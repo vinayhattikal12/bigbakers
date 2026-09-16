@@ -1,0 +1,95 @@
+'use client';
+
+import React, { useRef, useEffect } from 'react';
+import Link from 'next/link';
+import { Sparkles, ArrowRight, MapPin, ChevronDown, Heart } from 'lucide-react';
+
+export const MobileVideoHero: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Ensure video plays smoothly across all mobile devices (iOS Safari / Android)
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay policy handled gracefully
+      });
+    }
+  }, []);
+
+  return (
+    <section className="relative w-full h-[92vh] min-h-[580px] max-h-[920px] bg-cocoa-deep overflow-hidden select-none flex flex-col justify-end pt-24 pb-8">
+      {/* 1. FULL-BLEED SEAMLESS 16:9 VIDEO (Auto-cropped to mobile viewport by browser object-cover with ZERO black bars) */}
+      <div className="absolute inset-0 z-0 bg-cocoa-deep overflow-hidden">
+        <video
+          ref={videoRef}
+          src="/videos/hero-reel.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover object-center filter brightness-[1.05] contrast-[1.05] saturate-[1.12]"
+        />
+
+        {/* Ambient Contrast Gradients for Clear Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep via-cocoa-deep/40 to-black/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 pointer-events-none" />
+      </div>
+
+      {/* 2. CINEMATIC EDITORIAL CONTENT */}
+      <div className="relative z-10 px-5 max-w-7xl mx-auto w-full space-y-5">
+        <div className="max-w-3xl space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-gold/40 text-gold text-[11px] font-bold uppercase tracking-wider shadow-lg">
+            <Sparkles className="w-3.5 h-3.5 text-gold animate-pulse" />
+            <span>Handcrafted in Vijaynagar, Bengaluru</span>
+          </div>
+
+          <h1 className="font-serif text-4xl sm:text-5xl font-black text-white tracking-tight leading-[1.08] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
+            Bite Into <br />
+            <span className="text-caramel italic">Happiness.</span>
+          </h1>
+
+          <p className="text-xs sm:text-sm text-cream-100/95 font-sans font-normal leading-relaxed max-w-2xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            Freshly baked Belgian chocolate truffle gateaux, New York baked cheesecakes, Italian gelato, and stone-baked savouries. Prepared fresh every morning with 100% pure ingredients.
+          </p>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-wrap items-center gap-3 pt-1">
+          <Link
+            href="/menu"
+            className="flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-caramel hover:bg-caramel-dark text-white font-bold text-xs shadow-2xl shadow-caramel/30 active:scale-95 transition-all"
+          >
+            <span>Explore Full Menu (190+ Items)</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+
+          <Link
+            href="/stores"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-black/60 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold text-xs active:scale-95 transition-all"
+          >
+            <MapPin className="w-4 h-4 text-gold" />
+            <span>Visit Store</span>
+          </Link>
+        </div>
+
+        {/* Bottom Trust & Scroll Bar */}
+        <div className="pt-4 border-t border-white/15 flex flex-wrap items-center justify-between gap-3 text-xs text-cream-200/80">
+          <div className="flex items-center gap-3 font-medium text-[11px]">
+            <span className="flex items-center gap-1.5 text-cream-100">
+              <Heart className="w-3.5 h-3.5 text-caramel fill-current" />
+              <span>50,000+ Celebrations</span>
+            </span>
+            <span className="text-white/30">•</span>
+            <span>⚡ 45-60 Min Express</span>
+          </div>
+
+          <div className="flex items-center gap-1 text-gold font-medium animate-bounce text-[11px]">
+            <span>Scroll for Cravings</span>
+            <ChevronDown className="w-3.5 h-3.5 text-gold" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
