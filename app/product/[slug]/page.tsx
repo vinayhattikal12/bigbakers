@@ -10,11 +10,9 @@ import { useCart } from '@/lib/context/CartContext';
 import { ProductCard } from '@/components/ecommerce/ProductCard';
 import { ProductMediaGallery } from '@/components/ecommerce/ProductMediaGallery';
 import { SensoryProfile } from '@/components/ecommerce/SensoryProfile';
-import { LayerAnatomy } from '@/components/ecommerce/LayerAnatomy';
 import { triggerFlyToCartAnimation } from '@/components/ecommerce/FlyToCartOverlay';
 import { LiveCakePipingPreview } from '@/components/ecommerce/LiveCakePipingPreview';
 import { CravingPairUpsell } from '@/components/ecommerce/CravingPairUpsell';
-import { ColdChainGuaranteeBadge } from '@/components/ecommerce/ColdChainGuaranteeBadge';
 import {
   Star,
   Plus,
@@ -253,9 +251,6 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
             {/* The Craving Pair 1-Tap Upsell Bar */}
             <CravingPairUpsell currentCategory={product.category} currentProductId={product.id} />
-
-            {/* Worry-Free Cold Chain Guarantee */}
-            <ColdChainGuaranteeBadge />
           </div>
         </div>
 
@@ -266,9 +261,6 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           rating={product.rating}
           dietary={product.dietary}
         />
-
-        {/* Layer Anatomy Exploded View */}
-        <LayerAnatomy productSlug={product.slug} category={product.category} />
 
         {/* Product Story, Ingredients & Storage Tabs */}
         <div className="bg-white rounded-3xl p-6 sm:p-10 border border-cream-300 shadow-sm space-y-8">

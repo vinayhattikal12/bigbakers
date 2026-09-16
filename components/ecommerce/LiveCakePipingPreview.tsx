@@ -14,7 +14,6 @@ export const LiveCakePipingPreview: React.FC<LiveCakePipingPreviewProps> = ({
   message,
   onMessageChange,
 }) => {
-  const [style, setStyle] = useState<'gold' | 'white' | 'chocolate'>('gold');
 
   const presetMessages = [
     'Happy Birthday! 🎉',
@@ -76,44 +75,6 @@ export const LiveCakePipingPreview: React.FC<LiveCakePipingPreviewProps> = ({
         ))}
       </div>
 
-      {/* Piping Style Selector */}
-      <div className="flex items-center gap-2 pt-1">
-        <span className="text-[11px] text-cream-200/70 font-medium">Icing Style:</span>
-        <button
-          type="button"
-          onClick={() => setStyle('gold')}
-          className={`text-[10px] px-2.5 py-1 rounded-lg font-bold transition-all ${
-            style === 'gold'
-              ? 'bg-gold text-cocoa-deep shadow-md scale-105'
-              : 'bg-white/10 text-cream-200 hover:bg-white/15'
-          }`}
-        >
-          ✨ 24K Liquid Gold
-        </button>
-        <button
-          type="button"
-          onClick={() => setStyle('white')}
-          className={`text-[10px] px-2.5 py-1 rounded-lg font-bold transition-all ${
-            style === 'white'
-              ? 'bg-cream-100 text-cocoa-deep shadow-md scale-105'
-              : 'bg-white/10 text-cream-200 hover:bg-white/15'
-          }`}
-        >
-          🥛 White Choc Pearl
-        </button>
-        <button
-          type="button"
-          onClick={() => setStyle('chocolate')}
-          className={`text-[10px] px-2.5 py-1 rounded-lg font-bold transition-all ${
-            style === 'chocolate'
-              ? 'bg-amber-950 text-amber-200 border border-amber-500/50 shadow-md scale-105'
-              : 'bg-white/10 text-cream-200 hover:bg-white/15'
-          }`}
-        >
-          🍫 Dark Truffle
-        </button>
-      </div>
-
       {/* REAL-TIME LIVE PLAQUE RENDERING */}
       <div className="relative overflow-hidden rounded-2xl bg-black/60 border border-caramel/50 p-4 flex flex-col items-center justify-center min-h-[90px] shadow-inner text-center">
         {/* Subtle shimmer effect */}
@@ -124,15 +85,7 @@ export const LiveCakePipingPreview: React.FC<LiveCakePipingPreviewProps> = ({
         </span>
 
         {message.trim() ? (
-          <p
-            className={`font-serif text-xl sm:text-2xl font-bold italic tracking-wide transition-all duration-300 drop-shadow-md ${
-              style === 'gold'
-                ? 'text-gold bg-gradient-to-r from-amber-200 via-gold to-amber-300 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(230,180,60,0.4)]'
-                : style === 'white'
-                ? 'text-cream-100 drop-shadow-[0_2px_6px_rgba(255,255,255,0.3)]'
-                : 'text-amber-300 drop-shadow-[0_2px_6px_rgba(100,50,20,0.6)]'
-            }`}
-          >
+          <p className="font-serif text-xl sm:text-2xl font-bold italic tracking-wide transition-all duration-300 drop-shadow-md text-gold bg-gradient-to-r from-amber-200 via-gold to-amber-300 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(230,180,60,0.4)]">
             &ldquo;{message}&rdquo;
           </p>
         ) : (

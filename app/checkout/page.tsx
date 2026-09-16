@@ -8,7 +8,6 @@ import { useCart } from '@/lib/context/CartContext';
 import { formatPrice } from '@/lib/utils/formatters';
 import { Button } from '@/components/ui/Button';
 import { ecommerceService } from '@/lib/ecommerce/mock-adapter';
-import { ColdChainGuaranteeBadge } from '@/components/ecommerce/ColdChainGuaranteeBadge';
 import {
   ShieldCheck,
   Truck,
@@ -472,8 +471,6 @@ export default function CheckoutPage() {
 
           {/* Right Summary Box */}
           <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-cream-300 shadow-sm space-y-6">
-            <ColdChainGuaranteeBadge compact />
-
             <h3 className="font-serif text-lg font-bold text-cocoa border-b border-cream-200 pb-3">
               Order Summary ({items.length} {items.length === 1 ? 'item' : 'items'})
             </h3>

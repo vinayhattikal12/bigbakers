@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CinematicHero } from '@/components/cinematic/CinematicHero';
 import { CravingMoodSelector } from '@/components/ecommerce/CravingMoodSelector';
-import { ColdChainGuaranteeBadge } from '@/components/ecommerce/ColdChainGuaranteeBadge';
 import { products } from '@/data/products';
 import { ProductGrid } from '@/components/ecommerce/ProductGrid';
 import { Button } from '@/components/ui/Button';
