@@ -7,18 +7,15 @@ import {
   Sparkles,
   ArrowRight,
   MapPin,
-  ChevronRight,
-  ChevronLeft,
   ChevronDown,
-  Compass,
-  Volume2,
-  VolumeX,
+  Flame,
+  Award,
 } from 'lucide-react';
 
 interface StoryScene {
   id: number;
   tag: string;
-  tagIcon: 'pin' | 'sparkle';
+  tagIcon: 'pin' | 'sparkle' | 'flame' | 'award';
   titleLead: string;
   titleAccent: string;
   description: string;
@@ -32,13 +29,13 @@ interface StoryScene {
 const STORY_SCENES: StoryScene[] = [
   {
     id: 1,
-    tag: 'Vijaynagar Flagship Store • Bengaluru',
+    tag: 'Flagship Store • Vijaynagar, Bengaluru',
     tagIcon: 'pin',
     titleLead: 'Step Into ',
     titleAccent: 'Warmth.',
     description:
       'Where authentic European patisserie craft meets Bengaluru’s most cherished celebration cakes.',
-    image: '/cinematic/scene1/ezgif-frame-001.webp',
+    image: '/images/mobile-hero/story-1-store.jpg',
     primaryCtaText: 'Explore Menu',
     primaryCtaLink: '/menu',
     secondaryCtaText: 'Our Story',
@@ -51,8 +48,8 @@ const STORY_SCENES: StoryScene[] = [
     titleLead: 'Belgian Truffle ',
     titleAccent: 'Royale.',
     description:
-      'Tempered 54% dark Belgian chocolate ganache on moist espresso chiffon with 24K edible gold.',
-    image: '/cinematic/scene2/ezgif-frame-001.webp',
+      'Tempered 54% dark Callebaut mirror ganache on moist espresso chiffon dusted with 24K edible gold.',
+    image: '/images/mobile-hero/story-2-truffle.jpg',
     primaryCtaText: 'Order Truffle Cake',
     primaryCtaLink: '/product/belgian-truffle-cake',
     secondaryCtaText: 'All Cakes',
@@ -60,21 +57,49 @@ const STORY_SCENES: StoryScene[] = [
   },
   {
     id: 3,
-    tag: 'European Patisserie & Treats',
-    tagIcon: 'sparkle',
+    tag: 'Pure Luxury • European Bake',
+    tagIcon: 'award',
     titleLead: 'Cheesecakes & ',
     titleAccent: 'Tiramisu.',
     description:
-      'Baked Lotus Biscoff cheesecakes, authentic Italian mascarpone tiramisu, and roasted snacks.',
-    image: '/cinematic/scene3/ezgif-frame-001.webp',
+      'New York dense baked Lotus Biscoff cheesecakes and authentic Italian mascarpone tiramisu.',
+    image: '/images/mobile-hero/story-3-cheesecake.jpg',
     primaryCtaText: 'Taste Desserts',
     primaryCtaLink: '/desserts',
     secondaryCtaText: 'Find Stores',
     secondaryCtaLink: '/stores',
   },
+  {
+    id: 4,
+    tag: 'Everyday Joy • Oven-Fresh',
+    tagIcon: 'sparkle',
+    titleLead: 'Brioche Donuts & ',
+    titleAccent: 'Cookies.',
+    description:
+      'Glazed artisan donuts, molten chocolate chunk NYC cookies, and red velvet cupcakes.',
+    image: '/images/mobile-hero/story-4-treats.jpg',
+    primaryCtaText: 'Explore Treats',
+    primaryCtaLink: '/treats',
+    secondaryCtaText: 'Full Menu',
+    secondaryCtaLink: '/menu',
+  },
+  {
+    id: 5,
+    tag: 'Crispy & Pure • Bengaluru Snack',
+    tagIcon: 'flame',
+    titleLead: 'Roasted Peri Peri ',
+    titleAccent: 'Makhana.',
+    description:
+      'Slow-roasted spicy foxnuts, authentic savory mixtures, and stone-baked crusty sourdough.',
+    image: '/images/mobile-hero/story-5-snacks.jpg',
+    primaryCtaText: 'Shop Savory Snacks',
+    primaryCtaLink: '/snacks',
+    secondaryCtaText: 'All Products',
+    secondaryCtaLink: '/menu',
+  },
 ];
 
-const SCENE_DURATION_MS = 5500;
+const SCENE_DURATION_MS = 5000;
 
 export const MobileStoryHero: React.FC = () => {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -156,7 +181,7 @@ export const MobileStoryHero: React.FC = () => {
     const diffY = touch.clientY - touchStartYRef.current;
 
     // Check if swipe was mostly horizontal
-    if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+    if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
       if (diffX < 0) {
         nextScene();
       } else {
@@ -170,13 +195,26 @@ export const MobileStoryHero: React.FC = () => {
 
   const currentScene = STORY_SCENES[activeIdx];
 
+  const renderTagIcon = (icon: StoryScene['tagIcon']) => {
+    switch (icon) {
+      case 'pin':
+        return <MapPin className="w-3 h-3 text-gold" />;
+      case 'flame':
+        return <Flame className="w-3 h-3 text-caramel fill-current" />;
+      case 'award':
+        return <Award className="w-3 h-3 text-gold" />;
+      default:
+        return <Sparkles className="w-3 h-3 text-gold" />;
+    }
+  };
+
   return (
     <section
-      className="relative w-full h-[88vh] min-h-[580px] max-h-[780px] bg-cocoa-deep overflow-hidden select-none flex flex-col justify-between"
+      className="relative w-full h-[88vh] min-h-[580px] max-h-[820px] bg-cocoa-deep overflow-hidden select-none flex flex-col justify-between"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Background Image Carousel with Ken-Burns Motion */}
+      {/* Background High-Definition Image Carousel with Ken-Burns Motion */}
       {STORY_SCENES.map((scene, idx) => (
         <div
           key={scene.id}
@@ -188,28 +226,29 @@ export const MobileStoryHero: React.FC = () => {
             src={scene.image}
             alt={scene.titleLead + scene.titleAccent}
             fill
-            priority={idx === 0}
+            priority={idx <= 1}
+            quality={95}
             sizes="100vw"
-            className={`object-cover transform transition-transform duration-[6000ms] ease-out ${
+            className={`object-cover transform transition-transform duration-[5500ms] ease-out ${
               idx === activeIdx ? 'scale-105' : 'scale-100'
             }`}
           />
-          {/* Ambient Cinematic Contrast Gradients */}
-          <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep via-cocoa-deep/40 to-black/60" />
-          <div className="absolute inset-0 bg-black/20" />
+          {/* Ambient Contrast Gradients for Crystal Clear Text */}
+          <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep via-cocoa-deep/45 to-black/60" />
+          <div className="absolute inset-0 bg-black/15" />
         </div>
       ))}
 
       {/* ========================================================
-          📱 TOP STORY PROGRESS BARS (Instagram/Tesla Style)
+          📱 TOP 5-SEGMENT STORY PROGRESS BARS (Instagram/Tesla Style)
           ======================================================== */}
       <div className="relative z-20 pt-4 px-4 space-y-3">
-        <div className="grid grid-cols-3 gap-1.5 w-full">
+        <div className="grid grid-cols-5 gap-1.5 w-full">
           {STORY_SCENES.map((s, idx) => (
             <button
               key={s.id}
               onClick={() => selectScene(idx)}
-              className="h-1 rounded-full bg-white/25 overflow-hidden transition-all text-left"
+              className="h-1 rounded-full bg-white/30 overflow-hidden transition-all text-left"
               aria-label={`Go to story ${idx + 1}`}
             >
               <div
@@ -227,26 +266,22 @@ export const MobileStoryHero: React.FC = () => {
           ))}
         </div>
 
-        {/* Top Story Header Meta */}
+        {/* Top Story Header Badge & Indicator */}
         <div className="flex items-center justify-between text-xs text-cream-100">
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-gold/40 text-gold text-[11px] font-bold uppercase tracking-wider">
-            {currentScene.tagIcon === 'pin' ? (
-              <MapPin className="w-3 h-3 text-gold" />
-            ) : (
-              <Sparkles className="w-3 h-3 text-gold" />
-            )}
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/65 backdrop-blur-md border border-gold/40 text-gold text-[11px] font-bold uppercase tracking-wider shadow-md">
+            {renderTagIcon(currentScene.tagIcon)}
             <span>{currentScene.tag}</span>
           </div>
 
-          <div className="flex items-center gap-1 text-[11px] text-cream-200/80 font-mono bg-black/40 backdrop-blur-sm px-2.5 py-0.5 rounded-full border border-white/10">
+          <div className="flex items-center gap-1 text-[11px] text-cream-200/90 font-mono bg-black/50 backdrop-blur-sm px-2.5 py-0.5 rounded-full border border-white/15">
             <span>0{activeIdx + 1}</span>
-            <span>/</span>
+            <span className="text-white/40">/</span>
             <span>0{STORY_SCENES.length}</span>
           </div>
         </div>
       </div>
 
-      {/* Left/Right Tap Area Navigators (For easy one-hand tapping) */}
+      {/* Left/Right Tap Area Navigators (For easy one-hand thumb tapping) */}
       <button
         onClick={prevScene}
         className="absolute left-0 top-20 bottom-36 w-1/4 z-10 opacity-0 cursor-pointer"
@@ -262,13 +297,13 @@ export const MobileStoryHero: React.FC = () => {
           🌟 BOTTOM EDITORIAL STORY NARRATIVE CARD
           ======================================================== */}
       <div className="relative z-20 px-5 pb-6 space-y-4">
-        <div className="space-y-2 animate-in fade-in slide-in-from-bottom-3 duration-500 key={activeIdx}">
-          <h2 className="font-serif text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+        <div className="space-y-2 animate-in fade-in slide-in-from-bottom-2 duration-400" key={activeIdx}>
+          <h2 className="font-serif text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
             {currentScene.titleLead}
             <span className="text-caramel italic">{currentScene.titleAccent}</span>
           </h2>
 
-          <p className="text-xs sm:text-sm text-cream-100/90 font-medium leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)] max-w-sm">
+          <p className="text-xs sm:text-sm text-cream-100/95 font-medium leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.95)] max-w-sm">
             {currentScene.description}
           </p>
         </div>
@@ -277,7 +312,7 @@ export const MobileStoryHero: React.FC = () => {
         <div className="flex items-center gap-2.5 pt-1">
           <Link
             href={currentScene.primaryCtaLink}
-            className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-caramel to-caramel-dark hover:from-caramel-dark hover:to-cocoa text-white font-bold text-xs shadow-xl active:scale-95 transition-all"
+            className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-caramel to-caramel-dark hover:from-caramel-dark hover:to-cocoa text-white font-bold text-xs shadow-2xl active:scale-95 transition-all"
           >
             <span>{currentScene.primaryCtaText}</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -285,30 +320,30 @@ export const MobileStoryHero: React.FC = () => {
 
           <Link
             href={currentScene.secondaryCtaLink}
-            className="px-4 py-3 rounded-full bg-black/60 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold text-xs active:scale-95 transition-all"
+            className="px-4 py-3 rounded-full bg-black/65 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold text-xs active:scale-95 transition-all"
           >
             <span>{currentScene.secondaryCtaText}</span>
           </Link>
         </div>
 
         {/* Bottom Interactive Scene Pills & Scroll Cue */}
-        <div className="flex items-center justify-between pt-1 border-t border-cream-300/10 text-[11px] text-cream-200/70">
+        <div className="flex items-center justify-between pt-1 border-t border-cream-300/15 text-[11px] text-cream-200/80">
           <div className="flex items-center gap-1.5">
             {STORY_SCENES.map((_, i) => (
               <button
                 key={i}
                 onClick={() => selectScene(i)}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === activeIdx ? 'w-5 bg-gold' : 'w-1.5 bg-white/30'
+                  i === activeIdx ? 'w-5 bg-gold' : 'w-1.5 bg-white/35'
                 }`}
                 aria-label={`Jump to scene ${i + 1}`}
               />
             ))}
-            <span className="pl-1 text-[10px] text-cream-200/50">Swipe or tap</span>
+            <span className="pl-1 text-[10px] text-cream-200/60">Hold to pause</span>
           </div>
 
           <div className="flex items-center gap-1 text-[10px] text-gold font-medium animate-bounce">
-            <span>Scroll to browse menu</span>
+            <span>Scroll for menu</span>
             <ChevronDown className="w-3 h-3 text-gold" />
           </div>
         </div>
