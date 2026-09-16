@@ -11,6 +11,12 @@ interface CinematicCanvasProps {
   onLoaded?: () => void;
 }
 
+const SCENE_FRAME_COUNTS: Record<number, number> = {
+  1: 300,
+  2: 191,
+  3: 198,
+};
+
 export const CinematicCanvas: React.FC<CinematicCanvasProps> = ({
   currentFrame,
   totalFrames = 300,
@@ -25,7 +31,9 @@ export const CinematicCanvas: React.FC<CinematicCanvasProps> = ({
 
   // Primary path uses optimized WebP frames with zero lag
   const getFramePath = useCallback((sceneIndex: number, frameIndex: number, ext: 'webp' | 'png' = 'webp') => {
-    const padded = String(Math.min(300, Math.max(1, frameIndex))).padStart(3, '0');
+    const maxF = SCENE_FRAME_COUNTS[sceneIndex] || 300;
+    const clamped = Math.min(maxF, Math.max(1, frameIndex));
+    const padded = String(clamped).padStart(3, '0');
     return `/cinematic/scene${sceneIndex}/ezgif-frame-${padded}.${ext}`;
   }, []);
 
@@ -37,18 +45,20 @@ export const CinematicCanvas: React.FC<CinematicCanvasProps> = ({
     const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
-    const key = `scene${sceneIndex}-${frameIndex}`;
+    const maxF = SCENE_FRAME_COUNTS[sceneIndex] || 300;
+    const validFrame = Math.min(maxF, Math.max(1, frameIndex));
+    const key = `scene${sceneIndex}-${validFrame}`;
     let img = imagesRef.current.get(key);
 
     // If exact frame is not yet decoded, find closest available cached frame in the same scene
     if (!img || !img.complete || img.naturalWidth === 0) {
       for (let offset = 1; offset <= 20; offset++) {
-        const prev = imagesRef.current.get(`scene${sceneIndex}-${Math.max(1, frameIndex - offset)}`);
+        const prev = imagesRef.current.get(`scene${sceneIndex}-${Math.max(1, validFrame - offset)}`);
         if (prev && prev.complete && prev.naturalWidth > 0) {
           img = prev;
           break;
         }
-        const next = imagesRef.current.get(`scene${sceneIndex}-${Math.min(300, frameIndex + offset)}`);
+        const next = imagesRef.current.get(`scene${sceneIndex}-${Math.min(maxF, validFrame + offset)}`);
         if (next && next.complete && next.naturalWidth > 0) {
           img = next;
           break;

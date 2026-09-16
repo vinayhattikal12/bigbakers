@@ -7,6 +7,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ReducedMotionHero } from './ReducedMotionHero';
 import { ChevronDown, Sparkles, ArrowRight, Compass, MapPin } from 'lucide-react';
 
+// Exact dynamic frame counts per scene
+export const SCENE_FRAME_COUNTS: Record<number, number> = {
+  1: 300,
+  2: 191,
+  3: 198,
+};
+
 export const CinematicHero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -39,14 +46,19 @@ export const CinematicHero: React.FC = () => {
   }, []);
 
   const getFrameSrc = useCallback((scene: number, frame: number) => {
-    const padded = String(Math.min(300, Math.max(1, frame))).padStart(3, '0');
+    const maxF = SCENE_FRAME_COUNTS[scene] || 300;
+    const clamped = Math.min(maxF, Math.max(1, frame));
+    const padded = String(clamped).padStart(3, '0');
     return `/cinematic/scene${scene}/ezgif-frame-${padded}.webp`;
   }, []);
 
   // Frame loading helper with caching
   const loadFrame = useCallback(
     (scene: number, frame: number, priority = false): Promise<HTMLImageElement | null> => {
-      const key = `s${scene}-f${frame}`;
+      const maxF = SCENE_FRAME_COUNTS[scene] || 300;
+      const validFrame = Math.min(maxF, Math.max(1, frame));
+      const key = `s${scene}-f${validFrame}`;
+
       const existing = imagesRef.current.get(key);
       if (existing && existing.complete && existing.naturalWidth > 0) {
         return Promise.resolve(existing);
@@ -62,7 +74,7 @@ export const CinematicHero: React.FC = () => {
         if (priority) {
           (img as any).fetchPriority = 'high';
         }
-        img.src = getFrameSrc(scene, frame);
+        img.src = getFrameSrc(scene, validFrame);
         img.onload = () => {
           imagesRef.current.set(key, img);
           if (img.decode) {
@@ -88,18 +100,20 @@ export const CinematicHero: React.FC = () => {
     const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
-    const key = `s${scene}-f${frame}`;
+    const maxF = SCENE_FRAME_COUNTS[scene] || 300;
+    const validFrame = Math.min(maxF, Math.max(1, frame));
+    const key = `s${scene}-f${validFrame}`;
     let img = imagesRef.current.get(key);
 
     // Fallback: If exact frame is still downloading, find the nearest cached frame
     if (!img || !img.complete || img.naturalWidth === 0) {
       for (let offset = 1; offset <= 30; offset++) {
-        const prev = imagesRef.current.get(`s${scene}-f${Math.max(1, frame - offset)}`);
+        const prev = imagesRef.current.get(`s${scene}-f${Math.max(1, validFrame - offset)}`);
         if (prev && prev.complete && prev.naturalWidth > 0) {
           img = prev;
           break;
         }
-        const next = imagesRef.current.get(`s${scene}-f${Math.min(300, frame + offset)}`);
+        const next = imagesRef.current.get(`s${scene}-f${Math.min(maxF, validFrame + offset)}`);
         if (next && next.complete && next.naturalWidth > 0) {
           img = next;
           break;
@@ -137,7 +151,7 @@ export const CinematicHero: React.FC = () => {
     ctx.drawImage(img, x, y, renderWidth, renderHeight);
     ctx.restore();
 
-    lastDrawnRef.current = { scene, frame };
+    lastDrawnRef.current = { scene, frame: validFrame };
   }, []);
 
   // Multi-tier background preloading
@@ -156,12 +170,13 @@ export const CinematicHero: React.FC = () => {
       loadFrame(1, f);
     }
 
-    // 3. Keyframe milestone preloader (every 8th frame across all 3 scenes)
+    // 3. Keyframe milestone preloader (every 8th frame across each scene's exact length)
     const preloadKeyframes = () => {
       if (isCancelled) return;
       const keyframes: { scene: number; frame: number }[] = [];
       for (let s = 1; s <= 3; s++) {
-        for (let f = 8; f <= 300; f += 8) {
+        const maxF = SCENE_FRAME_COUNTS[s] || 300;
+        for (let f = 8; f <= maxF; f += 8) {
           keyframes.push({ scene: s, frame: f });
         }
       }
@@ -169,7 +184,6 @@ export const CinematicHero: React.FC = () => {
       let idx = 0;
       const loadNextKeyframe = () => {
         if (isCancelled || idx >= keyframes.length) {
-          // Once keyframes are ready, progressively fill sequential frames
           preloadAllSequential();
           return;
         }
@@ -191,9 +205,10 @@ export const CinematicHero: React.FC = () => {
         if (isCancelled) return;
         if (s > 3) return;
 
+        const maxF = SCENE_FRAME_COUNTS[s] || 300;
         loadFrame(s, f);
         f++;
-        if (f > 300) {
+        if (f > maxF) {
           f = 1;
           s++;
         }
@@ -290,29 +305,33 @@ export const CinematicHero: React.FC = () => {
           if (p < 0.3333) {
             sceneNum = 1;
             const norm = p / 0.3333;
-            frame = Math.min(300, Math.max(1, Math.floor(norm * 299) + 1));
+            const maxF = SCENE_FRAME_COUNTS[1];
+            frame = Math.min(maxF, Math.max(1, Math.floor(norm * (maxF - 1)) + 1));
           } else if (p < 0.6666) {
             sceneNum = 2;
             const norm = (p - 0.3333) / 0.3333;
-            frame = Math.min(300, Math.max(1, Math.floor(norm * 299) + 1));
+            const maxF = SCENE_FRAME_COUNTS[2];
+            frame = Math.min(maxF, Math.max(1, Math.floor(norm * (maxF - 1)) + 1));
           } else {
             sceneNum = 3;
             const norm = (p - 0.6666) / 0.3334;
-            frame = Math.min(300, Math.max(1, Math.floor(norm * 299) + 1));
+            const maxF = SCENE_FRAME_COUNTS[3];
+            frame = Math.min(maxF, Math.max(1, Math.floor(norm * (maxF - 1)) + 1));
           }
 
           targetStateRef.current = { scene: sceneNum, frame, progress: p };
 
           // Intelligent Dynamic Lookahead Window (+15 ahead, -5 behind)
+          const currentMaxF = SCENE_FRAME_COUNTS[sceneNum] || 300;
           for (let offset = -5; offset <= 15; offset++) {
             const target = frame + offset;
-            if (target >= 1 && target <= 300) {
+            if (target >= 1 && target <= currentMaxF) {
               loadFrame(sceneNum, target);
             }
           }
 
           // Pre-warm next scene when nearing boundary
-          if (frame > 250 && sceneNum < 3) {
+          if (frame > currentMaxF - 30 && sceneNum < 3) {
             for (let f = 1; f <= 15; f++) {
               loadFrame(sceneNum + 1, f);
             }
