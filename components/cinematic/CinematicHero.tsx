@@ -28,12 +28,12 @@ export const CinematicHero: React.FC = () => {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover scale-[1.42] sm:scale-[1.2] lg:scale-[1.08] object-center origin-center filter brightness-[0.88] contrast-[1.05] transition-transform duration-700"
+          className="w-full h-full object-cover scale-[1.42] sm:scale-[1.2] lg:scale-[1.08] object-center origin-center filter brightness-[1.12] contrast-[1.06] saturate-[1.18] transition-transform duration-700"
         />
 
-        {/* Ambient Contrast Gradients for Crystal Clear Typography */}
-        <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep via-cocoa-deep/55 to-black/70 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50 pointer-events-none" />
+        {/* Lighter, Cinematic Ambient Vignette for Maximum Video Radiance */}
+        <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep/85 via-cocoa-deep/20 to-black/35 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-black/25 pointer-events-none" />
       </div>
 
       {/* 2. CINEMATIC EDITORIAL CONTENT (SAFELY POSITIONED BELOW NAVBAR) */}
