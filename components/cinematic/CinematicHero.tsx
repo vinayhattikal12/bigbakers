@@ -17,8 +17,8 @@ export const CinematicHero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[94vh] min-h-[640px] max-h-[960px] lg:h-screen bg-cocoa-deep overflow-hidden select-none flex flex-col justify-end pt-24 sm:pt-28 pb-8 sm:pb-12">
-      {/* 1. SEAMLESS BACKGROUND 9:16 / FULL-BLEED VIDEO */}
+    <section className="relative w-full h-[92vh] min-h-[580px] max-h-[920px] lg:h-screen bg-cocoa-deep overflow-hidden select-none flex flex-col justify-end pt-24 pb-8 sm:pb-12">
+      {/* 1. TRUE FULL-BLEED SEAMLESS 16:9 VIDEO (Auto-cropped to viewport by browser object-cover with ZERO black bars) */}
       <div className="absolute inset-0 z-0 bg-cocoa-deep overflow-hidden">
         <video
           ref={videoRef}
@@ -28,15 +28,15 @@ export const CinematicHero: React.FC = () => {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover scale-[1.42] sm:scale-[1.2] lg:scale-[1.08] object-center origin-center filter brightness-[1.12] contrast-[1.06] saturate-[1.18] transition-transform duration-700"
+          className="w-full h-full object-cover object-center filter brightness-[1.05] contrast-[1.05] saturate-[1.12]"
         />
 
-        {/* Lighter, Cinematic Ambient Vignette for Maximum Video Radiance */}
-        <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep/85 via-cocoa-deep/20 to-black/35 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-black/25 pointer-events-none" />
+        {/* Cinematic Ambient Contrast Gradients for Clear Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep via-cocoa-deep/40 to-black/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 pointer-events-none" />
       </div>
 
-      {/* 2. CINEMATIC EDITORIAL CONTENT (SAFELY POSITIONED BELOW NAVBAR) */}
+      {/* 2. CINEMATIC EDITORIAL CONTENT */}
       <div className="relative z-10 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full space-y-5 sm:space-y-6">
         <div className="max-w-3xl space-y-3 sm:space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-gold/40 text-gold text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-lg">
