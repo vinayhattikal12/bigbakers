@@ -29,12 +29,12 @@ interface StoryScene {
 const STORY_SCENES: StoryScene[] = [
   {
     id: 1,
-    tag: 'Flagship Store • Vijaynagar, Bengaluru',
+    tag: 'Big Bakers Flagship • Vijaynagar',
     tagIcon: 'pin',
-    titleLead: 'Step Into ',
-    titleAccent: 'Warmth.',
+    titleLead: 'Bite Into ',
+    titleAccent: 'Happiness.',
     description:
-      'Where authentic European patisserie craft meets Bengaluru’s most cherished celebration cakes.',
+      'Cakes, Desserts, Gelato, Pizza & more. Authentic handcrafted delicacies in Vijaynagar, Bengaluru.',
     image: '/images/mobile-hero/story-1-store.jpg',
     primaryCtaText: 'Explore Menu',
     primaryCtaLink: '/menu',
