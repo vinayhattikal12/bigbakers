@@ -71,11 +71,11 @@ export default function HomePage() {
 
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="p-4 rounded-2xl bg-cocoa/60 border border-cream-300/10 space-y-1">
-                  <p className="font-serif text-2xl font-black text-gold">50,000+</p>
+                  <p className="font-sans text-2xl sm:text-3xl font-black text-gold tracking-tight tabular-nums">50,000+</p>
                   <p className="text-xs text-cream-200/70">Celebrations Sweetened</p>
                 </div>
                 <div className="p-4 rounded-2xl bg-cocoa/60 border border-cream-300/10 space-y-1">
-                  <p className="font-serif text-2xl font-black text-gold">4.9 ★</p>
+                  <p className="font-sans text-2xl sm:text-3xl font-black text-gold tracking-tight tabular-nums">4.9 ★</p>
                   <p className="text-xs text-cream-200/70">Over 3,000 Verified Reviews</p>
                 </div>
               </div>

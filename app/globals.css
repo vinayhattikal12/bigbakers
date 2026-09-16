@@ -72,6 +72,12 @@
   .text-glow {
     text-shadow: 0 0 24px rgba(212, 175, 55, 0.45);
   }
+  .price-text {
+    font-family: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-feature-settings: 'tnum' 1, 'cv02' 1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
 }
 
 /* 3D Pop-out & Parabolic Flight Keyframes */

@@ -296,7 +296,7 @@ export const MasterReserveShowcase: React.FC = () => {
                         >
                           <div className="flex items-center justify-between">
                             <span className="font-bold text-xs text-cocoa">{w.weight}</span>
-                            <span className="font-serif font-black text-xs text-caramel">
+                            <span className="font-sans font-black text-xs text-caramel tabular-nums">
                               ₹{w.price}
                             </span>
                           </div>
@@ -313,7 +313,7 @@ export const MasterReserveShowcase: React.FC = () => {
             <div className="pt-4 border-t border-cream-200 flex flex-col sm:flex-row items-center gap-3">
               <div className="w-full sm:w-auto sm:pr-4">
                 <span className="text-[10px] text-cocoa/50 uppercase font-semibold block">Total Price</span>
-                <span className="font-serif text-2xl sm:text-3xl font-black text-cocoa">
+                <span className="font-sans text-2xl sm:text-3xl font-black text-cocoa tracking-tight tabular-nums">
                   ₹{activeWeightObj.price}
                 </span>
               </div>
