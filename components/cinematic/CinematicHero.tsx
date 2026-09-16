@@ -17,8 +17,8 @@ export const CinematicHero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[92vh] min-h-[600px] max-h-[960px] lg:h-screen bg-cocoa-deep overflow-hidden select-none flex flex-col justify-between">
-      {/* 1. SEAMLESS BACKGROUND VIDEO (Muted, Autoplay, Looped, Zero Controls) */}
+    <section className="relative w-full h-[94vh] min-h-[640px] max-h-[960px] lg:h-screen bg-cocoa-deep overflow-hidden select-none flex flex-col justify-end pt-24 sm:pt-28 pb-8 sm:pb-12">
+      {/* 1. SEAMLESS BACKGROUND 9:16 / FULL-BLEED VIDEO */}
       <div className="absolute inset-0 z-0 bg-cocoa-deep overflow-hidden">
         <video
           ref={videoRef}
@@ -28,33 +28,20 @@ export const CinematicHero: React.FC = () => {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover scale-[1.02] filter brightness-[0.88] contrast-[1.05]"
+          className="w-full h-full object-cover scale-[1.01] filter brightness-[0.88] contrast-[1.05]"
         />
 
         {/* Ambient Contrast Gradients for Crystal Clear Typography */}
-        <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep via-cocoa-deep/50 to-black/60 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep via-cocoa-deep/55 to-black/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50 pointer-events-none" />
       </div>
 
-      {/* 2. TOP AMBIENT BADGE */}
-      <div className="relative z-10 pt-6 sm:pt-8 px-4 sm:px-8 max-w-7xl mx-auto w-full flex items-center justify-between">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-gold/40 text-gold text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-lg">
-          <Sparkles className="w-3.5 h-3.5 text-gold animate-pulse" />
-          <span>Handcrafted in Vijaynagar, Bengaluru</span>
-        </div>
-
-        <div className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-cream-100 text-xs font-semibold">
-          <span className="w-2 h-2 rounded-full bg-emerald-500" />
-          <span>100% Pure Veg & Eggless</span>
-        </div>
-      </div>
-
-      {/* 3. CENTER / LOWER-THIRD CINEMATIC EDITORIAL CONTENT */}
-      <div className="relative z-10 px-5 sm:px-8 lg:px-12 pb-10 sm:pb-14 max-w-7xl mx-auto w-full space-y-6">
+      {/* 2. CINEMATIC EDITORIAL CONTENT (SAFELY POSITIONED BELOW NAVBAR) */}
+      <div className="relative z-10 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full space-y-5 sm:space-y-6">
         <div className="max-w-3xl space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-cream-100 text-xs font-bold tracking-wider uppercase">
-            <Award className="w-3.5 h-3.5 text-gold" />
-            <span>Bengaluru&apos;s Premier Artisanal Bakery</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-gold/40 text-gold text-[11px] sm:text-xs font-bold uppercase tracking-wider shadow-lg">
+            <Sparkles className="w-3.5 h-3.5 text-gold animate-pulse" />
+            <span>Handcrafted in Vijaynagar, Bengaluru</span>
           </div>
 
           <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
