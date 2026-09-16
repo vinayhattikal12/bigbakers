@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { CinematicHero } from '@/components/cinematic/CinematicHero';
 import { CinematicCravingSection } from '@/components/cinematic/CinematicCravingSection';
 import { MasterReserveShowcase } from '@/components/cinematic/MasterReserveShowcase';
-import { CraftPhilosophy } from '@/components/cinematic/CraftPhilosophy';
 import { Button } from '@/components/ui/Button';
 import {
   ArrowRight,
@@ -23,13 +22,10 @@ export default function HomePage() {
       {/* 2. WHAT ARE YOU CRAVING TODAY? (CINEMATIC 6-CATEGORY EDITORIAL SHOWCASE) */}
       <CinematicCravingSection />
 
-      {/* 3. THE MASTER BAKER'S SIGNATURE RESERVE (INTERACTIVE TASTING ROOM) */}
+      {/* 3. CHEF'S SIGNATURE MASTERPIECES SHOWCASE */}
       <MasterReserveShowcase />
 
-      {/* 4. THE PHILOSOPHY OF UNCOMPROMISED QUALITY (4 CRAFT PILLARS) */}
-      <CraftPhilosophy />
-
-      {/* 5. EDITORIAL STORY BANNER — "OUR BAKING HERITAGE" */}
+      {/* 4. EDITORIAL STORY BANNER — "OUR BAKING HERITAGE" */}
       <section className="py-24 bg-cocoa-deep text-cream-100 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-caramel/5 blur-3xl pointer-events-none" />
 
@@ -97,7 +93,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. VERIFIED REVIEWS / COMMUNITY LOVE */}
+      {/* 5. VERIFIED REVIEWS / COMMUNITY LOVE */}
       <section className="py-20 bg-cream-50 border-t border-cream-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
