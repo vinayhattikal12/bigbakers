@@ -167,60 +167,80 @@ export const Header: React.FC = () => {
               {/* Mega Menu Dropdown */}
               {isMenuDropdownOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-[540px] bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-cream-300/80 p-4 text-cocoa animate-in fade-in-0 zoom-in-95 duration-200 z-50"
+                  className="absolute top-full left-0 mt-3 w-[580px] bg-white rounded-2xl shadow-[0_25px_60px_rgba(40,20,10,0.22)] border border-cream-300 p-5 text-cocoa animate-in fade-in-0 zoom-in-95 duration-200 z-50"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-cream-200">
+                  {/* Dropdown Header */}
+                  <div className="flex items-center justify-between pb-3.5 mb-3.5 border-b border-cream-200">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold uppercase tracking-wider text-cocoa">
-                        Explore Our Catalog
+                      <span className="font-serif font-bold text-sm tracking-wide text-cocoa">
+                        Explore Big Bakers
                       </span>
-                      <span className="px-2 py-0.5 rounded-full bg-caramel/15 text-caramel text-[10px] font-bold">
+                      <span className="px-2.5 py-0.5 rounded-full bg-caramel/15 text-caramel text-[10px] font-bold tracking-wide uppercase">
                         190+ Pure Veg Items
                       </span>
                     </div>
                     <Link
                       href="/menu"
                       onClick={() => setIsMenuDropdownOpen(false)}
-                      className="text-xs font-semibold text-caramel hover:text-caramel-dark flex items-center gap-1 transition-colors"
+                      className="text-xs font-bold text-caramel hover:text-caramel-dark flex items-center gap-1 transition-colors group"
                     >
-                      <span>View All</span>
-                      <ArrowRight className="w-3 h-3" />
+                      <span>Browse All</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                     </Link>
                   </div>
 
-                  {/* Category Grid */}
-                  <div className="grid grid-cols-2 gap-2">
+                  {/* Balanced 8-Tile Category Grid */}
+                  <div className="grid grid-cols-2 gap-2.5">
                     {categories.map((cat) => (
                       <Link
                         key={cat.id}
                         href={`/${cat.slug}`}
                         onClick={() => setIsMenuDropdownOpen(false)}
-                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-cream-100 transition-all group"
+                        className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-cream-100/90 border border-transparent hover:border-cream-300 transition-all group"
                       >
-                        <div className="p-2 rounded-lg bg-cream-200 group-hover:bg-caramel/20 transition-colors shrink-0">
+                        <div className="w-9 h-9 rounded-xl bg-cream-200/80 group-hover:bg-caramel/20 flex items-center justify-center transition-colors shrink-0">
                           {categoryIcons[cat.id] || <Sparkles className="w-4 h-4 text-caramel" />}
                         </div>
                         <div className="min-w-0">
                           <p className="text-xs font-bold text-cocoa group-hover:text-caramel transition-colors truncate">
                             {cat.title}
                           </p>
-                          <p className="text-[11px] text-cocoa/60 truncate">
+                          <p className="text-[11px] text-cocoa/60 truncate leading-tight">
                             {cat.tagline}
                           </p>
                         </div>
                       </Link>
                     ))}
+
+                    {/* 8th Balancing Tile: Full Menu / Chef's Catalog */}
+                    <Link
+                      href="/menu"
+                      onClick={() => setIsMenuDropdownOpen(false)}
+                      className="flex items-center gap-3 p-2.5 rounded-xl bg-gradient-to-r from-caramel/10 via-cream-100 to-caramel/15 border border-caramel/30 hover:border-caramel hover:bg-caramel/20 transition-all group"
+                    >
+                      <div className="w-9 h-9 rounded-xl bg-caramel text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                        <Sparkles className="w-4 h-4" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-xs font-bold text-caramel-dark truncate">
+                          Full 190+ Menu Catalog
+                        </p>
+                        <p className="text-[11px] text-cocoa/70 truncate leading-tight font-medium">
+                          All cakes, treats, bakes & combos →
+                        </p>
+                      </div>
+                    </Link>
                   </div>
 
                   {/* Dropdown Footer */}
-                  <div className="mt-3 pt-2.5 border-t border-cream-200/80 flex items-center justify-between text-[11px] text-cocoa/70">
-                    <span className="flex items-center gap-1">
+                  <div className="mt-4 pt-3 border-t border-cream-200 flex items-center justify-between text-[11px] text-cocoa/70 font-medium bg-cream-50 -mx-5 -mb-5 px-5 py-2.5 rounded-b-2xl">
+                    <span className="flex items-center gap-1.5 text-emerald-800 font-semibold">
                       <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                       <span>100% Pure Vegetarian & Eggless</span>
                     </span>
-                    <span className="text-caramel font-medium">Baked Fresh Daily</span>
+                    <span className="text-cocoa/60">Vijaynagar, Bengaluru</span>
                   </div>
                 </div>
               )}
