@@ -1,12 +1,29 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { ShoppingBag, Search, Menu, Sparkles } from 'lucide-react';
+import { 
+  ShoppingBag, 
+  Search, 
+  Menu as MenuIcon, 
+  Sparkles, 
+  ChevronDown, 
+  Cake, 
+  UtensilsCrossed, 
+  IceCream, 
+  Cookie, 
+  Flame, 
+  ArrowRight,
+  ShieldCheck,
+  Pizza,
+  Croissant
+} from 'lucide-react';
 import { useCart } from '@/lib/context/CartContext';
 import { SearchModal } from '@/components/ecommerce/SearchModal';
 import { MobileNav } from './MobileNav';
+import { categories } from '@/data/categories';
 import { cn } from '@/lib/utils/cn';
 
 export const Header: React.FC = () => {
@@ -15,6 +32,8 @@ export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isMenuDropdownOpen, setIsMenuDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const isHomePage = pathname === '/';
 
@@ -26,52 +45,69 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleMouseEnter = () => {
+    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    setIsMenuDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setIsMenuDropdownOpen(false);
+    }, 150);
+  };
+
+  // Primary desktop navigation links (organized and cleanly spaced)
   const navLinks = [
-    { label: 'Menu', href: '/menu' },
     { label: 'Cakes', href: '/cakes' },
     { label: 'Desserts', href: '/desserts' },
-    { label: 'Pizzas & Pasta', href: '/pizzas' },
-    { label: 'Savouries', href: '/savouries' },
-    { label: 'Gelato', href: '/gelato' },
-    { label: 'Treats', href: '/treats' },
+    { label: 'Pizzas & Savouries', href: '/pizzas' },
+    { label: 'Gelato & Treats', href: '/treats' },
     { label: 'Snacks', href: '/snacks' },
-    { label: 'Story', href: '/story' },
+    { label: 'Our Story', href: '/story' },
     { label: 'Store', href: '/stores' },
   ];
 
-  // If on homepage and not scrolled: sleek transparent dark mode with white text
-  // When scrolled or on other pages: warm cream frosted glass
+  const categoryIcons: Record<string, React.ReactNode> = {
+    cakes: <Cake className="w-4 h-4 text-caramel" />,
+    desserts: <Sparkles className="w-4 h-4 text-berry-rose" />,
+    pizzas: <Pizza className="w-4 h-4 text-amber-500" />,
+    savouries: <Croissant className="w-4 h-4 text-orange-400" />,
+    gelato: <IceCream className="w-4 h-4 text-pink-400" />,
+    treats: <Cookie className="w-4 h-4 text-caramel" />,
+    snacks: <Flame className="w-4 h-4 text-emerald-400" />,
+  };
+
   const isDarkHeroHeader = isHomePage && !isScrolled;
 
   return (
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-out',
+          'fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-out',
           isScrolled
-            ? 'py-3 bg-cream-50/90 backdrop-blur-md shadow-sm border-b border-cream-300/60'
+            ? 'py-2.5 bg-cream-50/95 backdrop-blur-md shadow-md border-b border-cream-300/70'
             : isDarkHeroHeader
-            ? 'py-4 bg-gradient-to-b from-black/85 via-black/40 to-transparent'
-            : 'py-5 bg-gradient-to-b from-cream-100/90 via-cream-100/50 to-transparent'
+            ? 'py-3.5 bg-gradient-to-b from-black/90 via-black/50 to-transparent'
+            : 'py-4 bg-cream-100/90 backdrop-blur-sm border-b border-cream-200/50'
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Mobile menu trigger */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-1 lg:hidden">
             <button
               onClick={() => setIsMobileNavOpen(true)}
               className={cn(
-                'p-2 rounded-full transition-colors',
+                'p-2 rounded-xl transition-colors',
                 isDarkHeroHeader ? 'text-white hover:bg-white/20' : 'text-cocoa hover:bg-cream-200/60'
               )}
               aria-label="Open mobile menu"
             >
-              <Menu className="w-6 h-6" />
+              <MenuIcon className="w-6 h-6" />
             </button>
             <button
               onClick={() => setIsSearchOpen(true)}
               className={cn(
-                'p-2 rounded-full transition-colors',
+                'p-2 rounded-xl transition-colors',
                 isDarkHeroHeader ? 'text-white hover:bg-white/20' : 'text-cocoa hover:bg-cream-200/60'
               )}
               aria-label="Search"
@@ -81,10 +117,10 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Brand Logo */}
-          <Link href="/" className="flex flex-col items-center group">
+          <Link href="/" className="flex flex-col items-start lg:items-center group shrink-0">
             <span
               className={cn(
-                'font-serif text-2xl sm:text-3xl font-black tracking-tight transition-colors drop-shadow-sm',
+                'font-serif text-xl sm:text-2xl font-black tracking-tight transition-colors drop-shadow-xs leading-none',
                 isDarkHeroHeader ? 'text-white group-hover:text-caramel' : 'text-cocoa group-hover:text-caramel'
               )}
             >
@@ -92,7 +128,7 @@ export const Header: React.FC = () => {
             </span>
             <span
               className={cn(
-                'text-[9px] sm:text-[10px] tracking-[0.25em] font-semibold uppercase -mt-0.5 group-hover:tracking-[0.3em] transition-all',
+                'text-[8px] sm:text-[9px] tracking-[0.22em] font-bold uppercase transition-all mt-0.5',
                 isDarkHeroHeader ? 'text-gold' : 'text-caramel'
               )}
             >
@@ -101,7 +137,96 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            {/* Menu with Mega Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link
+                href="/menu"
+                className={cn(
+                  'flex items-center gap-1 px-3 py-1.5 rounded-full text-[13px] font-medium transition-all whitespace-nowrap',
+                  pathname === '/menu'
+                    ? isDarkHeroHeader
+                      ? 'bg-white/20 text-gold font-bold'
+                      : 'bg-caramel/15 text-caramel font-bold'
+                    : isDarkHeroHeader
+                    ? 'text-white/90 hover:text-white hover:bg-white/10'
+                    : 'text-cocoa/85 hover:text-cocoa hover:bg-cream-200/60'
+                )}
+              >
+                <span>Full Menu</span>
+                <ChevronDown className={cn(
+                  'w-3.5 h-3.5 transition-transform duration-200 opacity-70',
+                  isMenuDropdownOpen && 'rotate-180 text-caramel'
+                )} />
+              </Link>
+
+              {/* Mega Menu Dropdown */}
+              {isMenuDropdownOpen && (
+                <div
+                  className="absolute top-full left-0 mt-2 w-[540px] bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-cream-300/80 p-4 text-cocoa animate-in fade-in-0 zoom-in-95 duration-200 z-50"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-cream-200">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-bold uppercase tracking-wider text-cocoa">
+                        Explore Our Catalog
+                      </span>
+                      <span className="px-2 py-0.5 rounded-full bg-caramel/15 text-caramel text-[10px] font-bold">
+                        190+ Pure Veg Items
+                      </span>
+                    </div>
+                    <Link
+                      href="/menu"
+                      onClick={() => setIsMenuDropdownOpen(false)}
+                      className="text-xs font-semibold text-caramel hover:text-caramel-dark flex items-center gap-1 transition-colors"
+                    >
+                      <span>View All</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  </div>
+
+                  {/* Category Grid */}
+                  <div className="grid grid-cols-2 gap-2">
+                    {categories.map((cat) => (
+                      <Link
+                        key={cat.id}
+                        href={`/${cat.slug}`}
+                        onClick={() => setIsMenuDropdownOpen(false)}
+                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-cream-100 transition-all group"
+                      >
+                        <div className="p-2 rounded-lg bg-cream-200 group-hover:bg-caramel/20 transition-colors shrink-0">
+                          {categoryIcons[cat.id] || <Sparkles className="w-4 h-4 text-caramel" />}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-xs font-bold text-cocoa group-hover:text-caramel transition-colors truncate">
+                            {cat.title}
+                          </p>
+                          <p className="text-[11px] text-cocoa/60 truncate">
+                            {cat.tagline}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* Dropdown Footer */}
+                  <div className="mt-3 pt-2.5 border-t border-cream-200/80 flex items-center justify-between text-[11px] text-cocoa/70">
+                    <span className="flex items-center gap-1">
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                      <span>100% Pure Vegetarian & Eggless</span>
+                    </span>
+                    <span className="text-caramel font-medium">Baked Fresh Daily</span>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Other Navigation Links */}
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -109,77 +234,83 @@ export const Header: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'text-sm font-medium transition-colors relative py-1 hover:text-caramel drop-shadow-xs',
-                    isDarkHeroHeader
-                      ? isActive
-                        ? 'text-gold font-bold'
-                        : 'text-white/90 hover:text-gold'
-                      : isActive
-                      ? 'text-caramel font-semibold'
-                      : 'text-cocoa/85'
+                    'px-3 py-1.5 rounded-full text-[13px] font-medium transition-all whitespace-nowrap',
+                    isActive
+                      ? isDarkHeroHeader
+                        ? 'bg-white/20 text-gold font-bold'
+                        : 'bg-caramel/15 text-caramel font-bold'
+                      : isDarkHeroHeader
+                      ? 'text-white/90 hover:text-white hover:bg-white/10'
+                      : 'text-cocoa/85 hover:text-cocoa hover:bg-cream-200/60'
                   )}
                 >
                   {link.label}
-                  {isActive && (
-                    <span
-                      className={cn(
-                        'absolute bottom-0 left-0 right-0 h-0.5 rounded-full animate-in fade-in duration-300',
-                        isDarkHeroHeader ? 'bg-gold' : 'bg-caramel'
-                      )}
-                    />
-                  )}
                 </Link>
               );
             })}
           </nav>
 
-          {/* Actions: Search, Order Fresh, Cart */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          {/* Actions: Search, Order Fresh CTA, Shopping Bag */}
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
             <button
               onClick={() => setIsSearchOpen(true)}
               className={cn(
-                'hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all',
+                'hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-all whitespace-nowrap',
                 isDarkHeroHeader
                   ? 'bg-white/15 hover:bg-white/25 text-white border-white/25 backdrop-blur-md'
                   : 'bg-cream-200/70 hover:bg-cream-300/80 text-cocoa border-cream-300/80'
               )}
             >
-              <Search className={cn('w-3.5 h-3.5', isDarkHeroHeader ? 'text-white/70' : 'text-cocoa/60')} />
+              <Search className={cn('w-3.5 h-3.5', isDarkHeroHeader ? 'text-white/80' : 'text-cocoa/60')} />
               <span>Search cravings...</span>
               <kbd
                 className={cn(
-                  'text-[10px] px-1.5 py-0.5 rounded shadow-xs',
-                  isDarkHeroHeader ? 'bg-white/20 text-white' : 'bg-white text-cocoa/50'
+                  'text-[10px] px-1.5 py-0.5 rounded font-mono',
+                  isDarkHeroHeader ? 'bg-white/20 text-white' : 'bg-white text-cocoa/50 shadow-xs'
                 )}
               >
                 ⌘K
               </kbd>
             </button>
 
+            {/* Quick search button for medium desktop screens */}
+            <button
+              onClick={() => setIsSearchOpen(true)}
+              className={cn(
+                'hidden lg:flex xl:hidden p-2 rounded-full border transition-all',
+                isDarkHeroHeader
+                  ? 'bg-white/15 hover:bg-white/25 text-white border-white/25'
+                  : 'bg-cream-200/70 hover:bg-cream-300/80 text-cocoa border-cream-300/80'
+              )}
+              aria-label="Search cravings"
+            >
+              <Search className="w-4 h-4" />
+            </button>
+
             <Link
               href="/menu"
-              className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full bg-caramel text-white text-xs font-semibold hover:bg-caramel-dark shadow-md transition-all"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-caramel text-white text-xs font-bold hover:bg-caramel-dark shadow-sm transition-all whitespace-nowrap active:scale-95"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Order Fresh</span>
             </Link>
 
-            {/* Shopping Bag with ID for 3D Fly-to-Cart Destination Anchor */}
+            {/* Shopping Bag with Anchor */}
             <button
               id="header-cart-icon"
               data-cart-target="true"
               onClick={openCart}
               className={cn(
-                'relative p-2.5 rounded-full transition-all shadow-md group active:scale-95',
+                'relative p-2.5 rounded-full transition-all shadow-sm group active:scale-95 shrink-0',
                 isDarkHeroHeader
                   ? 'bg-white/20 text-white hover:bg-caramel backdrop-blur-md border border-white/25'
                   : 'bg-cocoa text-cream-50 hover:bg-caramel hover:text-white'
               )}
               aria-label="View shopping bag"
             >
-              <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" />
+              <ShoppingBag className="w-4 h-4 sm:w-4.5 sm:h-4.5 transition-transform group-hover:scale-110" />
               {totalItems > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-berry-rose text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm transition-all scale-100">
+                <span className="absolute -top-1.5 -right-1.5 bg-berry-rose text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm transition-all scale-100">
                   {totalItems}
                 </span>
               )}
@@ -196,3 +327,4 @@ export const Header: React.FC = () => {
     </>
   );
 };
+
