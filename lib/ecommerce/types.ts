@@ -19,7 +19,7 @@ export interface Product {
   slug: string;
   name: string;
   tagline: string;
-  category: 'cakes' | 'desserts' | 'treats' | 'snacks' | 'bakery';
+  category: 'cakes' | 'desserts' | 'pizzas' | 'savouries' | 'gelato' | 'treats' | 'snacks' | 'bakery';
   subcategory: string;
   description: string;
   longDescription?: string;

@@ -12,9 +12,9 @@ export default function SnacksPage() {
 
   const subcategories = [
     'All Snacks',
-    'Makhana (Foxnuts)',
-    'Namkeens & Mixtures',
-    'Artisan Breads',
+    'Makhana',
+    'Spiced Peanuts',
+    'Traditional Namkeens',
   ];
 
   const filtered = selectedSub === 'All Snacks'

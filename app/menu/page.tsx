@@ -15,9 +15,12 @@ export default function MenuPage() {
   const categories = [
     { id: 'all', label: 'All Delights' },
     { id: 'cakes', label: 'Celebration Cakes' },
-    { id: 'desserts', label: 'Patisserie & Desserts' },
-    { id: 'treats', label: 'Artisan Cookies & Treats' },
-    { id: 'snacks', label: 'Savory Foxnuts & Snacks' },
+    { id: 'desserts', label: 'Artisan Desserts' },
+    { id: 'pizzas', label: 'Pizzas & Pastas' },
+    { id: 'savouries', label: 'Hot Savouries' },
+    { id: 'gelato', label: 'Artisan Gelato' },
+    { id: 'treats', label: 'Treats & Chocolates' },
+    { id: 'snacks', label: 'Makhana & Snacks' },
   ];
 
   const moods = [

@@ -12,9 +12,9 @@ export default function CakesPage() {
 
   const subcategories = [
     'All Cakes',
-    'Signature Truffles',
     'Celebration Cakes',
-    'Pastry Cakes',
+    'Pastry Slices',
+    'Bento Box Cakes',
   ];
 
   const filtered = selectedSub === 'All Cakes'

@@ -12,10 +12,13 @@ export default function TreatsPage() {
 
   const subcategories = [
     'All Treats',
-    'Donuts',
+    'Coated Chocolates',
+    'Cookies',
     'Cupcakes',
-    'Artisan Cookies',
-    'Sugar Candies',
+    'Donuts',
+    'Tea Cakes',
+    'Candies & Mukhwas',
+    'Gift Hampers',
   ];
 
   const filtered = selectedSub === 'All Treats'

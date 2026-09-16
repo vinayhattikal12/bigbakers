@@ -30,10 +30,13 @@ export const Header: React.FC = () => {
     { label: 'Menu', href: '/menu' },
     { label: 'Cakes', href: '/cakes' },
     { label: 'Desserts', href: '/desserts' },
+    { label: 'Pizzas & Pasta', href: '/pizzas' },
+    { label: 'Savouries', href: '/savouries' },
+    { label: 'Gelato', href: '/gelato' },
     { label: 'Treats', href: '/treats' },
     { label: 'Snacks', href: '/snacks' },
-    { label: 'Our Story', href: '/story' },
-    { label: 'Stores', href: '/stores' },
+    { label: 'Story', href: '/story' },
+    { label: 'Store', href: '/stores' },
   ];
 
   // If on homepage and not scrolled: sleek transparent dark mode with white text

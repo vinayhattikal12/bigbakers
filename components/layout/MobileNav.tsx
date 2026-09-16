@@ -17,12 +17,15 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const links = [
-    { label: 'Full Menu', href: '/menu', subtitle: 'Cakes, desserts, treats & snacks' },
-    { label: 'Celebration Cakes', href: '/cakes', subtitle: 'Truffles, Red Velvet, Pastries' },
-    { label: 'Artisan Desserts', href: '/desserts', subtitle: 'Cheesecakes, Tiramisu, Tres Leches' },
-    { label: 'Little Treats', href: '/treats', subtitle: 'Donuts, Cupcakes & Cookies' },
-    { label: 'Savory Snacks', href: '/snacks', subtitle: 'Peri Peri Makhana & Breads' },
-    { label: 'Our Story & Bakers', href: '/story', subtitle: 'Handmade with passion in Vijaynagar' },
+    { label: 'Full Menu (190+ Items)', href: '/menu', subtitle: 'Explore the complete authentic catalog' },
+    { label: 'Celebration & Pastry Cakes', href: '/cakes', subtitle: 'Belgian Truffles, Pista Kunafa, Bento' },
+    { label: 'Artisan Desserts', href: '/desserts', subtitle: 'Biscoff Cheesecakes, Tiramisu, Brownies' },
+    { label: 'Pizzas & Pastas', href: '/pizzas', subtitle: 'Stone-baked 8" Pizzas & Chef Pastas' },
+    { label: 'Hot Savouries & Breads', href: '/savouries', subtitle: 'Korean Buns, Puffs, Calzones, Milk Bread' },
+    { label: 'Artisan Gelato', href: '/gelato', subtitle: 'Slow-churned Italian pure veg gelato' },
+    { label: 'Treats & Chocolates', href: '/treats', subtitle: 'Rose Cashew Coated Chocolates, Cookies' },
+    { label: 'Makhana & Snacks', href: '/snacks', subtitle: 'Peri Peri Makhana, Kodubele, Chakli' },
+    { label: 'Our Story & Heritage', href: '/story', subtitle: 'Handmade with passion in Vijaynagar' },
     { label: 'Our Store', href: '/stores', subtitle: 'Visit our flagship in Vijaynagar, Bengaluru' },
   ];
 
