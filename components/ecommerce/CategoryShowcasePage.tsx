@@ -6,14 +6,22 @@ import Link from 'next/link';
 import { 
   Sparkles, 
   Star, 
+  Check, 
+  Plus, 
+  ArrowRight, 
   SlidersHorizontal, 
   Flame, 
   ShieldCheck, 
+  Heart, 
   Zap,
   ShoppingBag
 } from 'lucide-react';
 import { products } from '@/data/products';
+import { Product, ProductWeightOption } from '@/lib/ecommerce/types';
+import { formatPrice } from '@/lib/utils/formatters';
 import { ProductGrid } from '@/components/ecommerce/ProductGrid';
+import { useCart } from '@/lib/context/CartContext';
+import { triggerFlyToCartAnimation } from '@/components/ecommerce/FlyToCartOverlay';
 
 export interface CategoryShowcaseProps {
   categoryId: string;
@@ -22,7 +30,7 @@ export interface CategoryShowcaseProps {
   heroHeadline: React.ReactNode;
   heroDescription: string;
   heroImage: string;
-  flagshipSlug?: string;
+  flagshipSlug: string;
   theme: {
     bgGradient: string;
     ambientGlow: string;
@@ -45,18 +53,30 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
   heroHeadline,
   heroDescription,
   heroImage,
+  flagshipSlug,
   theme,
   craftPillars,
   subcategories,
 }) => {
+  const { addItem } = useCart();
   const [selectedSubcategory, setSelectedSubcategory] = useState<string>('All');
   const [quickFilter, setQuickFilter] = useState<'all' | 'bestsellers' | 'under300' | 'premium'>('all');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'rating'>('featured');
+  const [spotlightAdded, setSpotlightAdded] = useState(false);
 
   // All products in this category
   const categoryProducts = useMemo(() => {
     return products.filter((p) => p.category === categoryId);
   }, [categoryId]);
+
+  // Flagship Product for Hero Spotlight Card
+  const flagshipProduct = useMemo(() => {
+    return (
+      products.find((p) => p.slug === flagshipSlug) ||
+      categoryProducts.find((p) => p.featured || p.bestseller) ||
+      categoryProducts[0]
+    );
+  }, [flagshipSlug, categoryProducts]);
 
   // Subcategory item counts mapping
   const subcategoryCounts = useMemo(() => {
@@ -101,10 +121,36 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
     return list;
   }, [categoryProducts, selectedSubcategory, quickFilter, sortBy]);
 
+  const handleSpotlightQuickAdd = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!flagshipProduct) return;
+
+    const defaultWeight =
+      flagshipProduct.weights.find((w) => w.isDefault)?.weight ||
+      flagshipProduct.weights[0]?.weight ||
+      'Standard';
+
+    const cardElement = document.getElementById('flagship-spotlight-image');
+    if (cardElement) {
+      triggerFlyToCartAnimation(cardElement, flagshipProduct.heroImage, {
+        id: String(flagshipProduct.id) + '-' + String(Date.now()),
+        name: flagshipProduct.name,
+        price: flagshipProduct.price,
+        weight: defaultWeight,
+        imageUrl: flagshipProduct.heroImage,
+        category: flagshipProduct.category,
+      });
+    }
+
+    addItem(flagshipProduct, defaultWeight, 1, undefined, false);
+    setSpotlightAdded(true);
+    setTimeout(() => setSpotlightAdded(false), 2000);
+  };
+
   return (
     <div className="pt-20 sm:pt-24 pb-28 min-h-screen bg-cream-100">
-      {/* 1. ATMOSPHERIC CINEMATIC HERO SECTION */}
-      <section className={`relative ${theme.bgGradient} text-cream-100 py-12 sm:py-16 md:py-20 overflow-hidden mb-8 sm:mb-12 border-b border-caramel/20`}>
+      {/* 1. ATMOSPHERIC SPLIT HERO SECTION */}
+      <section className={`relative ${theme.bgGradient} text-cream-100 py-12 sm:py-20 overflow-hidden mb-8 sm:mb-12 border-b border-caramel/20`}>
         {/* Ambient Glow Orbs */}
         <div className={`absolute top-1/4 left-1/4 w-96 h-96 ${theme.ambientGlow} rounded-full blur-[120px] pointer-events-none`} />
         <div className="absolute bottom-0 right-10 w-80 h-80 bg-gold/10 rounded-full blur-[100px] pointer-events-none" />
@@ -121,44 +167,129 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
-          <div className="space-y-4 sm:space-y-6">
-            {/* Category Pill */}
-            <div className="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
-              <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-xs font-bold uppercase tracking-wider shadow-sm`}>
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>{theme.badgeText}</span>
-              </span>
-              <span className="text-[11px] font-bold text-cream-200/80 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                {categoryProducts.length} Handcrafted Creations
-              </span>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Category Story & Typography */}
+            <div className="lg:col-span-7 space-y-4 sm:space-y-6">
+              {/* Category Pill */}
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-xs font-bold uppercase tracking-wider`}>
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>{theme.badgeText}</span>
+                </span>
+                <span className="text-[11px] font-bold text-cream-200/70 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                  {categoryProducts.length} Handcrafted Creations
+                </span>
+              </div>
+
+              {/* Main Headline */}
+              <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15]">
+                {heroHeadline}
+              </h1>
+
+              {/* Sensory Description */}
+              <p className="text-sm sm:text-base text-cream-200/85 leading-relaxed max-w-xl font-normal">
+                {heroDescription}
+              </p>
+
+              {/* Craft Pillars / Assurance Bar */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2 text-xs text-cream-200/90 font-medium">
+                {craftPillars.map((pillar, idx) => {
+                  const Icon = pillar.icon;
+                  return (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-2 p-2.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 shadow-xs"
+                    >
+                      <Icon className="w-4 h-4 text-gold shrink-0" />
+                      <span className="truncate text-[11px] sm:text-xs">{pillar.text}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] max-w-3xl">
-              {heroHeadline}
-            </h1>
-
-            {/* Sensory Description */}
-            <p className="text-sm sm:text-base text-cream-200/90 leading-relaxed max-w-2xl font-normal">
-              {heroDescription}
-            </p>
-
-            {/* Craft Pillars / Assurance Bar */}
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 pt-2 text-xs text-cream-200/90 font-medium">
-              {craftPillars.map((pillar, idx) => {
-                const Icon = pillar.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 shadow-xs"
-                  >
-                    <Icon className="w-4 h-4 text-gold shrink-0" />
-                    <span className="text-[11px] sm:text-xs font-semibold">{pillar.text}</span>
+            {/* Right Column: Hero Flagship Spotlight Card */}
+            {flagshipProduct && (
+              <div className="lg:col-span-5">
+                <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-4 sm:p-5 border border-white/20 shadow-2xl hover:border-gold/40 transition-all duration-500 group">
+                  {/* Floating Tag */}
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[10px] uppercase font-black tracking-widest text-gold bg-black/50 px-3 py-1 rounded-full border border-gold/30">
+                      ★ Featured Spotlight
+                    </span>
+                    <div className="flex items-center gap-1 text-xs font-bold text-white bg-black/40 px-2.5 py-0.5 rounded-full">
+                      <Star className="w-3.5 h-3.5 fill-gold text-gold" />
+                      <span>{flagshipProduct.rating}</span>
+                      <span className="text-white/60 text-[10px]">({flagshipProduct.reviewCount})</span>
+                    </div>
                   </div>
-                );
-              })}
-            </div>
+
+                  {/* Spotlight Image with Zoom */}
+                  <Link href={`/product/${flagshipProduct.slug}`} className="block relative h-48 sm:h-56 rounded-2xl overflow-hidden bg-black/40">
+                    <div id="flagship-spotlight-image" className="relative w-full h-full">
+                      <Image
+                        src={flagshipProduct.heroImage}
+                        alt={flagshipProduct.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      />
+                    </div>
+                  </Link>
+
+                  {/* Spotlight Info */}
+                  <div className="mt-3.5 space-y-2">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <Link href={`/product/${flagshipProduct.slug}`}>
+                          <h3 className="font-serif text-lg sm:text-xl font-bold text-white group-hover:text-gold transition-colors line-clamp-1">
+                            {flagshipProduct.name}
+                          </h3>
+                        </Link>
+                        <p className="text-xs text-cream-200/75 line-clamp-1">
+                          {flagshipProduct.tagline}
+                        </p>
+                      </div>
+                      <span className="font-sans text-lg font-black text-gold shrink-0">
+                        {formatPrice(flagshipProduct.price)}
+                      </span>
+                    </div>
+
+                    <div className="pt-2 flex items-center gap-2">
+                      <button
+                        onClick={handleSpotlightQuickAdd}
+                        disabled={spotlightAdded}
+                        className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-md active:scale-95 ${
+                          spotlightAdded
+                            ? 'bg-emerald-600 text-white'
+                            : 'bg-gold hover:bg-gold-light text-cocoa-deep font-black'
+                        }`}
+                      >
+                        {spotlightAdded ? (
+                          <>
+                            <Check className="w-4 h-4" />
+                            <span>Added to Bag!</span>
+                          </>
+                        ) : (
+                          <>
+                            <ShoppingBag className="w-4 h-4" />
+                            <span>Quick Add to Bag</span>
+                          </>
+                        )}
+                      </button>
+
+                      <Link
+                        href={`/product/${flagshipProduct.slug}`}
+                        className="p-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white transition-colors border border-white/20"
+                        title="View Details"
+                      >
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
