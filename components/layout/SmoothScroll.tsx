@@ -14,14 +14,17 @@ export const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children
 
     gsap.registerPlugin(ScrollTrigger);
 
+    const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: isTouch ? 0.5 : 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
+      syncTouch: false,
+      touchMultiplier: 1.0,
+      autoRaf: false,
     });
     lenisRef.current = lenis;
 
