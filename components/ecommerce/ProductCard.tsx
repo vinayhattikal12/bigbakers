@@ -54,7 +54,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
   };
 
   return (
-    <div className="group relative bg-white rounded-3xl border border-cream-300/80 hover:border-caramel/50 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between overflow-hidden">
+    <div className="group relative bg-white rounded-2xl sm:rounded-3xl border border-cream-300/80 hover:border-caramel/50 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden">
       {/* Top Image Container */}
       <Link
         href={`/product/${product.slug}`}
@@ -67,93 +67,88 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             fill
             priority={priority}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
           />
         </div>
 
-        {/* Badges Overlay */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
-          {product.bestseller && <Badge variant="bestseller">Bestseller</Badge>}
-          {product.dietary === 'eggless' && <Badge variant="veg">100% Eggless</Badge>}
-          {product.freshlyBaked && <Badge variant="fresh">Freshly Baked</Badge>}
+        {/* Minimal Badges Overlay: Clean on mobile, rich on desktop */}
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex flex-col gap-1 z-10">
+          {product.bestseller ? (
+            <span className="px-2 py-0.5 rounded-full bg-caramel text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider shadow-xs">
+              Bestseller
+            </span>
+          ) : product.freshlyBaked ? (
+            <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold tracking-wider shadow-xs">
+              Fresh Batch
+            </span>
+          ) : null}
+        </div>
+
+        {/* Pure Veg Green Dot Indicator (Standard Indian FSSAI aesthetic) */}
+        <div className="absolute bottom-2 left-2 z-10">
+          <div className="w-4 h-4 rounded-sm border border-emerald-600 bg-white/90 flex items-center justify-center shadow-xs">
+            <div className="w-2 h-2 rounded-full bg-emerald-600" />
+          </div>
         </div>
 
         {/* Wishlist Button */}
         <button
           onClick={handleToggleWishlist}
-          className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition-all duration-300 z-10 active:scale-90 ${
+          className={`absolute top-2 right-2 sm:top-3 sm:right-3 p-1.5 sm:p-2 rounded-full backdrop-blur-md transition-all z-10 active:scale-90 ${
             isWishlisted
               ? 'bg-berry-rose text-white shadow-md'
-              : 'bg-white/80 text-cocoa/70 hover:bg-white hover:text-berry-rose shadow-sm'
+              : 'bg-white/80 text-cocoa/70 hover:bg-white hover:text-berry-rose shadow-xs'
           }`}
           aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
         >
-          <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-current' : ''}`} />
+          <Heart className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isWishlisted ? 'fill-current' : ''}`} />
         </button>
       </Link>
 
       {/* Details Body */}
-      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+      <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between">
         <div>
           {/* Subcategory & Rating */}
-          <div className="flex items-center justify-between gap-2 mb-1.5">
-            <span className="text-[11px] uppercase font-semibold text-caramel tracking-wider">
+          <div className="flex items-center justify-between gap-1 mb-1">
+            <span className="text-[10px] sm:text-[11px] uppercase font-bold text-caramel tracking-wider truncate">
               {product.subcategory}
             </span>
-            <div className="flex items-center gap-1 text-xs text-cocoa/80 font-semibold bg-cream-100 px-2 py-0.5 rounded-md">
-              <Star className="w-3 h-3 fill-gold text-gold" />
+            <div className="flex items-center gap-0.5 text-[10px] sm:text-xs text-cocoa/90 font-bold bg-cream-100 px-1.5 py-0.5 rounded-md shrink-0">
+              <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-gold text-gold" />
               <span>{product.rating}</span>
-              <span className="text-cocoa/40 text-[10px]">({product.reviewCount})</span>
             </div>
           </div>
 
           {/* Product Title */}
           <Link href={`/product/${product.slug}`} className="block group-hover:text-caramel transition-colors">
-            <h3 className="font-serif text-base sm:text-lg font-bold text-cocoa line-clamp-1">
+            <h3 className="font-serif text-xs sm:text-sm md:text-base font-bold text-cocoa line-clamp-2 leading-snug">
               {product.name}
             </h3>
           </Link>
 
-          {/* Tagline */}
-          <p className="text-xs text-cocoa/60 mt-1 line-clamp-2 leading-relaxed">
-            {product.tagline}
-          </p>
-
-          {/* Taste & Texture Sensory Micro-Pill */}
-          <div className="mt-2.5 flex items-center gap-1.5 flex-wrap">
-            <span className="text-[10px] font-semibold text-cocoa/75 bg-cream-100/90 px-2 py-0.5 rounded-md border border-cream-300/60 truncate">
-              {product.category === 'cakes'
-                ? '🎂 Velvety Sponge • 54% Ganache'
-                : product.category === 'desserts'
-                ? '🍰 Silky Cream • European Style'
-                : product.category === 'pizzas'
-                ? '🍕 Stone-Baked • Rich Mozzarella'
-                : product.category === 'savouries'
-                ? '🥐 Flaky Butter • Golden Baked'
-                : product.category === 'gelato'
-                ? '🍨 Slow-Churned • Pure Milk'
-                : product.category === 'snacks'
-                ? '🌶️ Slow-Roasted • Crisp Crunch'
-                : '🍫 Artisan Enrobed • Pure Veg'}
-            </span>
+          {/* Desktop Only: Tagline & Sensory Pill for spacious desktop layouts */}
+          <div className="hidden sm:block">
+            <p className="text-xs text-cocoa/60 mt-1 line-clamp-1 leading-relaxed">
+              {product.tagline}
+            </p>
           </div>
         </div>
 
         {/* Price and Quick Add */}
-        <div className="mt-4 pt-3 border-t border-cream-200 flex items-center justify-between">
-          <div>
-            <div className="flex items-baseline gap-1.5">
-              <span className="font-sans font-bold text-base sm:text-lg text-cocoa">
+        <div className="mt-2.5 sm:mt-3 pt-2 sm:pt-2.5 border-t border-cream-200/80 flex items-center justify-between gap-1">
+          <div className="min-w-0">
+            <div className="flex items-baseline gap-1">
+              <span className="font-sans font-black text-sm sm:text-base text-cocoa">
                 {formatPrice(currentPrice)}
               </span>
-              {product.originalPrice && (
-                <span className="text-xs text-cocoa/40 line-through">
+              {product.originalPrice && product.originalPrice > currentPrice && (
+                <span className="text-[10px] sm:text-xs text-cocoa/40 line-through">
                   {formatPrice(product.originalPrice)}
                 </span>
               )}
             </div>
             {defaultWeight && (
-              <span className="text-[11px] text-cocoa/50 font-medium block">
+              <span className="text-[10px] text-cocoa/50 font-medium truncate block">
                 {defaultWeight}
               </span>
             )}
@@ -162,21 +157,21 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           <button
             onClick={handleQuickAdd}
             disabled={isAdded}
-            className={`p-2.5 sm:px-3.5 sm:py-2 rounded-full font-medium text-xs flex items-center gap-1.5 transition-all duration-300 active:scale-90 ${
+            className={`w-8 h-8 sm:w-auto sm:h-auto p-1.5 sm:px-3 sm:py-1.5 rounded-full font-bold text-xs flex items-center justify-center gap-1 transition-all shrink-0 active:scale-90 ${
               isAdded
                 ? 'bg-emerald-600 text-white shadow-md'
-                : 'bg-cocoa text-cream-50 hover:bg-caramel hover:text-white shadow-sm hover:shadow-md'
+                : 'bg-cocoa text-cream-50 hover:bg-caramel hover:text-white shadow-xs'
             }`}
             aria-label={`Add ${product.name} to cart`}
           >
             {isAdded ? (
               <>
-                <Check className="w-4 h-4 stroke-[2.5]" />
-                <span className="hidden sm:inline font-semibold">Added</span>
+                <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                <span className="hidden sm:inline">Added</span>
               </>
             ) : (
               <>
-                <Plus className="w-4 h-4 stroke-[2.5]" />
+                <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
                 <span className="hidden sm:inline">Add</span>
               </>
             )}
