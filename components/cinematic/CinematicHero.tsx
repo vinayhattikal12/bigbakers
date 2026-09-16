@@ -5,16 +5,15 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ReducedMotionHero } from './ReducedMotionHero';
-import { ChevronDown, Sparkles, ArrowRight, Compass, Cake, UtensilsCrossed, Cookie, Flame, MapPin } from 'lucide-react';
+import { ChevronDown, Sparkles, ArrowRight, Compass, MapPin } from 'lucide-react';
 
 export const CinematicHero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const progressBarRef = useRef<HTMLDivElement | null>(null);
-  const sceneIndicatorRef = useRef<HTMLSpanElement | null>(null);
   const percentIndicatorRef = useRef<HTMLSpanElement | null>(null);
 
-  // 6 Dynamic Spatial Narrative Stage Refs (Apple / Nike Spatial Editorial Flow)
+  // 6 Dynamic Spatial Narrative Stage Refs
   const beat1Ref = useRef<HTMLDivElement | null>(null); // Top-Left (Storefront Entrance 0.0 - 0.16)
   const beat2Ref = useRef<HTMLDivElement | null>(null); // Left-Aligned (Live Kitchen Craft 0.17 - 0.33)
   const beat3Ref = useRef<HTMLDivElement | null>(null); // Right-Aligned (Belgian Truffle Cake 0.34 - 0.50)
@@ -23,7 +22,9 @@ export const CinematicHero: React.FC = () => {
   const beat6Ref = useRef<HTMLDivElement | null>(null); // Centered (Grand Finale 0.84 - 1.00)
 
   const imagesRef = useRef<Map<string, HTMLImageElement>>(new Map());
-  const activeFrameRef = useRef<{ scene: number; frame: number }>({ scene: 1, frame: 1 });
+  const requestedRef = useRef<Set<string>>(new Set());
+  const targetStateRef = useRef<{ scene: number; frame: number; progress: number }>({ scene: 1, frame: 1, progress: 0 });
+  const lastDrawnRef = useRef<{ scene: number; frame: number }>({ scene: 0, frame: 0 });
   const [isReducedMotion, setIsReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -42,6 +43,44 @@ export const CinematicHero: React.FC = () => {
     return `/cinematic/scene${scene}/ezgif-frame-${padded}.webp`;
   }, []);
 
+  // Frame loading helper with caching
+  const loadFrame = useCallback(
+    (scene: number, frame: number, priority = false): Promise<HTMLImageElement | null> => {
+      const key = `s${scene}-f${frame}`;
+      const existing = imagesRef.current.get(key);
+      if (existing && existing.complete && existing.naturalWidth > 0) {
+        return Promise.resolve(existing);
+      }
+      if (requestedRef.current.has(key)) {
+        return Promise.resolve(null);
+      }
+
+      requestedRef.current.add(key);
+
+      return new Promise((resolve) => {
+        const img = new Image();
+        if (priority) {
+          (img as any).fetchPriority = 'high';
+        }
+        img.src = getFrameSrc(scene, frame);
+        img.onload = () => {
+          imagesRef.current.set(key, img);
+          if (img.decode) {
+            img.decode().then(() => resolve(img)).catch(() => resolve(img));
+          } else {
+            resolve(img);
+          }
+        };
+        img.onerror = () => {
+          requestedRef.current.delete(key);
+          resolve(null);
+        };
+      });
+    },
+    [getFrameSrc]
+  );
+
+  // High-performance Canvas rendering
   const drawFrame = useCallback((scene: number, frame: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -52,6 +91,7 @@ export const CinematicHero: React.FC = () => {
     const key = `s${scene}-f${frame}`;
     let img = imagesRef.current.get(key);
 
+    // Fallback: If exact frame is still downloading, find the nearest cached frame
     if (!img || !img.complete || img.naturalWidth === 0) {
       for (let offset = 1; offset <= 30; offset++) {
         const prev = imagesRef.current.get(`s${scene}-f${Math.max(1, frame - offset)}`);
@@ -96,65 +136,81 @@ export const CinematicHero: React.FC = () => {
 
     ctx.drawImage(img, x, y, renderWidth, renderHeight);
     ctx.restore();
+
+    lastDrawnRef.current = { scene, frame };
   }, []);
 
-  const loadFrame = useCallback(
-    (scene: number, frame: number) => {
-      const key = `s${scene}-f${frame}`;
-      if (imagesRef.current.has(key)) return;
-
-      const img = new Image();
-      img.src = getFrameSrc(scene, frame);
-      img.onload = () => {
-        imagesRef.current.set(key, img);
-        if (activeFrameRef.current.scene === scene && activeFrameRef.current.frame === frame) {
-          drawFrame(scene, frame);
-        }
-      };
-    },
-    [getFrameSrc, drawFrame]
-  );
-
+  // Multi-tier background preloading
   useEffect(() => {
-    const firstImg = new Image();
-    firstImg.src = getFrameSrc(1, 1);
-    firstImg.onload = () => {
-      imagesRef.current.set('s1-f1', firstImg);
-      drawFrame(1, 1);
+    let isCancelled = false;
+
+    // 1. Critical first frames for instant visual ready
+    loadFrame(1, 1, true).then(() => {
+      if (!isCancelled) drawFrame(1, 1);
+    });
+    loadFrame(2, 1, true);
+    loadFrame(3, 1, true);
+
+    // 2. Immediate warm-up: first 25 frames of Scene 1
+    for (let f = 2; f <= 25; f++) {
+      loadFrame(1, f);
+    }
+
+    // 3. Keyframe milestone preloader (every 8th frame across all 3 scenes)
+    const preloadKeyframes = () => {
+      if (isCancelled) return;
+      const keyframes: { scene: number; frame: number }[] = [];
+      for (let s = 1; s <= 3; s++) {
+        for (let f = 8; f <= 300; f += 8) {
+          keyframes.push({ scene: s, frame: f });
+        }
+      }
+
+      let idx = 0;
+      const loadNextKeyframe = () => {
+        if (isCancelled || idx >= keyframes.length) {
+          // Once keyframes are ready, progressively fill sequential frames
+          preloadAllSequential();
+          return;
+        }
+        const item = keyframes[idx++];
+        loadFrame(item.scene, item.frame).then(() => {
+          setTimeout(loadNextKeyframe, 10);
+        });
+      };
+      setTimeout(loadNextKeyframe, 100);
     };
 
-    const s2First = new Image();
-    s2First.src = getFrameSrc(2, 1);
-    s2First.onload = () => imagesRef.current.set('s2-f1', s2First);
+    // 4. Background sequential filler
+    const preloadAllSequential = () => {
+      if (isCancelled) return;
+      let s = 1;
+      let f = 1;
 
-    const s3First = new Image();
-    s3First.src = getFrameSrc(3, 1);
-    s3First.onload = () => imagesRef.current.set('s3-f1', s3First);
+      const fillNext = () => {
+        if (isCancelled) return;
+        if (s > 3) return;
 
-    let cur = 2;
-    const timer = setInterval(() => {
-      if (cur <= 60) {
-        loadFrame(1, cur);
-        cur++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 20);
+        loadFrame(s, f);
+        f++;
+        if (f > 300) {
+          f = 1;
+          s++;
+        }
+        setTimeout(fillNext, 12);
+      };
+      fillNext();
+    };
 
-    return () => clearInterval(timer);
-  }, [getFrameSrc, drawFrame, loadFrame]);
+    const idleTimer = setTimeout(preloadKeyframes, 200);
 
-  const scrollToScene = (sceneNum: 1 | 2 | 3) => {
-    const container = containerRef.current;
-    if (!container) return;
-    const containerTop = container.offsetTop;
-    const totalHeight = container.offsetHeight - window.innerHeight;
-    const targetProgress = sceneNum === 1 ? 0 : sceneNum === 2 ? 0.38 : 0.72;
-    const targetY = containerTop + totalHeight * targetProgress;
-    window.scrollTo({ top: targetY, behavior: 'smooth' });
-  };
+    return () => {
+      isCancelled = true;
+      clearTimeout(idleTimer);
+    };
+  }, [loadFrame, drawFrame]);
 
-  // Helper to smoothly calculate opacity and translateY for a range
+  // Smooth UI Parallax helper
   const computeParallax = (p: number, start: number, peakStart: number, peakEnd: number, end: number) => {
     if (p < start || p > end) {
       return { opacity: 0, translateY: 25, active: false };
@@ -167,9 +223,17 @@ export const CinematicHero: React.FC = () => {
       return { opacity: norm, translateY: 25 * (1 - norm), active: norm > 0.3 };
     }
     const norm = (p - peakEnd) / (end - peakEnd);
-    return { opacity: 1 - norm, translateY: -25 * norm, active: (1 - norm) > 0.3 };
+    return { opacity: 1 - norm, translateY: -25 * norm, active: 1 - norm > 0.3 };
   };
 
+  const applyBeatStyles = (el: HTMLElement | null, res: { opacity: number; translateY: number; active: boolean }) => {
+    if (!el) return;
+    el.style.opacity = `${res.opacity}`;
+    el.style.transform = `translate3d(0, ${res.translateY}px, 0)`;
+    el.style.pointerEvents = res.active ? 'auto' : 'none';
+  };
+
+  // Main ScrollTrigger & Render Loop Setup
   useEffect(() => {
     if (isReducedMotion) return;
 
@@ -178,12 +242,45 @@ export const CinematicHero: React.FC = () => {
     const container = containerRef.current;
     if (!container) return;
 
+    let rafId: number;
+
+    // Unified 60fps render tick
+    const renderTick = () => {
+      const { scene, frame, progress } = targetStateRef.current;
+
+      // Draw canvas only if frame changed or canvas was dirty
+      if (lastDrawnRef.current.scene !== scene || lastDrawnRef.current.frame !== frame) {
+        drawFrame(scene, frame);
+      }
+
+      // Update HUD Bar
+      if (progressBarRef.current) {
+        progressBarRef.current.style.width = `${progress * 100}%`;
+      }
+      if (percentIndicatorRef.current) {
+        percentIndicatorRef.current.innerText = `${Math.round(progress * 100)}%`;
+      }
+
+      // Update 6 Dynamic Spatial Narrative Beats
+      applyBeatStyles(beat1Ref.current, computeParallax(progress, 0.0, 0.02, 0.12, 0.16));
+      applyBeatStyles(beat2Ref.current, computeParallax(progress, 0.16, 0.2, 0.29, 0.33));
+      applyBeatStyles(beat3Ref.current, computeParallax(progress, 0.33, 0.37, 0.46, 0.5));
+      applyBeatStyles(beat4Ref.current, computeParallax(progress, 0.5, 0.54, 0.62, 0.66));
+      applyBeatStyles(beat5Ref.current, computeParallax(progress, 0.66, 0.7, 0.79, 0.83));
+      applyBeatStyles(beat6Ref.current, computeParallax(progress, 0.83, 0.87, 0.98, 1.0));
+
+      rafId = requestAnimationFrame(renderTick);
+    };
+
+    rafId = requestAnimationFrame(renderTick);
+
+    // ScrollTrigger with smooth numeric scrub (0.6s physics interpolation for mouse wheel notches)
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: container,
         start: 'top top',
         end: 'bottom bottom',
-        scrub: true,
+        scrub: 0.6,
         onUpdate: (self) => {
           const p = Math.max(0, Math.min(1, self.progress));
 
@@ -204,84 +301,60 @@ export const CinematicHero: React.FC = () => {
             frame = Math.min(300, Math.max(1, Math.floor(norm * 299) + 1));
           }
 
-          activeFrameRef.current = { scene: sceneNum, frame };
+          targetStateRef.current = { scene: sceneNum, frame, progress: p };
 
-          // 1. Direct Canvas Draw
-          drawFrame(sceneNum, frame);
-
-          // 2. Buffer Preload
-          for (let offset = -5; offset <= 30; offset++) {
+          // Intelligent Dynamic Lookahead Window (+15 ahead, -5 behind)
+          for (let offset = -5; offset <= 15; offset++) {
             const target = frame + offset;
             if (target >= 1 && target <= 300) {
               loadFrame(sceneNum, target);
             }
           }
 
-          // 3. Update HUD Bar
-          if (progressBarRef.current) {
-            progressBarRef.current.style.width = `${p * 100}%`;
+          // Pre-warm next scene when nearing boundary
+          if (frame > 250 && sceneNum < 3) {
+            for (let f = 1; f <= 15; f++) {
+              loadFrame(sceneNum + 1, f);
+            }
           }
-          if (sceneIndicatorRef.current) {
-            sceneIndicatorRef.current.innerText = `Scene ${sceneNum}`;
-          }
-          if (percentIndicatorRef.current) {
-            percentIndicatorRef.current.innerText = `${Math.round(p * 100)}%`;
-          }
-
-          // 4. Dynamic Spatial Narrative Transitions (6 Adaptive Spatial Beats)
-          const applyStyles = (el: HTMLElement | null, res: { opacity: number; translateY: number; active: boolean }) => {
-            if (!el) return;
-            el.style.opacity = `${res.opacity}`;
-            el.style.transform = `translate3d(0, ${res.translateY}px, 0)`;
-            el.style.pointerEvents = res.active ? 'auto' : 'none';
-          };
-
-          // Beat 1: Top-Left (Entrance 0.0 -> 0.16)
-          applyStyles(beat1Ref.current, computeParallax(p, 0.0, 0.02, 0.12, 0.16));
-
-          // Beat 2: Left-Aligned Middle (Live Kitchen Sanctuary 0.17 -> 0.33)
-          applyStyles(beat2Ref.current, computeParallax(p, 0.16, 0.20, 0.29, 0.33));
-
-          // Beat 3: Right-Aligned Middle (Belgian Truffle Turntable 0.34 -> 0.50)
-          applyStyles(beat3Ref.current, computeParallax(p, 0.33, 0.37, 0.46, 0.50));
-
-          // Beat 4: Left-Aligned Middle (The Golden Slice & Texture 0.51 -> 0.66)
-          applyStyles(beat4Ref.current, computeParallax(p, 0.50, 0.54, 0.62, 0.66));
-
-          // Beat 5: Right-Aligned Middle (European Desserts Showcase 0.67 -> 0.83)
-          applyStyles(beat5Ref.current, computeParallax(p, 0.66, 0.70, 0.79, 0.83));
-
-          // Beat 6: Center-Aligned Lower (Grand Finale 0.84 -> 1.00)
-          applyStyles(beat6Ref.current, computeParallax(p, 0.83, 0.87, 0.98, 1.00));
         },
       });
     }, container);
 
-    drawFrame(1, 1);
-
     const handleResize = () => {
-      drawFrame(activeFrameRef.current.scene, activeFrameRef.current.frame);
+      drawFrame(targetStateRef.current.scene, targetStateRef.current.frame);
     };
     window.addEventListener('resize', handleResize, { passive: true });
 
     return () => {
+      cancelAnimationFrame(rafId);
       ctx.revert();
       window.removeEventListener('resize', handleResize);
     };
   }, [isReducedMotion, drawFrame, loadFrame]);
+
+  const scrollToScene = (sceneNum: 1 | 2 | 3) => {
+    const container = containerRef.current;
+    if (!container) return;
+    const containerTop = container.offsetTop;
+    const totalHeight = container.offsetHeight - window.innerHeight;
+    const targetProgress = sceneNum === 1 ? 0 : sceneNum === 2 ? 0.38 : 0.72;
+    const targetY = containerTop + totalHeight * targetProgress;
+    window.scrollTo({ top: targetY, behavior: 'smooth' });
+  };
 
   if (isReducedMotion) {
     return <ReducedMotionHero />;
   }
 
   return (
-    <section ref={containerRef} className="relative h-[520vh] bg-cocoa-deep">
+    <section ref={containerRef} className="relative h-[480vh] bg-cocoa-deep">
       {/* Viewport locked sticky container */}
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden bg-cocoa-deep">
         {/* Direct Scrubbing Canvas */}
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full object-cover block"
+          className="absolute inset-0 w-full h-full object-cover block pointer-events-none select-none"
         />
 
         {/* Ambient Contrast Gradients */}
@@ -296,7 +369,6 @@ export const CinematicHero: React.FC = () => {
             style={{ width: '0%' }}
           />
         </div>
-
 
         {/* ========================================================
             🌟 6 DYNAMIC SPATIAL NARRATIVE BEATS
