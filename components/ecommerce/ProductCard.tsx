@@ -118,6 +118,25 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           <p className="text-xs text-cocoa/60 mt-1 line-clamp-2 leading-relaxed">
             {product.tagline}
           </p>
+
+          {/* Taste & Texture Sensory Micro-Pill */}
+          <div className="mt-2.5 flex items-center gap-1.5 flex-wrap">
+            <span className="text-[10px] font-semibold text-cocoa/75 bg-cream-100/90 px-2 py-0.5 rounded-md border border-cream-300/60 truncate">
+              {product.category === 'cakes'
+                ? '🎂 Velvety Sponge • 54% Ganache'
+                : product.category === 'desserts'
+                ? '🍰 Silky Cream • European Style'
+                : product.category === 'pizzas'
+                ? '🍕 Stone-Baked • Rich Mozzarella'
+                : product.category === 'savouries'
+                ? '🥐 Flaky Butter • Golden Baked'
+                : product.category === 'gelato'
+                ? '🍨 Slow-Churned • Pure Milk'
+                : product.category === 'snacks'
+                ? '🌶️ Slow-Roasted • Crisp Crunch'
+                : '🍫 Artisan Enrobed • Pure Veg'}
+            </span>
+          </div>
         </div>
 
         {/* Price and Quick Add */}

@@ -7,6 +7,8 @@ import { X, Plus, Minus, Trash2, ShoppingBag, ArrowRight, ShieldCheck } from 'lu
 import { useCart } from '@/lib/context/CartContext';
 import { formatPrice } from '@/lib/utils/formatters';
 import { Button } from '@/components/ui/Button';
+import { CravingPairUpsell } from '@/components/ecommerce/CravingPairUpsell';
+import { ColdChainGuaranteeBadge } from '@/components/ecommerce/ColdChainGuaranteeBadge';
 
 export const CartDrawer: React.FC = () => {
   const {
@@ -184,11 +186,21 @@ export const CartDrawer: React.FC = () => {
               </div>
             ))
           )}
+
+          {/* 1-Tap Craving Pair Upsell in Cart */}
+          {items.length > 0 && (
+            <div className="pt-2">
+              <CravingPairUpsell currentCategory={items[0]?.product.category || 'cakes'} />
+            </div>
+          )}
         </div>
 
         {/* Footer / Summary */}
         {items.length > 0 && (
           <div className="p-6 border-t border-cream-300 bg-white space-y-4">
+            {/* Cold Chain Guarantee */}
+            <ColdChainGuaranteeBadge compact />
+
             {/* Coupon Code Section */}
             <div>
               {couponCode ? (

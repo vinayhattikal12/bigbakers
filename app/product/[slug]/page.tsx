@@ -12,6 +12,9 @@ import { ProductMediaGallery } from '@/components/ecommerce/ProductMediaGallery'
 import { SensoryProfile } from '@/components/ecommerce/SensoryProfile';
 import { LayerAnatomy } from '@/components/ecommerce/LayerAnatomy';
 import { triggerFlyToCartAnimation } from '@/components/ecommerce/FlyToCartOverlay';
+import { LiveCakePipingPreview } from '@/components/ecommerce/LiveCakePipingPreview';
+import { CravingPairUpsell } from '@/components/ecommerce/CravingPairUpsell';
+import { ColdChainGuaranteeBadge } from '@/components/ecommerce/ColdChainGuaranteeBadge';
 import {
   Star,
   Plus,
@@ -185,22 +188,13 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               </div>
             )}
 
-            {/* Custom Cake Message (if cake category) */}
+            {/* Custom Cake Message with Interactive Live Golden Script Name Piping Preview */}
             {product.category === 'cakes' && (
-              <div className="space-y-1.5">
-                <label className="text-xs font-bold uppercase tracking-wider text-cocoa flex items-center justify-between">
-                  <span>Custom Message on Cake (Optional):</span>
-                  <span className="text-[11px] text-cocoa/50 font-normal">Max 25 chars</span>
-                </label>
-                <input
-                  type="text"
-                  maxLength={25}
-                  placeholder="e.g. Happy Birthday Arjun! 🎉"
-                  value={customMessage}
-                  onChange={(e) => setCustomMessage(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-white border border-cream-300 rounded-2xl text-xs text-cocoa focus:outline-none focus:border-caramel"
-                />
-              </div>
+              <LiveCakePipingPreview
+                cakeName={product.name}
+                message={customMessage}
+                onMessageChange={setCustomMessage}
+              />
             )}
 
             {/* Quantity Selector + Action Buttons */}
@@ -257,17 +251,11 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               </Button>
             </div>
 
-            {/* Assurance badges */}
-            <div className="grid grid-cols-2 gap-3 pt-2 border-t border-cream-200 text-xs text-cocoa/75">
-              <div className="flex items-center gap-2">
-                <Truck className="w-4 h-4 text-caramel flex-shrink-0" />
-                <span>Chilled Bengaluru Delivery</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-caramel flex-shrink-0" />
-                <span>100% Real Dairy Cream</span>
-              </div>
-            </div>
+            {/* The Craving Pair 1-Tap Upsell Bar */}
+            <CravingPairUpsell currentCategory={product.category} currentProductId={product.id} />
+
+            {/* Worry-Free Cold Chain Guarantee */}
+            <ColdChainGuaranteeBadge />
           </div>
         </div>
 
