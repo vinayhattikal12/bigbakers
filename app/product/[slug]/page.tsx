@@ -47,10 +47,14 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   const totalPrice = unitPrice * quantity;
 
   const handleAddToCart = () => {
-    // Locate the hero image stage element to trigger 3D pop out
+    // Locate the hero image stage element to trigger 3D pop out and Delivery Dispatch HUD
     const heroImageStage = document.getElementById('product-hero-image-stage');
     if (heroImageStage) {
-      triggerFlyToCartAnimation(heroImageStage, product.heroImage);
+      triggerFlyToCartAnimation(heroImageStage, product.heroImage, {
+        name: product.name,
+        weight: selectedWeight,
+        price: totalPrice,
+      });
     }
 
     addItem(

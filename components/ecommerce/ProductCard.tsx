@@ -30,9 +30,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
     e.preventDefault();
     e.stopPropagation();
 
-    // Trigger 3D Pop-out and parabolic fly animation
+    // Trigger 3D Pop-out and parabolic fly animation with Delivery Dispatch HUD
     if (imageContainerRef.current) {
-      triggerFlyToCartAnimation(imageContainerRef.current, product.heroImage);
+      triggerFlyToCartAnimation(imageContainerRef.current, product.heroImage, {
+        name: product.name,
+        weight: defaultWeight,
+        price: currentPrice,
+      });
     }
 
     addItem(product, defaultWeight, 1, undefined, false);
