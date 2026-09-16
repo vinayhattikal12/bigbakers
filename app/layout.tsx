@@ -8,6 +8,7 @@ import { Footer } from '@/components/layout/Footer';
 import { CartDrawer } from '@/components/ecommerce/CartDrawer';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
 import { FlyToCartOverlay } from '@/components/ecommerce/FlyToCartOverlay';
+import { DeliveryDispatchOverlay } from '@/components/ecommerce/DeliveryDispatchOverlay';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -113,6 +114,7 @@ export default function RootLayout({
               <Footer />
               <CartDrawer />
               <FlyToCartOverlay />
+              <DeliveryDispatchOverlay />
             </SmoothScroll>
           </WishlistProvider>
         </CartProvider>
