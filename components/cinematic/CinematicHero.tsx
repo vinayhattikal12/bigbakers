@@ -28,7 +28,7 @@ export const CinematicHero: React.FC = () => {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover scale-[1.01] filter brightness-[0.88] contrast-[1.05]"
+          className="w-full h-full object-cover scale-[1.42] sm:scale-[1.2] lg:scale-[1.08] object-center origin-center filter brightness-[0.88] contrast-[1.05] transition-transform duration-700"
         />
 
         {/* Ambient Contrast Gradients for Crystal Clear Typography */}
