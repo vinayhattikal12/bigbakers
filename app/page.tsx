@@ -2,165 +2,34 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CinematicHero } from '@/components/cinematic/CinematicHero';
-import { CravingMoodSelector } from '@/components/ecommerce/CravingMoodSelector';
-import { products } from '@/data/products';
-import { ProductGrid } from '@/components/ecommerce/ProductGrid';
+import { CinematicCravingSection } from '@/components/cinematic/CinematicCravingSection';
+import { MasterReserveShowcase } from '@/components/cinematic/MasterReserveShowcase';
+import { CraftPhilosophy } from '@/components/cinematic/CraftPhilosophy';
 import { Button } from '@/components/ui/Button';
 import {
   ArrowRight,
   Sparkles,
   Heart,
-  Truck,
-  ShieldCheck,
   Award,
   Star,
 } from 'lucide-react';
 
 export default function HomePage() {
-  const featured = products.filter((p) => p.featured);
-
-  const cravingCards = [
-    {
-      title: 'Celebration Cakes',
-      tagline: 'Belgian Truffles, Red Velvet, Pastries',
-      href: '/cakes',
-      image: '/images/cakes/belgian-truffle.webp',
-      badge: 'Bestselling',
-      accent: 'from-amber-900/80 via-amber-950/40 to-transparent',
-    },
-    {
-      title: 'Artisan Desserts',
-      tagline: 'Baked Cheesecakes, Tiramisu, Tres Leches',
-      href: '/desserts',
-      image: '/images/desserts/biscoff-cheesecake.webp',
-      badge: 'Pure Luxury',
-      accent: 'from-rose-950/80 via-rose-950/40 to-transparent',
-    },
-    {
-      title: 'Little Treats',
-      tagline: 'Gourmet Donuts, Cupcakes & NYC Cookies',
-      href: '/treats',
-      image: '/images/treats/glazed-donut.webp',
-      badge: 'Everyday Joy',
-      accent: 'from-orange-950/80 via-orange-950/40 to-transparent',
-    },
-    {
-      title: 'Savory Snacks',
-      tagline: 'Peri Peri Makhana, Mixtures & Sourdough',
-      href: '/snacks',
-      image: '/images/snacks/peri-peri-makhana.webp',
-      badge: 'Crispy & Pure',
-      accent: 'from-emerald-950/80 via-emerald-950/40 to-transparent',
-    },
-  ];
-
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. CINEMATIC HERO (SCENE 1 -> SCENE 2 -> SCENE 3 CANVAS SCRUBBING) */}
+      {/* 1. CINEMATIC HERO (CANVAS 3D / FLAVOUR SCRUBBING) */}
       <CinematicHero />
 
-      {/* 2. INSTANT CRAVING MOOD SELECTOR (1-TAP INTENT MATCHER) */}
-      <CravingMoodSelector />
+      {/* 2. WHAT ARE YOU CRAVING TODAY? (CINEMATIC 6-CATEGORY EDITORIAL SHOWCASE) */}
+      <CinematicCravingSection />
 
-      {/* 3. WHAT ARE YOU CRAVING? EDITORIAL COLLECTIONS */}
-      <section id="craving-section" className="py-20 sm:py-28 bg-cream-100 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-caramel/10 border border-caramel/30 text-caramel text-xs font-semibold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Handcrafted Fresh Daily in Bengaluru</span>
-              </div>
-              <h2 className="font-serif text-3xl sm:text-5xl font-black text-cocoa tracking-tight">
-                What Are You <span className="text-caramel italic">Craving?</span>
-              </h2>
-              <p className="text-sm sm:text-base text-cocoa/70 max-w-xl">
-                From velvety Belgian chocolate truffles to slow-roasted spicy foxnuts, explore our handcrafted gourmet collections.
-              </p>
-            </div>
-            <Link
-              href="/menu"
-              className="inline-flex items-center gap-2 text-sm font-bold text-caramel hover:text-caramel-dark group"
-            >
-              <span>Explore Full Menu (16+ Items)</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+      {/* 3. THE MASTER BAKER'S SIGNATURE RESERVE (INTERACTIVE TASTING ROOM) */}
+      <MasterReserveShowcase />
 
-          {/* 4 Large Editorial Craving Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {cravingCards.map((card) => (
-              <Link
-                key={card.title}
-                href={card.href}
-                className="group relative h-96 sm:h-[420px] rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-cream-300 transition-all duration-500 flex flex-col justify-end p-6"
-              >
-                {/* Background Image with Zoom */}
-                <div className="absolute inset-0 z-0 bg-cocoa">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out opacity-90"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${card.accent}`} />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                </div>
+      {/* 4. THE PHILOSOPHY OF UNCOMPROMISED QUALITY (4 CRAFT PILLARS) */}
+      <CraftPhilosophy />
 
-                {/* Content Overlay */}
-                <div className="relative z-10 space-y-2 transform group-hover:-translate-y-1 transition-transform duration-300">
-                  <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-gold bg-black/40 backdrop-blur-md px-3 py-0.5 rounded-full border border-gold/30">
-                    {card.badge}
-                  </span>
-                  <h3 className="font-serif text-2xl font-black text-white group-hover:text-gold-light transition-colors">
-                    {card.title}
-                  </h3>
-                  <p className="text-xs text-cream-100/80 font-medium line-clamp-2">
-                    {card.tagline}
-                  </p>
-
-                  <div className="pt-3 flex items-center gap-2 text-xs font-bold text-white group-hover:text-gold transition-colors">
-                    <span>Shop Collection</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 3. FEATURED PRODUCTS — "EVERYONE'S TALKING ABOUT THESE" */}
-      <section className="py-20 bg-cream-50 border-y border-cream-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-caramel">
-                Bengaluru Favorites
-              </span>
-              <h2 className="font-serif text-3xl sm:text-5xl font-black text-cocoa tracking-tight">
-                Everyone&apos;s Talking About These
-              </h2>
-              <p className="text-xs sm:text-sm text-cocoa/60">
-                Freshly baked every morning in Vijaynagar, delivered chilled right to your door.
-              </p>
-            </div>
-            <Link
-              href="/menu"
-              className="inline-flex items-center gap-2 text-xs font-bold text-cocoa hover:text-caramel"
-            >
-              <span>View All Products</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-          {/* Product Grid */}
-          <ProductGrid products={featured} priorityCount={4} />
-        </div>
-      </section>
-
-      {/* 4. EDITORIAL STORY BANNER — "THE PEOPLE BEHIND THE GOODNESS" */}
+      {/* 5. EDITORIAL STORY BANNER — "OUR BAKING HERITAGE" */}
       <section className="py-24 bg-cocoa-deep text-cream-100 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-caramel/5 blur-3xl pointer-events-none" />
 
@@ -200,7 +69,7 @@ export default function HomePage() {
                 <span className="text-caramel italic">Baked for Memories.</span>
               </h2>
 
-              <p className="text-sm sm:text-base text-cream-200/80 leading-relaxed">
+              <p className="text-sm sm:text-base text-cream-200/80 leading-relaxed font-sans">
                 At Big Bakers, we believe that cake is never just dessert—it is the centerpiece of your most cherished celebrations. Every truffle gateau, cheesecake slice, and brioche donut is created from scratch in our Vijaynagar kitchen using authentic European techniques and ethically sourced ingredients.
               </p>
 
@@ -228,7 +97,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. VERIFIED REVIEWS / COMMUNITY LOVE */}
+      {/* 6. VERIFIED REVIEWS / COMMUNITY LOVE */}
       <section className="py-20 bg-cream-50 border-t border-cream-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
