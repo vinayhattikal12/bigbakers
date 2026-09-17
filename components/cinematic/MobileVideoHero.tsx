@@ -55,22 +55,22 @@ export const MobileVideoHero: React.FC = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-stretch gap-2.5 pt-1">
+        <div className="grid grid-cols-2 gap-2.5 pt-1 w-full">
           <Link
             href="/menu"
-            className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-gradient-to-r from-amber-600 via-caramel to-amber-700 text-white font-bold text-xs sm:text-sm shadow-[0_8px_25px_rgba(217,119,6,0.4)] border border-amber-400/40 hover:brightness-110 active:scale-95 transition-all group"
+            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-3.5 rounded-2xl bg-gradient-to-r from-amber-600 via-caramel to-amber-700 text-white font-bold text-xs sm:text-sm shadow-[0_8px_25px_rgba(217,119,6,0.4)] border border-amber-400/40 hover:brightness-110 active:scale-95 transition-all group whitespace-nowrap"
           >
             <Sparkles className="w-4 h-4 text-amber-200 group-hover:rotate-12 transition-transform shrink-0" />
-            <span className="font-bold tracking-wide">Explore 190+ Menu</span>
+            <span className="font-bold tracking-tight sm:tracking-wide">Explore Menu</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
           </Link>
 
           <Link
             href="/stores"
-            className="inline-flex items-center justify-center gap-2 px-4.5 py-3.5 rounded-2xl bg-black/60 hover:bg-white/20 backdrop-blur-xl border border-white/30 text-white font-semibold text-xs sm:text-sm active:scale-95 transition-all shadow-lg group shrink-0"
+            className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-3.5 rounded-2xl bg-black/65 hover:bg-white/20 backdrop-blur-xl border border-white/35 text-white font-bold text-xs sm:text-sm active:scale-95 transition-all shadow-[0_8px_25px_rgba(0,0,0,0.4)] group whitespace-nowrap"
           >
-            <MapPin className="w-4 h-4 text-gold group-hover:scale-110 transition-transform" />
-            <span>Visit Store</span>
+            <MapPin className="w-4 h-4 text-gold group-hover:scale-110 transition-transform shrink-0" />
+            <span className="font-bold tracking-tight sm:tracking-wide">Visit Store</span>
           </Link>
         </div>
 
