@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { X, ArrowRight, Sparkles, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -57,13 +58,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
       <div className="relative w-full max-w-sm bg-cream-50 h-full flex flex-col justify-between shadow-2xl z-10 animate-in slide-in-from-left duration-300">
         <div>
           {/* Header */}
-          <div className="flex items-center justify-between px-6 py-5 border-b border-cream-300 bg-white">
-            <div className="flex flex-col">
-              <span className="font-serif text-xl font-black text-cocoa">BIG BAKERS</span>
-              <span className="text-[9px] tracking-[0.2em] font-semibold text-caramel uppercase">
-                Bite into Happiness
-              </span>
-            </div>
+          <div className="flex items-center justify-between px-6 py-4 border-b border-cream-300 bg-white">
+            <BrandLogo variant="dark" size="sm" />
             <button
               onClick={onClose}
               className="p-2 rounded-full text-cocoa/70 hover:text-cocoa hover:bg-cream-200 transition-colors"

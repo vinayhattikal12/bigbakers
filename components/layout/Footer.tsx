@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -26,14 +27,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-14 border-b border-cream-200/10">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block">
-              <span className="font-serif text-3xl font-black tracking-tight text-white block">
-                BIG BAKERS
-              </span>
-              <span className="text-[10px] tracking-[0.25em] font-semibold text-caramel uppercase block">
-                Bite into Happiness
-              </span>
-            </Link>
+            <BrandLogo variant="light" size="lg" />
             <p className="text-sm text-cream-200/70 max-w-sm leading-relaxed">
               Bengaluru&apos;s premier destination for handcrafted celebration cakes, European artisan desserts, Belgian chocolate truffles, and oven-fresh snacks in Vijaynagar. Baked fresh daily with pure dairy cream and natural ingredients.
             </p>

@@ -23,6 +23,7 @@ import { SearchModal } from '@/components/ecommerce/SearchModal';
 import { MobileNav } from './MobileNav';
 import { categories } from '@/data/categories';
 import { cn } from '@/lib/utils/cn';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
@@ -119,25 +120,14 @@ export const Header: React.FC = () => {
               </div>
             </div>
 
-            {/* Center: Centered Brand Logo & Subtitle */}
-            <Link href="/" className="flex flex-col items-center justify-center text-center group">
-              <span
-                className={cn(
-                  'font-serif text-lg sm:text-xl font-black tracking-tight leading-none transition-colors',
-                  isDarkHeroHeader ? 'text-white group-hover:text-gold' : 'text-cocoa group-hover:text-caramel'
-                )}
-              >
-                BIG BAKERS
-              </span>
-              <span
-                className={cn(
-                  'text-[8px] tracking-[0.2em] font-bold uppercase transition-all mt-0.5',
-                  isDarkHeroHeader ? 'text-gold' : 'text-caramel'
-                )}
-              >
-                Bite into Happiness
-              </span>
-            </Link>
+            {/* Center: Centered Brand Logo */}
+            <div className="flex items-center justify-center">
+              <BrandLogo
+                variant="auto"
+                isDarkHeader={isDarkHeroHeader}
+                size="sm"
+              />
+            </div>
 
             {/* Right: Cart Shopping Bag Button */}
             <div className="flex items-center justify-end">
@@ -168,24 +158,11 @@ export const Header: React.FC = () => {
               ======================================================== */}
           <div className="hidden lg:flex items-center justify-between gap-6">
             {/* Brand Logo */}
-            <Link href="/" className="flex flex-col items-start group shrink-0">
-              <span
-                className={cn(
-                  'font-serif text-2xl font-black tracking-tight transition-colors leading-none',
-                  isDarkHeroHeader ? 'text-white group-hover:text-gold' : 'text-cocoa group-hover:text-caramel'
-                )}
-              >
-                BIG BAKERS
-              </span>
-              <span
-                className={cn(
-                  'text-[9px] tracking-[0.22em] font-bold uppercase transition-all mt-0.5',
-                  isDarkHeroHeader ? 'text-gold' : 'text-caramel'
-                )}
-              >
-                Bite into Happiness
-              </span>
-            </Link>
+            <BrandLogo
+              variant="auto"
+              isDarkHeader={isDarkHeroHeader}
+              size="md"
+            />
 
             {/* Desktop Nav Links */}
             <nav className="flex items-center gap-1 xl:gap-2">
