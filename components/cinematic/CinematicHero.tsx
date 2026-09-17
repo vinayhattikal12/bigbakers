@@ -113,7 +113,7 @@ const DesktopCinematicHero: React.FC = () => {
 
     if (!img || !img.complete || img.naturalWidth === 0) return;
 
-    const dpr = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio || 1, 1.75) : 1;
+    const dpr = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio || 1, 2) : 1;
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
 
@@ -129,6 +129,8 @@ const DesktopCinematicHero: React.FC = () => {
 
     ctx.save();
     ctx.scale(dpr, dpr);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
 
     const imgWidth = img.naturalWidth;
     const imgHeight = img.naturalHeight;
@@ -136,7 +138,8 @@ const DesktopCinematicHero: React.FC = () => {
     const renderWidth = imgWidth * scale;
     const renderHeight = imgHeight * scale;
     const x = (width - renderWidth) / 2;
-    const y = (height - renderHeight) / 2;
+    // For Scene 1 (Shopfront), anchor to top so the full Big Bakers building & signage are clearly visible
+    const y = scene === 1 ? Math.max(height - renderHeight, 0) : (height - renderHeight) / 2;
 
     ctx.drawImage(img, x, y, renderWidth, renderHeight);
     ctx.restore();
@@ -352,11 +355,11 @@ const DesktopCinematicHero: React.FC = () => {
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden bg-cocoa-deep">
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full object-cover block pointer-events-none select-none"
+          className="absolute inset-0 w-full h-full object-cover block pointer-events-none select-none filter brightness-[1.08] contrast-[1.05] saturate-[1.12]"
         />
 
-        <div className="absolute top-0 left-0 right-0 h-36 bg-gradient-to-b from-cocoa-deep/80 via-cocoa-deep/30 to-transparent pointer-events-none z-10" />
-        <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-cocoa-deep/90 via-cocoa-deep/40 to-transparent pointer-events-none z-10" />
+        <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-cocoa-deep/50 via-cocoa-deep/15 to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-cocoa-deep/60 via-cocoa-deep/20 to-transparent pointer-events-none z-10" />
 
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-white/10 z-30 pointer-events-none">
           <div
