@@ -226,41 +226,41 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
         {/* Ambient Color Glow */}
         <div className={`absolute top-1/4 left-10 w-96 h-96 ${theme.ambientGlow} rounded-full blur-[140px] pointer-events-none opacity-40`} />
 
-        {/* Hero Content Layer in Frosted Glass Card */}
-        <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-          <div className="max-w-2xl bg-black/60 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-white/25 shadow-[0_16px_50px_rgba(0,0,0,0.7)] space-y-4 sm:space-y-5">
+        {/* Hero Content Layer - Fully Transparent Directly on Video */}
+        <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24">
+          <div className="max-w-2xl space-y-4 sm:space-y-6">
             {/* Category Pill & Count */}
             <div className="flex items-center gap-2.5 flex-wrap">
-              <span className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-md`}>
+              <span className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-xs font-bold uppercase tracking-wider bg-black/40 backdrop-blur-md shadow-md`}>
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{theme.badgeText}</span>
               </span>
-              <span className="text-[11px] sm:text-xs font-bold text-cream-100 bg-white/15 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-xs">
+              <span className="text-[11px] sm:text-xs font-bold text-cream-100 bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-xs">
                 {categoryProducts.length} Handcrafted Creations
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-5xl font-black text-white tracking-tight leading-[1.14] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_30px_rgba(0,0,0,0.95)]">
               {heroHeadline}
             </h1>
 
             {/* Sensory Description */}
-            <p className="text-sm sm:text-base text-cream-100/95 leading-relaxed font-normal drop-shadow-sm">
+            <p className="text-sm sm:text-base lg:text-lg text-cream-100 font-medium leading-relaxed drop-shadow-[0_2px_15px_rgba(0,0,0,0.95)]">
               {heroDescription}
             </p>
 
             {/* Craft Pillars / Assurance Bar */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 text-xs text-cream-100 font-semibold">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2 text-xs text-cream-100 font-semibold">
               {craftPillars.map((pillar, idx) => {
                 const Icon = pillar.icon;
                 return (
                   <div
                     key={idx}
-                    className="flex items-center gap-2 p-2.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 shadow-xs hover:border-gold/40 transition-colors"
+                    className="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-2xl bg-black/40 backdrop-blur-md border border-white/20 shadow-md hover:border-gold/50 transition-colors"
                   >
                     <Icon className="w-4 h-4 text-gold shrink-0" />
-                    <span className="truncate text-xs">{pillar.text}</span>
+                    <span className="truncate text-xs drop-shadow-sm">{pillar.text}</span>
                   </div>
                 );
               })}
