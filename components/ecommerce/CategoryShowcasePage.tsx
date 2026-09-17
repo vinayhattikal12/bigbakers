@@ -74,6 +74,15 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  // Ensure autoplay triggers on mount across all mobile/desktop browsers
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, [heroVideo]);
+
   // All products in this category
   const categoryProducts = useMemo(() => {
     return products.filter((p) => p.category === categoryId);
@@ -159,9 +168,9 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
 
   return (
     <div className="pt-20 sm:pt-24 pb-28 min-h-screen bg-cream-100">
-      {/* 1. FULL-BLEED CINEMATIC VIDEO HERO SECTION */}
-      <section className="relative min-h-[440px] sm:min-h-[500px] lg:min-h-[560px] flex items-center text-cream-100 overflow-hidden mb-8 sm:mb-12 border-b border-caramel/20">
-        {/* Full-Bleed Video Background */}
+      {/* 1. FULL-BLEED RADIANT CINEMATIC VIDEO HERO SECTION */}
+      <section className="relative min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] flex items-center text-cream-100 overflow-hidden mb-8 sm:mb-12 border-b border-caramel/20">
+        {/* Full-Bleed Radiant Video Background */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-cocoa-deep">
           {heroVideo ? (
             <video
@@ -173,7 +182,7 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
               muted={isMuted}
               playsInline
               preload="auto"
-              className="w-full h-full object-cover filter brightness-[0.72] contrast-[1.08] saturate-[1.12]"
+              className="w-full h-full object-cover filter brightness-[1.08] contrast-[1.05] saturate-[1.18]"
             />
           ) : (
             <Image
@@ -181,50 +190,50 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
               alt={categoryName}
               fill
               priority
-              className="object-cover filter brightness-[0.75]"
+              className="object-cover filter brightness-[0.9] contrast-[1.05]"
             />
           )}
 
-          {/* Cinematic Dark Gradient Overlays for optimal typography readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/40 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep via-transparent to-black/70 pointer-events-none" />
+          {/* Light Cinematic Vignettes (Keeps video bright & vibrant while framing text) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
         </div>
 
-        {/* Ambient Glow Orb */}
-        <div className={`absolute top-1/4 left-10 w-96 h-96 ${theme.ambientGlow} rounded-full blur-[140px] pointer-events-none`} />
+        {/* Ambient Color Glow */}
+        <div className={`absolute top-1/4 left-10 w-96 h-96 ${theme.ambientGlow} rounded-full blur-[140px] pointer-events-none opacity-60`} />
 
-        {/* Hero Content Layer */}
-        <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
-          <div className="max-w-3xl space-y-4 sm:space-y-6">
+        {/* Hero Content Layer in Frosted Glass Card */}
+        <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+          <div className="max-w-2xl bg-black/45 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/20 shadow-[0_12px_40px_rgba(0,0,0,0.6)] space-y-4 sm:space-y-5">
             {/* Category Pill & Count */}
             <div className="flex items-center gap-2.5 flex-wrap">
-              <span className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-lg`}>
+              <span className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-md`}>
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{theme.badgeText}</span>
               </span>
-              <span className="text-[11px] sm:text-xs font-bold text-cream-100/90 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 shadow-md">
+              <span className="text-[11px] sm:text-xs font-bold text-cream-100 bg-white/15 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-xs">
                 {categoryProducts.length} Handcrafted Creations
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-5xl font-black text-white tracking-tight leading-[1.14] drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
               {heroHeadline}
             </h1>
 
             {/* Sensory Description */}
-            <p className="text-sm sm:text-base lg:text-lg text-cream-100/90 leading-relaxed max-w-2xl font-normal drop-shadow-md">
+            <p className="text-sm sm:text-base text-cream-100/95 leading-relaxed font-normal drop-shadow-sm">
               {heroDescription}
             </p>
 
             {/* Craft Pillars / Assurance Bar */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2 text-xs text-cream-100 font-semibold max-w-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 text-xs text-cream-100 font-semibold">
               {craftPillars.map((pillar, idx) => {
                 const Icon = pillar.icon;
                 return (
                   <div
                     key={idx}
-                    className="flex items-center gap-2.5 p-3 rounded-2xl bg-black/60 backdrop-blur-md border border-white/15 shadow-lg hover:border-gold/40 transition-colors"
+                    className="flex items-center gap-2 p-2.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 shadow-xs hover:border-gold/40 transition-colors"
                   >
                     <Icon className="w-4 h-4 text-gold shrink-0" />
                     <span className="truncate text-xs">{pillar.text}</span>
