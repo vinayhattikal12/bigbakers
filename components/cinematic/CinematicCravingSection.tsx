@@ -116,7 +116,7 @@ const CravingCard: React.FC<{
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="none"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none filter brightness-[1.12] contrast-[1.05] ${
               showVideo ? 'opacity-90' : 'opacity-0'
             }`}

@@ -147,70 +147,54 @@ const DesktopCinematicHero: React.FC = () => {
     lastDrawnRef.current = { scene, frame: validFrame };
   }, []);
 
-  // Multi-tier background preloading
+  // Lightweight multi-tier background preloading
   useEffect(() => {
     let isCancelled = false;
 
-    // 1. Critical first frames
+    // 1. Critical first frames for instant visual display
     loadFrame(1, 1, true).then(() => {
       if (!isCancelled) drawFrame(1, 1);
     });
-    loadFrame(2, 1, true);
-    loadFrame(3, 1, true);
+    loadFrame(2, 1, false);
+    loadFrame(3, 1, false);
 
-    // 2. Immediate warm-up: first 25 frames of Scene 1
-    for (let f = 2; f <= 25; f++) {
+    // 2. Immediate warm-up: first 10 frames of Scene 1
+    for (let f = 2; f <= 10; f++) {
       loadFrame(1, f);
     }
 
-    // 3. Keyframe milestone preloader
-    const preloadKeyframes = () => {
+    // 3. Low-priority keyframe milestone preloader using requestIdleCallback
+    const preloadMilestones = () => {
       if (isCancelled) return;
       const keyframes: { scene: number; frame: number }[] = [];
       for (let s = 1; s <= 3; s++) {
         const maxF = SCENE_FRAME_COUNTS[s] || 300;
-        for (let f = 8; f <= maxF; f += 8) {
+        for (let f = 16; f <= maxF; f += 16) {
           keyframes.push({ scene: s, frame: f });
         }
       }
 
       let idx = 0;
-      const loadNextKeyframe = () => {
-        if (isCancelled || idx >= keyframes.length) {
-          preloadAllSequential();
-          return;
-        }
+      const loadNext = () => {
+        if (isCancelled || idx >= keyframes.length) return;
         const item = keyframes[idx++];
-        loadFrame(item.scene, item.frame).then(() => {
-          setTimeout(loadNextKeyframe, 10);
-        });
-      };
-      setTimeout(loadNextKeyframe, 100);
-    };
+        loadFrame(item.scene, item.frame);
 
-    // 4. Background sequential filler
-    const preloadAllSequential = () => {
-      if (isCancelled) return;
-      let s = 1;
-      let f = 1;
-
-      const fillNext = () => {
-        if (isCancelled) return;
-        if (s > 3) return;
-
-        const maxF = SCENE_FRAME_COUNTS[s] || 300;
-        loadFrame(s, f);
-        f++;
-        if (f > maxF) {
-          f = 1;
-          s++;
+        if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+          (window as any).requestIdleCallback(loadNext, { timeout: 300 });
+        } else {
+          setTimeout(loadNext, 80);
         }
-        setTimeout(fillNext, 15);
       };
-      fillNext();
+
+      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        (window as any).requestIdleCallback(loadNext, { timeout: 500 });
+      } else {
+        setTimeout(loadNext, 300);
+      }
     };
 
-    const idleTimer = setTimeout(preloadKeyframes, 200);
+    const idleTimer = setTimeout(preloadMilestones, 500);
 
     return () => {
       isCancelled = true;
@@ -626,16 +610,28 @@ const DesktopCinematicHero: React.FC = () => {
 // 🌟 MAIN RESPONSIVE HYBRID CINEMATIC HERO
 export const CinematicHero: React.FC = () => {
   const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setIsReducedMotion(mediaQuery.matches);
+
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop, { passive: true });
 
     const handleMediaChange = (e: MediaQueryListEvent) => {
       setIsReducedMotion(e.matches);
     };
     mediaQuery.addEventListener('change', handleMediaChange);
-    return () => mediaQuery.removeEventListener('change', handleMediaChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+      window.removeEventListener('resize', checkDesktop);
+    };
   }, []);
 
   if (isReducedMotion) {
@@ -644,15 +640,19 @@ export const CinematicHero: React.FC = () => {
 
   return (
     <>
-      {/* 📱 MOBILE VIEW (< 768px): Full-Bleed 16:9 Video Hero with Zero Overlap */}
-      <div className="block md:hidden">
-        <MobileVideoHero />
-      </div>
+      {/* 📱 MOBILE VIEW (< 768px): Only mounted on mobile devices */}
+      {(!mounted || !isDesktop) && (
+        <div className="block md:hidden">
+          <MobileVideoHero />
+        </div>
+      )}
 
-      {/* 💻 DESKTOP & TABLET VIEW (>= 768px): High-Performance GSAP 3D Canvas Video-Scrubbing */}
-      <div className="hidden md:block">
-        <DesktopCinematicHero />
-      </div>
+      {/* 💻 DESKTOP & TABLET VIEW (>= 768px): Only mounted on desktop/tablet */}
+      {mounted && isDesktop && (
+        <div className="hidden md:block">
+          <DesktopCinematicHero />
+        </div>
+      )}
     </>
   );
 };

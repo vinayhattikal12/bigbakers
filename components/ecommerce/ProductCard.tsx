@@ -69,14 +69,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             priority={priority}
             loading={priority ? 'eager' : 'lazy'}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 280px"
-            onLoad={() => setIsImageLoaded(true)}
-            className={`object-cover group-hover:scale-105 transition-all duration-500 ease-out ${
-              isImageLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
+            className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
           />
-          {!isImageLoaded && (
-            <div className="absolute inset-0 bg-cream-200/60 animate-pulse" />
-          )}
         </div>
 
         {/* Real Catalogue Badges Overlay */}
