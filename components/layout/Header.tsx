@@ -339,14 +339,6 @@ export const Header: React.FC = () => {
                 </kbd>
               </button>
 
-              <Link
-                href="/menu"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-caramel text-white text-xs font-bold hover:bg-caramel-dark shadow-sm transition-all whitespace-nowrap active:scale-95"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Order Fresh</span>
-              </Link>
-
               <button
                 id="header-cart-icon"
                 data-cart-target="true"

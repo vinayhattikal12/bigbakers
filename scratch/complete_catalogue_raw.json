@@ -1,0 +1,1328 @@
+[
+  {
+    "name": "SAVOURY",
+    "header_count": 12,
+    "items": [
+      {
+        "name": "Veg Small Puff",
+        "price_raw": "Rs. 30",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Aloo Bun",
+        "price_raw": "Rs. 40",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mix Veg Puff",
+        "price_raw": "Rs. 40",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Cajun Paneer Puff",
+        "price_raw": "Rs. 50",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Chimichurri Mushroom Puff",
+        "price_raw": "Rs. 50",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Flat Bread With Veg Cheesy Creole",
+        "price_raw": "Rs. 70",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Paneer & Sweet Corn Calzone",
+        "price_raw": "Rs. 70",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Paneer Roll",
+        "price_raw": "Rs. 70",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Snack Box",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Korean Bun",
+        "price_raw": "Rs. 120",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Veg Panini Sandwitch",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Paneer Panini Sandwitch",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "8 PIZZA",
+    "header_count": 6,
+    "items": [
+      {
+        "name": "Double Cheese Margarita",
+        "price_raw": "Rs. 225",
+        "pack_raw": "Rs. 15",
+        "options_raw": "Add-on group: Add On"
+      },
+      {
+        "name": "Farmhouse Pizza",
+        "price_raw": "Rs. 245",
+        "pack_raw": "Rs. 15",
+        "options_raw": "Add-on group: Add On"
+      },
+      {
+        "name": "Faboulous 4 Cheese Pizza",
+        "price_raw": "Rs. 275",
+        "pack_raw": "Rs. 15",
+        "options_raw": "Add-on group: Add On"
+      },
+      {
+        "name": "Grilled Mushroom Pizza",
+        "price_raw": "Rs. 275",
+        "pack_raw": "Rs. 15",
+        "options_raw": "Add-on group: Add On"
+      },
+      {
+        "name": "Peri Peri Pizza",
+        "price_raw": "Rs. 275",
+        "pack_raw": "Rs. 15",
+        "options_raw": "Add-on group: Add On"
+      },
+      {
+        "name": "Pesto Pizza",
+        "price_raw": "Rs. 325",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "PASTA",
+    "header_count": 4,
+    "items": [
+      {
+        "name": "Alfredo With Penne Pasta",
+        "price_raw": "Rs. 190",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Arrabbiata With Fusilli Pasta",
+        "price_raw": "Rs. 190",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Blend Of Sauces With Fusilli Pasta.",
+        "price_raw": "Rs. 190",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Pesto With Penne Pasta",
+        "price_raw": "Rs. 210",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "BREADS",
+    "header_count": 3,
+    "items": [
+      {
+        "name": "Half Pound Bread",
+        "price_raw": "Rs. 30",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Milk Bread 400gms[o]",
+        "price_raw": "Rs. 55",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Rusk 250gms[o]",
+        "price_raw": "Rs. 90",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "CELEBRATION CAKES",
+    "header_count": 19,
+    "items": [
+      {
+        "name": "Blueberry Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.450) / 1Kg (Rs.900)"
+      },
+      {
+        "name": "Butterscotch Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.450) / 1Kg (Rs.950)"
+      },
+      {
+        "name": "Pineapple Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.450) / 1Kg (Rs.900)"
+      },
+      {
+        "name": "Black Forest Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.480) / 1Kg (Rs.960)"
+      },
+      {
+        "name": "White Forest Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.480) / 1Kg (Rs.930)"
+      },
+      {
+        "name": "Chocolate Delight Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.500) / 1Kg (Rs.1000)"
+      },
+      {
+        "name": "Irish Coffee Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.500) / 1Kg (Rs.1000)"
+      },
+      {
+        "name": "Alphonso Mango Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.550) / 1Kg (Rs.1100)"
+      },
+      {
+        "name": "Choco Velvet Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.550) / 1Kg (Rs.1200)"
+      },
+      {
+        "name": "Rasmalai Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.550) / 1Kg (Rs.1100)"
+      },
+      {
+        "name": "Biscoff Cake (500Grms)",
+        "price_raw": "Rs. 600",
+        "pack_raw": "Rs. 15",
+        "options_raw": "None"
+      },
+      {
+        "name": "Honey Almond Cake (500Grms)",
+        "price_raw": "Rs. 600",
+        "pack_raw": "Rs. 15",
+        "options_raw": "None"
+      },
+      {
+        "name": "Red Velvet Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.600) / 1Kg (Rs.1200)"
+      },
+      {
+        "name": "Belgian Truffle Cake",
+        "price_raw": "By variant",
+        "pack_raw": "—",
+        "options_raw": "Sizes: 500Grms (Rs.650) / 1Kg (Rs.1300)"
+      },
+      {
+        "name": "Biscoff Kunafa (500Grms)",
+        "price_raw": "Rs. 700",
+        "pack_raw": "Rs. 15",
+        "options_raw": "None"
+      },
+      {
+        "name": "Caramel Butterscotch Cake (500Grms)",
+        "price_raw": "Rs. 700",
+        "pack_raw": "Rs. 15",
+        "options_raw": "None"
+      },
+      {
+        "name": "Hazelnut Cake (500Grms)",
+        "price_raw": "Rs. 700",
+        "pack_raw": "Rs. 15",
+        "options_raw": "None"
+      },
+      {
+        "name": "Pista Kunafa Chocolate Cake (500Grms)",
+        "price_raw": "Rs. 700",
+        "pack_raw": "Rs. 15",
+        "options_raw": "None"
+      },
+      {
+        "name": "Opera Cake (500Grms)",
+        "price_raw": "Rs. 800",
+        "pack_raw": "Rs. 15",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "PASTRY CAKES",
+    "header_count": 19,
+    "items": [
+      {
+        "name": "Black Forest Pastry",
+        "price_raw": "Rs. 85",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Blueberry Pastry",
+        "price_raw": "Rs. 85",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Butterscotch Pastry",
+        "price_raw": "Rs. 85",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Pineapple Pastry",
+        "price_raw": "Rs. 85",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "White Forest Pastry",
+        "price_raw": "Rs. 85",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mango Pastry",
+        "price_raw": "Rs. 95",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Choco Velvet Pastry",
+        "price_raw": "Rs. 110",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Chocolate Truffle Pastry",
+        "price_raw": "Rs. 110",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Honey Almond Pastry",
+        "price_raw": "Rs. 110",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Rasmalai Pastry",
+        "price_raw": "Rs. 110",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Red Velvet Pastry",
+        "price_raw": "Rs. 110",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Biscoff Pastry",
+        "price_raw": "Rs. 115",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Belgian Truffle Pastry",
+        "price_raw": "Rs. 120",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Opera Pastry",
+        "price_raw": "Rs. 140",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Biscoff Kunafa Pastry",
+        "price_raw": "Rs. 150",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Hazelnut Pastry",
+        "price_raw": "Rs. 150",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Pista Kunafa Pastry",
+        "price_raw": "Rs. 150",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Opera Cake",
+        "price_raw": "Rs. 190",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Salted Caramel Chocolate",
+        "price_raw": "Rs. 250",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "BENTO BOX",
+    "header_count": 4,
+    "items": [
+      {
+        "name": "Choco Panda",
+        "price_raw": "Rs. 250",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Red Velvet",
+        "price_raw": "Rs. 250",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Doraemon Cartoon",
+        "price_raw": "Rs. 280",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Lotus Biscoff",
+        "price_raw": "Rs. 280",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "CAKES",
+    "header_count": 13,
+    "items": [
+      {
+        "name": "Little Heart",
+        "price_raw": "Rs. 60",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Plain Cup Cake",
+        "price_raw": "Rs. 80",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Plain Cupcake 6pcs[o]",
+        "price_raw": "Rs. 80",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Blueberry Cupcakes 6pcs[o]",
+        "price_raw": "Rs. 90",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Chocolate Cup Cake 6pcs[o]",
+        "price_raw": "Rs. 90",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Caramal Donut",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Chocolate Donut",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Swiss Roll",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Plain Tea Cake[o]",
+        "price_raw": "Rs. 125",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Vanilla Tea Cake",
+        "price_raw": "Rs. 125",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Chocolate Tea Cake[o]",
+        "price_raw": "Rs. 150",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mix Fruit Tea Cake[o]",
+        "price_raw": "Rs. 150",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Kulfi Tea Cake[o]",
+        "price_raw": "Rs. 170",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "DESSERT",
+    "header_count": 24,
+    "items": [
+      {
+        "name": "Vanilla Muffins",
+        "price_raw": "Rs. 70",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Blueberry Muffins",
+        "price_raw": "Rs. 80",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Chocolate Muffins",
+        "price_raw": "Rs. 80",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Vanilla Berliner",
+        "price_raw": "Rs. 80",
+        "pack_raw": "Rs. 5",
+        "options_raw": "None"
+      },
+      {
+        "name": "Blueberry Berliner",
+        "price_raw": "Rs. 100",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Choco Cookie Berliner",
+        "price_raw": "Rs. 100",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mango Berliner",
+        "price_raw": "Rs. 100",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Red Velvet Cookie Berliner",
+        "price_raw": "Rs. 100",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Walnut Brownie",
+        "price_raw": "Rs. 120",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Biscoff Brownie",
+        "price_raw": "Rs. 130",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Hazelnut Brownie",
+        "price_raw": "Rs. 130",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Classic Rasmalai Tres Leches",
+        "price_raw": "Rs. 140",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mango Tres Leches",
+        "price_raw": "Rs. 150",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Rose Tres Leches",
+        "price_raw": "Rs. 150",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Biscoff Tub",
+        "price_raw": "Rs. 160",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Kunafa Pistachio Chocolate",
+        "price_raw": "Rs. 160",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mango Tiramisu",
+        "price_raw": "Rs. 180",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Plain Cheese Cake",
+        "price_raw": "Rs. 180",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Tiramisu",
+        "price_raw": "Rs. 180",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Biscoff Cheesecake",
+        "price_raw": "Rs. 200",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Blueberry Cheese Cake",
+        "price_raw": "Rs. 200",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Hazelnut Cheese Cake",
+        "price_raw": "Rs. 200",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mango Cheese Cake",
+        "price_raw": "Rs. 200",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      },
+      {
+        "name": "Assorted Brownies",
+        "price_raw": "Rs. 275",
+        "pack_raw": "Rs. 10",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "GELATO",
+    "header_count": 7,
+    "items": [
+      {
+        "name": "Alphanso Mango Gelato",
+        "price_raw": "Rs. 99",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Belgian Chocolate Gelato",
+        "price_raw": "Rs. 99",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Biscoff Gelato",
+        "price_raw": "Rs. 99",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Fruit Flavour Gelato",
+        "price_raw": "Rs. 99",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Musk Melon Gelato",
+        "price_raw": "Rs. 99",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Pista Gelato",
+        "price_raw": "Rs. 99",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Vanilla Gelato",
+        "price_raw": "Rs. 99",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "COOKIES",
+    "header_count": 13,
+    "items": [
+      {
+        "name": "Biscoff Cookies",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Chocolate Cookies",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Hazulnut Cookies",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Butter Cookies 180gms[o]",
+        "price_raw": "Rs. 110",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Cashew Sticks 130gms[o]",
+        "price_raw": "Rs. 110",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Choco Chip Cookies 150gms[o]",
+        "price_raw": "Rs. 110",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Coconut Cookies 150gms[o]",
+        "price_raw": "Rs. 110",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Masala Cookies 120gms[o]",
+        "price_raw": "Rs. 110",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Red Velvet Cookies (120 Gms)",
+        "price_raw": "Rs. 110",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Salt Cookies 180gms[o]",
+        "price_raw": "Rs. 110",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Soanpapdi Cookies (150gms)",
+        "price_raw": "Rs. 110",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Pista Cookies",
+        "price_raw": "Rs. 150",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Assorted Cookies",
+        "price_raw": "Rs. 250",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "MAKHANA",
+    "header_count": 5,
+    "items": [
+      {
+        "name": "Bbq Makhana 60gms[o]",
+        "price_raw": "Rs. 189",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Lime Pudina Makhana 60gms[o]",
+        "price_raw": "Rs. 189",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mexican Cheese Makhana 60gms[o]",
+        "price_raw": "Rs. 189",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Peri Peri Makhana 60gms[o]",
+        "price_raw": "Rs. 189",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Sour Cream Onion Makhana 60gms[o]",
+        "price_raw": "Rs. 189",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "NAMKEENS",
+    "header_count": 9,
+    "items": [
+      {
+        "name": "Dryfruit Madras Mixture 100gms[o]",
+        "price_raw": "Rs. 90",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Congress Peanuts 170gms[o]",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Masala Peanuts 170gms[o]",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Kodubele 200gms[o]",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Navratan Mixture 150gms[o]",
+        "price_raw": "Rs. 130",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Masala Chakli 200gms[o]",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Nippat 200gms[o]",
+        "price_raw": "Rs. 150",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Sabudana Vada 200gms[o]",
+        "price_raw": "Rs. 150",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Bannana Chips 200gms[o]",
+        "price_raw": "Rs. 160",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "FG",
+    "header_count": 48,
+    "items": [
+      {
+        "name": "Masala Chips",
+        "price_raw": "Rs. 70",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Salted Chips",
+        "price_raw": "Rs. 70",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mixture (150Gms)",
+        "price_raw": "Rs. 80",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Garlic Chilli (200 Gm)ms",
+        "price_raw": "Rs. 99",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Congress Peanuts ( 170Gms)",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Love Treat (95G)",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Masala Peanuts (170Gms)",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Oats & Raisins Coookies (180 Gms)",
+        "price_raw": "Rs. 110",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Baby Muruku Chilli (200 Gm)Ms",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Baby Salt (200 Gm)Ms",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Garlic Mixture (100Gms)",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Kodubele (200 Gm)Ms",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mullu Muruku Chilli (200 Gm)Ms",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Ribbon Pakoda (150Gms)",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Spiral Chilli (200 Gm)Ms",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Thenkulal Chilli (200 Gm)Ms",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Thenkulal Salt (200 Gm)Ms",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Tomato Chilli (200 Gm)Ms",
+        "price_raw": "Rs. 120",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Navratan Mixture",
+        "price_raw": "Rs. 130",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "3 In 1 Saunf (95G)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Bubblegum Candy Can (220G)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Chatpat Goli Can (240G)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Chatpata Amla Can (200 Gm)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Fluffy Marsh Mallow (70G)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Fruit Jelly Can (200 Gm)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Jelly Belly Can (215G)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Litchi Balls Can (240G)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Madrasi Saunf Can (200 Gm)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Masala Chakli (200 Gm)Ms",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mix Fruit Candy Can (230G)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Orange Jelly Can (200 Gm)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "South Mix Saunf Can (200 Gm)",
+        "price_raw": "Rs. 140",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mix Jelly Can (200 Gm)",
+        "price_raw": "Rs. 148",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Milk Cadbury Cracker Balls",
+        "price_raw": "Rs. 149",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Coconut Rose Peda Can (200 Gm)",
+        "price_raw": "Rs. 150",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mango Slice Can (170G)",
+        "price_raw": "Rs. 150",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Nippat (200 Gm)Ms",
+        "price_raw": "Rs. 150",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Sabudana Vada (200 Gm)Ms",
+        "price_raw": "Rs. 150",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Bannana Chips (200 Gm)Ms",
+        "price_raw": "Rs. 160",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Imli Bite Can (160G)",
+        "price_raw": "Rs. 160",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Jelly Jelly Can (230G)",
+        "price_raw": "Rs. 160",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mango Bite Can (160G)",
+        "price_raw": "Rs. 160",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mix Twist (215G)",
+        "price_raw": "Rs. 170",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Biscoff Almond Coated Chocolate",
+        "price_raw": "Rs. 199",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Mango Cashew Coated Chocolate",
+        "price_raw": "Rs. 199",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Oreo Almond Coated Chocolate",
+        "price_raw": "Rs. 199",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Pista Kulfi Almond Coated Chocolate",
+        "price_raw": "Rs. 199",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Rose Petal Cashew Coated Chocolate",
+        "price_raw": "Rs. 199",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "BEVERAGES",
+    "header_count": 3,
+    "items": [
+      {
+        "name": "Water Bottle (500ml)",
+        "price_raw": "Rs. 10",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Hot Chocolate (classic)",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Hot Chocolate (hazelnut)",
+        "price_raw": "Rs. 125",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "HAMPERS",
+    "header_count": 2,
+    "items": [
+      {
+        "name": "Assorted Bites (6pcs)",
+        "price_raw": "Rs. 275",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Assorted Bites (9pcs)",
+        "price_raw": "Rs. 400",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "GIFT ITEMS",
+    "header_count": 6,
+    "items": [
+      {
+        "name": "Gift 2",
+        "price_raw": "—",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Gift 4",
+        "price_raw": "—",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Gift 1",
+        "price_raw": "Rs. 50",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Gidt 3",
+        "price_raw": "Rs. 100",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Gift 5",
+        "price_raw": "Rs. 150",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Gift 6",
+        "price_raw": "Rs. 200",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "PARCEL CHARGES",
+    "header_count": 2,
+    "items": [
+      {
+        "name": "Parcel 5",
+        "price_raw": "Rs. 5",
+        "pack_raw": "—",
+        "options_raw": "None"
+      },
+      {
+        "name": "Parcel 10",
+        "price_raw": "Rs. 10",
+        "pack_raw": "—",
+        "options_raw": "None"
+      }
+    ]
+  },
+  {
+    "name": "✓ Fixed price, no options:",
+    "header_count": 182,
+    "items": [
+      {
+        "name": "Rs. 10",
+        "price_raw": "Premium pastries, desserts, pasta",
+        "pack_raw": "",
+        "options_raw": ""
+      },
+      {
+        "name": "Rs. 5",
+        "price_raw": "Entry pastries, muffins, puffs",
+        "pack_raw": "",
+        "options_raw": ""
+      },
+      {
+        "name": "Rs. 0",
+        "price_raw": "Packaged snacks, cookies, gelato, gifts, breads",
+        "pack_raw": "",
+        "options_raw": ""
+      }
+    ]
+  }
+]

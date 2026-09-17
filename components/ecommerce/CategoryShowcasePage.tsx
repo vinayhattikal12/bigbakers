@@ -206,7 +206,7 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
               loop
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
               onLoadedData={(e) => {
                 e.currentTarget.muted = true;
                 e.currentTarget.play().catch(() => {});

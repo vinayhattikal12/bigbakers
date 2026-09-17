@@ -20,6 +20,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
   const { addItem } = useCart();
   const { isInWishlist, toggleWishlist } = useWishlist();
   const [isAdded, setIsAdded] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const isWishlisted = isInWishlist(product.id);
 
@@ -58,7 +59,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       {/* Top Image Container */}
       <Link
         href={`/product/${product.slug}`}
-        className="block relative aspect-square w-full overflow-hidden bg-cream-100"
+        className="block relative aspect-square w-full overflow-hidden bg-cream-200/50"
       >
         <div ref={imageContainerRef} className="relative w-full h-full">
           <Image
@@ -66,9 +67,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             alt={product.name}
             fill
             priority={priority}
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+            loading={priority ? 'eager' : 'lazy'}
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 280px"
+            onLoad={() => setIsImageLoaded(true)}
+            className={`object-cover group-hover:scale-105 transition-all duration-500 ease-out ${
+              isImageLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
           />
+          {!isImageLoaded && (
+            <div className="absolute inset-0 bg-cream-200/60 animate-pulse" />
+          )}
         </div>
 
         {/* Real Catalogue Badges Overlay */}

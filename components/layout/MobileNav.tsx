@@ -108,7 +108,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           <Link href="/menu" onClick={onClose} className="block w-full">
             <Button variant="primary" size="lg" className="w-full justify-center">
               <Sparkles className="w-4 h-4 mr-2" />
-              <span>Order Fresh in Bengaluru</span>
+              <span>Explore Full Menu</span>
             </Button>
           </Link>
 
