@@ -159,22 +159,21 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
 
   return (
     <div className="pt-20 sm:pt-24 pb-28 min-h-screen bg-cream-100">
-      {/* 1. ATMOSPHERIC SPLIT HERO SECTION WITH CINEMATIC VIDEO STAGE */}
-      <section className={`relative ${theme.bgGradient} text-cream-100 py-10 sm:py-16 lg:py-20 overflow-hidden mb-8 sm:mb-12 border-b border-caramel/20`}>
-        {/* Ambient Glow Orbs */}
-        <div className={`absolute top-1/4 left-1/4 w-96 h-96 ${theme.ambientGlow} rounded-full blur-[120px] pointer-events-none`} />
-        <div className="absolute bottom-0 right-10 w-80 h-80 bg-gold/10 rounded-full blur-[100px] pointer-events-none" />
-
-        {/* Subtle Background Backdrop */}
-        <div className="absolute inset-0 z-0 opacity-15 overflow-hidden">
+      {/* 1. FULL-BLEED CINEMATIC VIDEO HERO SECTION */}
+      <section className="relative min-h-[440px] sm:min-h-[500px] lg:min-h-[560px] flex items-center text-cream-100 overflow-hidden mb-8 sm:mb-12 border-b border-caramel/20">
+        {/* Full-Bleed Video Background */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-cocoa-deep">
           {heroVideo ? (
             <video
+              ref={videoRef}
               src={heroVideo}
+              poster={heroImage}
               autoPlay
               loop
-              muted
+              muted={isMuted}
               playsInline
-              className="w-full h-full object-cover filter blur-md scale-110"
+              preload="auto"
+              className="w-full h-full object-cover filter brightness-[0.72] contrast-[1.08] saturate-[1.12]"
             />
           ) : (
             <Image
@@ -182,145 +181,100 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
               alt={categoryName}
               fill
               priority
-              className="object-cover mix-blend-overlay"
+              className="object-cover filter brightness-[0.75]"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+
+          {/* Cinematic Dark Gradient Overlays for optimal typography readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-cocoa-deep via-transparent to-black/70 pointer-events-none" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-6">
-              {/* Category Pill */}
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-xs font-bold uppercase tracking-wider shadow-sm`}>
-                  <Sparkles className="w-3.5 h-3.5" />
-                  <span>{theme.badgeText}</span>
-                </span>
-                <span className="text-[11px] font-bold text-cream-200/70 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                  {categoryProducts.length} Handcrafted Creations
-                </span>
-              </div>
+        {/* Ambient Glow Orb */}
+        <div className={`absolute top-1/4 left-10 w-96 h-96 ${theme.ambientGlow} rounded-full blur-[140px] pointer-events-none`} />
 
-              {/* Main Headline */}
-              <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15]">
-                {heroHeadline}
-              </h1>
-
-              {/* Sensory Description */}
-              <p className="text-sm sm:text-base text-cream-200/85 leading-relaxed max-w-2xl font-normal">
-                {heroDescription}
-              </p>
-
-              {/* Craft Pillars / Assurance Bar */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2 text-xs text-cream-200/90 font-medium">
-                {craftPillars.map((pillar, idx) => {
-                  const Icon = pillar.icon;
-                  return (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-2 p-2.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 shadow-xs hover:border-gold/30 transition-colors"
-                    >
-                      <Icon className="w-4 h-4 text-gold shrink-0" />
-                      <span className="truncate text-[11px] sm:text-xs">{pillar.text}</span>
-                    </div>
-                  );
-                })}
-              </div>
+        {/* Hero Content Layer */}
+        <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
+          <div className="max-w-3xl space-y-4 sm:space-y-6">
+            {/* Category Pill & Count */}
+            <div className="flex items-center gap-2.5 flex-wrap">
+              <span className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-lg`}>
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>{theme.badgeText}</span>
+              </span>
+              <span className="text-[11px] sm:text-xs font-bold text-cream-100/90 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15 shadow-md">
+                {categoryProducts.length} Handcrafted Creations
+              </span>
             </div>
 
-            {/* Right Video Showcase Column */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative group rounded-2xl sm:rounded-3xl overflow-hidden border border-gold/30 shadow-[0_12px_45px_rgba(0,0,0,0.6)] bg-cocoa/40 backdrop-blur-md">
-                {/* Ambient back-glow under video */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-gold/20 via-caramel/30 to-peach/20 rounded-3xl blur-md opacity-75 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            {/* Main Headline */}
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+              {heroHeadline}
+            </h1>
 
-                {/* Aspect Ratio Video Stage */}
-                <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-black/50">
-                  {heroVideo ? (
-                    <video
-                      ref={videoRef}
-                      src={heroVideo}
-                      poster={heroImage}
-                      autoPlay
-                      loop
-                      muted={isMuted}
-                      playsInline
-                      preload="auto"
-                      className="w-full h-full object-cover filter brightness-[1.04] contrast-[1.06]"
-                    />
-                  ) : (
-                    <Image
-                      src={heroImage}
-                      alt={categoryName}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  )}
+            {/* Sensory Description */}
+            <p className="text-sm sm:text-base lg:text-lg text-cream-100/90 leading-relaxed max-w-2xl font-normal drop-shadow-md">
+              {heroDescription}
+            </p>
 
-                  {/* Gradient vignettes */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
-
-                  {/* Live Reel Badge */}
-                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-gold/40 text-gold text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-lg">
-                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-                    <span>Live Reel</span>
+            {/* Craft Pillars / Assurance Bar */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2 text-xs text-cream-100 font-semibold max-w-2xl">
+              {craftPillars.map((pillar, idx) => {
+                const Icon = pillar.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-2.5 p-3 rounded-2xl bg-black/60 backdrop-blur-md border border-white/15 shadow-lg hover:border-gold/40 transition-colors"
+                  >
+                    <Icon className="w-4 h-4 text-gold shrink-0" />
+                    <span className="truncate text-xs">{pillar.text}</span>
                   </div>
-
-                  {/* Bottom Video Metadata & Interactive Controls Overlay */}
-                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 z-10 flex items-end justify-between gap-2">
-                    <div className="space-y-0.5 max-w-[70%]">
-                      <p className="text-[10px] sm:text-xs uppercase font-bold text-gold/90 tracking-wider flex items-center gap-1">
-                        <Sparkles className="w-3 h-3 text-gold" />
-                        <span>Artisan Craft</span>
-                      </p>
-                      <p className="text-xs sm:text-sm font-serif font-bold text-white line-clamp-1 drop-shadow-md">
-                        {categoryTagline}
-                      </p>
-                    </div>
-
-                    {heroVideo && (
-                      <div className="flex items-center gap-1.5 shrink-0">
-                        <button
-                          type="button"
-                          onClick={() => {
-                            if (videoRef.current) {
-                              if (isPlaying) {
-                                videoRef.current.pause();
-                                setIsPlaying(false);
-                              } else {
-                                videoRef.current.play();
-                                setIsPlaying(true);
-                              }
-                            }
-                          }}
-                          className="p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/20 transition-all active:scale-90"
-                          aria-label={isPlaying ? 'Pause video' : 'Play video'}
-                        >
-                          {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-current" />}
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            if (videoRef.current) {
-                              videoRef.current.muted = !isMuted;
-                              setIsMuted(!isMuted);
-                            }
-                          }}
-                          className="p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/20 transition-all active:scale-90"
-                          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-                        >
-                          {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </div>
+
+        {/* Bottom Right Cinematic Controls & Live Reel Badge */}
+        {heroVideo && (
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-8 z-20 flex items-center gap-2 bg-black/70 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full shadow-2xl">
+            <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+            <span className="text-[10px] sm:text-xs font-bold text-gold uppercase tracking-wider hidden sm:inline mr-1">
+              Live Reel
+            </span>
+            <button
+              type="button"
+              onClick={() => {
+                if (videoRef.current) {
+                  if (isPlaying) {
+                    videoRef.current.pause();
+                    setIsPlaying(false);
+                  } else {
+                    videoRef.current.play();
+                    setIsPlaying(true);
+                  }
+                }
+              }}
+              className="p-1.5 hover:bg-white/20 rounded-full text-white transition-colors"
+              aria-label={isPlaying ? 'Pause background video' : 'Play background video'}
+            >
+              {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-current" />}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                if (videoRef.current) {
+                  videoRef.current.muted = !isMuted;
+                  setIsMuted(!isMuted);
+                }
+              }}
+              className="p-1.5 hover:bg-white/20 rounded-full text-white transition-colors"
+              aria-label={isMuted ? 'Unmute background video' : 'Mute background video'}
+            >
+              {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
+            </button>
+          </div>
+        )}
       </section>
 
       {/* 2. STICKY SUBCATEGORY PILLS & TOOLBAR */}
