@@ -12,9 +12,9 @@ export const products: Product[] = [
     "price": 30,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/veg-small-puff.jpg",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/veg-small-puff.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -51,9 +51,9 @@ export const products: Product[] = [
     "price": 40,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/aloo-bun.jpg",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/aloo-bun.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -90,9 +90,9 @@ export const products: Product[] = [
     "price": 40,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/mix-veg-puff.jpg",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/mix-veg-puff.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -129,9 +129,9 @@ export const products: Product[] = [
     "price": 50,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/cajun-paneer-puff.jpg",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/cajun-paneer-puff.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -168,9 +168,9 @@ export const products: Product[] = [
     "price": 50,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/chimichurri-mushroom-puff.jpg",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/chimichurri-mushroom-puff.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -207,9 +207,9 @@ export const products: Product[] = [
     "price": 70,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/sourdough-bread.webp",
+    "heroImage": "/images/products/savoury/flat-bread-with-veg-cheesy-creole.jpg",
     "gallery": [
-      "/images/snacks/sourdough-bread.webp"
+      "/images/products/savoury/flat-bread-with-veg-cheesy-creole.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -246,9 +246,9 @@ export const products: Product[] = [
     "price": 70,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/paneer-sweet-corn-calzone.jpg",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/paneer-sweet-corn-calzone.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -285,9 +285,9 @@ export const products: Product[] = [
     "price": 70,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/paneer-roll.jpg",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/paneer-roll.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -324,9 +324,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/snack-box.webp",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/snack-box.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -363,9 +363,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/korean-bun.jpg",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/korean-bun.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -402,9 +402,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/veg-panini-sandwitch.jpg",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/veg-panini-sandwitch.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -441,9 +441,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/savouries/korean-bun.webp",
+    "heroImage": "/images/products/savoury/paneer-panini-sandwitch.jpg",
     "gallery": [
-      "/images/savouries/korean-bun.webp"
+      "/images/products/savoury/paneer-panini-sandwitch.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -480,9 +480,9 @@ export const products: Product[] = [
     "price": 225,
     "packingCharge": 15,
     "optionsRaw": "Add-on group: Add On",
-    "heroImage": "/images/pizzas/farmhouse-pizza.webp",
+    "heroImage": "/images/products/pizzas/double-cheese-margarita.webp",
     "gallery": [
-      "/images/pizzas/farmhouse-pizza.webp"
+      "/images/products/pizzas/double-cheese-margarita.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -519,9 +519,9 @@ export const products: Product[] = [
     "price": 245,
     "packingCharge": 15,
     "optionsRaw": "Add-on group: Add On",
-    "heroImage": "/images/pizzas/farmhouse-pizza.webp",
+    "heroImage": "/images/products/pizzas/farmhouse-pizza.webp",
     "gallery": [
-      "/images/pizzas/farmhouse-pizza.webp"
+      "/images/products/pizzas/farmhouse-pizza.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -558,9 +558,9 @@ export const products: Product[] = [
     "price": 275,
     "packingCharge": 15,
     "optionsRaw": "Add-on group: Add On",
-    "heroImage": "/images/pizzas/farmhouse-pizza.webp",
+    "heroImage": "/images/products/pizzas/faboulous-4-cheese-pizza.webp",
     "gallery": [
-      "/images/pizzas/farmhouse-pizza.webp"
+      "/images/products/pizzas/faboulous-4-cheese-pizza.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -597,9 +597,9 @@ export const products: Product[] = [
     "price": 275,
     "packingCharge": 15,
     "optionsRaw": "Add-on group: Add On",
-    "heroImage": "/images/pizzas/farmhouse-pizza.webp",
+    "heroImage": "/images/products/pizzas/grilled-mushroom-pizza.webp",
     "gallery": [
-      "/images/pizzas/farmhouse-pizza.webp"
+      "/images/products/pizzas/grilled-mushroom-pizza.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -636,9 +636,9 @@ export const products: Product[] = [
     "price": 275,
     "packingCharge": 15,
     "optionsRaw": "Add-on group: Add On",
-    "heroImage": "/images/pizzas/farmhouse-pizza.webp",
+    "heroImage": "/images/products/pizzas/peri-peri-pizza.webp",
     "gallery": [
-      "/images/pizzas/farmhouse-pizza.webp"
+      "/images/products/pizzas/peri-peri-pizza.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -675,9 +675,9 @@ export const products: Product[] = [
     "price": 325,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/pizzas/farmhouse-pizza.webp",
+    "heroImage": "/images/products/pizzas/pesto-pizza.webp",
     "gallery": [
-      "/images/pizzas/farmhouse-pizza.webp"
+      "/images/products/pizzas/pesto-pizza.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -714,9 +714,9 @@ export const products: Product[] = [
     "price": 190,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/pizzas/arrabbiata-pasta.webp",
+    "heroImage": "/images/products/pasta/alfredo-with-penne-pasta.webp",
     "gallery": [
-      "/images/pizzas/arrabbiata-pasta.webp"
+      "/images/products/pasta/alfredo-with-penne-pasta.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -753,9 +753,9 @@ export const products: Product[] = [
     "price": 190,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/pizzas/arrabbiata-pasta.webp",
+    "heroImage": "/images/products/pasta/arrabbiata-with-fusilli-pasta.webp",
     "gallery": [
-      "/images/pizzas/arrabbiata-pasta.webp"
+      "/images/products/pasta/arrabbiata-with-fusilli-pasta.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -792,9 +792,9 @@ export const products: Product[] = [
     "price": 190,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/pizzas/arrabbiata-pasta.webp",
+    "heroImage": "/images/products/pasta/blend-of-sauces-with-fusilli-pasta.webp",
     "gallery": [
-      "/images/pizzas/arrabbiata-pasta.webp"
+      "/images/products/pasta/blend-of-sauces-with-fusilli-pasta.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -831,9 +831,9 @@ export const products: Product[] = [
     "price": 210,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/pizzas/arrabbiata-pasta.webp",
+    "heroImage": "/images/products/pasta/pesto-with-penne-pasta.webp",
     "gallery": [
-      "/images/pizzas/arrabbiata-pasta.webp"
+      "/images/products/pasta/pesto-with-penne-pasta.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -870,9 +870,9 @@ export const products: Product[] = [
     "price": 30,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/sourdough-bread.webp",
+    "heroImage": "/images/products/breads/half-pound-bread.webp",
     "gallery": [
-      "/images/snacks/sourdough-bread.webp"
+      "/images/products/breads/half-pound-bread.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -909,9 +909,9 @@ export const products: Product[] = [
     "price": 55,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/sourdough-bread.webp",
+    "heroImage": "/images/products/breads/milk-bread-400gms.webp",
     "gallery": [
-      "/images/snacks/sourdough-bread.webp"
+      "/images/products/breads/milk-bread-400gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -948,9 +948,9 @@ export const products: Product[] = [
     "price": 90,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/sourdough-bread.webp",
+    "heroImage": "/images/products/breads/rusk-250gms.webp",
     "gallery": [
-      "/images/snacks/sourdough-bread.webp"
+      "/images/products/breads/rusk-250gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -987,9 +987,9 @@ export const products: Product[] = [
     "price": 450,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.450) / 1Kg (Rs.900)",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/blueberry-cake.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/blueberry-cake.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1031,9 +1031,9 @@ export const products: Product[] = [
     "price": 450,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.450) / 1Kg (Rs.950)",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/butterscotch-cake.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/butterscotch-cake.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1075,9 +1075,9 @@ export const products: Product[] = [
     "price": 450,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.450) / 1Kg (Rs.900)",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/pineapple-cake.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/pineapple-cake.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1119,9 +1119,9 @@ export const products: Product[] = [
     "price": 480,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.480) / 1Kg (Rs.960)",
-    "heroImage": "/images/cakes/black-forest.webp",
+    "heroImage": "/images/products/celebration-cakes/black-forest-cake.webp",
     "gallery": [
-      "/images/cakes/black-forest.webp"
+      "/images/products/celebration-cakes/black-forest-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1163,9 +1163,9 @@ export const products: Product[] = [
     "price": 480,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.480) / 1Kg (Rs.930)",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/white-forest-cake.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/white-forest-cake.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1207,9 +1207,9 @@ export const products: Product[] = [
     "price": 500,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.500) / 1Kg (Rs.1000)",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/chocolate-delight-cake.webp",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/chocolate-delight-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1251,9 +1251,9 @@ export const products: Product[] = [
     "price": 500,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.500) / 1Kg (Rs.1000)",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/irish-coffee-cake.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/irish-coffee-cake.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1295,9 +1295,9 @@ export const products: Product[] = [
     "price": 550,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.550) / 1Kg (Rs.1100)",
-    "heroImage": "/images/cakes/mango-mousse.webp",
+    "heroImage": "/images/products/celebration-cakes/alphonso-mango-cake.webp",
     "gallery": [
-      "/images/cakes/mango-mousse.webp"
+      "/images/products/celebration-cakes/alphonso-mango-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1339,9 +1339,9 @@ export const products: Product[] = [
     "price": 550,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.550) / 1Kg (Rs.1200)",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/choco-velvet-cake.webp",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/choco-velvet-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1383,9 +1383,9 @@ export const products: Product[] = [
     "price": 550,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.550) / 1Kg (Rs.1100)",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/rasmalai-cake.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/rasmalai-cake.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1427,9 +1427,9 @@ export const products: Product[] = [
     "price": 600,
     "packingCharge": 15,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/lotus-biscoff-cake.webp",
+    "heroImage": "/images/products/celebration-cakes/biscoff-cake-500grms.webp",
     "gallery": [
-      "/images/cakes/lotus-biscoff-cake.webp"
+      "/images/products/celebration-cakes/biscoff-cake-500grms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1466,9 +1466,9 @@ export const products: Product[] = [
     "price": 600,
     "packingCharge": 15,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/honey-almond-cake-500grms.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/honey-almond-cake-500grms.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1505,9 +1505,9 @@ export const products: Product[] = [
     "price": 600,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.600) / 1Kg (Rs.1200)",
-    "heroImage": "/images/cakes/red-velvet.webp",
+    "heroImage": "/images/products/celebration-cakes/red-velvet-cake.webp",
     "gallery": [
-      "/images/cakes/red-velvet.webp"
+      "/images/products/celebration-cakes/red-velvet-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1549,9 +1549,9 @@ export const products: Product[] = [
     "price": 650,
     "packingCharge": 0,
     "optionsRaw": "Sizes: 500Grms (Rs.650) / 1Kg (Rs.1300)",
-    "heroImage": "/images/cakes/belgian-truffle.webp",
+    "heroImage": "/images/products/celebration-cakes/belgian-truffle-cake.webp",
     "gallery": [
-      "/images/cakes/belgian-truffle.webp"
+      "/images/products/celebration-cakes/belgian-truffle-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1593,9 +1593,9 @@ export const products: Product[] = [
     "price": 700,
     "packingCharge": 15,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/pista-kunafa.webp",
+    "heroImage": "/images/products/celebration-cakes/biscoff-kunafa-500grms.webp",
     "gallery": [
-      "/images/cakes/pista-kunafa.webp"
+      "/images/products/celebration-cakes/biscoff-kunafa-500grms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1632,9 +1632,9 @@ export const products: Product[] = [
     "price": 700,
     "packingCharge": 15,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/caramel-butterscotch-cake-500grms.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/caramel-butterscotch-cake-500grms.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1671,9 +1671,9 @@ export const products: Product[] = [
     "price": 700,
     "packingCharge": 15,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/hazelnut-cake-500grms.webp",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/hazelnut-cake-500grms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1710,9 +1710,9 @@ export const products: Product[] = [
     "price": 700,
     "packingCharge": 15,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/pista-kunafa.webp",
+    "heroImage": "/images/products/celebration-cakes/pista-kunafa-chocolate-cake-500grms.webp",
     "gallery": [
-      "/images/cakes/pista-kunafa.webp"
+      "/images/products/celebration-cakes/pista-kunafa-chocolate-cake-500grms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1749,9 +1749,9 @@ export const products: Product[] = [
     "price": 800,
     "packingCharge": 15,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-hero.webp",
+    "heroImage": "/images/products/celebration-cakes/opera-cake-500grms.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-hero.webp"
+      "/images/products/celebration-cakes/opera-cake-500grms.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1788,9 +1788,9 @@ export const products: Product[] = [
     "price": 85,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/black-forest.webp",
+    "heroImage": "/images/products/pastry-cakes/black-forest-pastry.webp",
     "gallery": [
-      "/images/cakes/black-forest.webp"
+      "/images/products/pastry-cakes/black-forest-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1827,9 +1827,9 @@ export const products: Product[] = [
     "price": 85,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/blueberry-pastry.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/blueberry-pastry.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1866,9 +1866,9 @@ export const products: Product[] = [
     "price": 85,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/butterscotch-pastry.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/butterscotch-pastry.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1905,9 +1905,9 @@ export const products: Product[] = [
     "price": 85,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/pineapple-pastry.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/pineapple-pastry.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1944,9 +1944,9 @@ export const products: Product[] = [
     "price": 85,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/white-forest-pastry.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/white-forest-pastry.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -1983,9 +1983,9 @@ export const products: Product[] = [
     "price": 95,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/mango-mousse.webp",
+    "heroImage": "/images/products/pastry-cakes/mango-pastry.webp",
     "gallery": [
-      "/images/cakes/mango-mousse.webp"
+      "/images/products/pastry-cakes/mango-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2022,9 +2022,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/red-velvet-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/choco-velvet-pastry.webp",
     "gallery": [
-      "/images/cakes/red-velvet-slice.webp"
+      "/images/products/pastry-cakes/choco-velvet-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2061,9 +2061,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/chocolate-truffle-pastry.webp",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/chocolate-truffle-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2100,9 +2100,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/honey-almond-pastry.webp",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/honey-almond-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2139,9 +2139,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/rasmalai-pastry.webp",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/rasmalai-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2178,9 +2178,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/red-velvet.webp",
+    "heroImage": "/images/products/pastry-cakes/red-velvet-pastry.webp",
     "gallery": [
-      "/images/cakes/red-velvet.webp"
+      "/images/products/pastry-cakes/red-velvet-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2217,9 +2217,9 @@ export const products: Product[] = [
     "price": 115,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/lotus-biscoff-cake.webp",
+    "heroImage": "/images/products/pastry-cakes/biscoff-pastry.webp",
     "gallery": [
-      "/images/cakes/lotus-biscoff-cake.webp"
+      "/images/products/pastry-cakes/biscoff-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2256,9 +2256,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle.webp",
+    "heroImage": "/images/products/pastry-cakes/belgian-truffle-pastry.webp",
     "gallery": [
-      "/images/cakes/belgian-truffle.webp"
+      "/images/products/pastry-cakes/belgian-truffle-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2295,9 +2295,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/opera-pastry.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/opera-pastry.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2334,9 +2334,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/pista-kunafa.webp",
+    "heroImage": "/images/products/pastry-cakes/biscoff-kunafa-pastry.webp",
     "gallery": [
-      "/images/cakes/pista-kunafa.webp"
+      "/images/products/pastry-cakes/biscoff-kunafa-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2373,9 +2373,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/hazelnut-pastry.webp",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/hazelnut-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2412,9 +2412,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/pista-kunafa.webp",
+    "heroImage": "/images/products/pastry-cakes/pista-kunafa-pastry.webp",
     "gallery": [
-      "/images/cakes/pista-kunafa.webp"
+      "/images/products/pastry-cakes/pista-kunafa-pastry.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2451,9 +2451,9 @@ export const products: Product[] = [
     "price": 190,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/opera-cake.jpg",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/opera-cake.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2490,9 +2490,9 @@ export const products: Product[] = [
     "price": 250,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/belgian-truffle-slice.webp",
+    "heroImage": "/images/products/pastry-cakes/salted-caramel-chocolate.webp",
     "gallery": [
-      "/images/cakes/belgian-truffle-slice.webp"
+      "/images/products/pastry-cakes/salted-caramel-chocolate.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2529,9 +2529,9 @@ export const products: Product[] = [
     "price": 250,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/bento-box.webp",
+    "heroImage": "/images/products/bento-box/choco-panda.webp",
     "gallery": [
-      "/images/cakes/bento-box.webp"
+      "/images/products/bento-box/choco-panda.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2568,9 +2568,9 @@ export const products: Product[] = [
     "price": 250,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/bento-box/red-velvet.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/bento-box/red-velvet.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2607,9 +2607,9 @@ export const products: Product[] = [
     "price": 280,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/bento-box.webp",
+    "heroImage": "/images/products/bento-box/doraemon-cartoon.webp",
     "gallery": [
-      "/images/cakes/bento-box.webp"
+      "/images/products/bento-box/doraemon-cartoon.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2646,9 +2646,9 @@ export const products: Product[] = [
     "price": 280,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/bento-box/lotus-biscoff.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/bento-box/lotus-biscoff.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2685,9 +2685,9 @@ export const products: Product[] = [
     "price": 60,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cakes/little-heart.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cakes/little-heart.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2724,9 +2724,9 @@ export const products: Product[] = [
     "price": 80,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/cupcake.webp",
+    "heroImage": "/images/products/cakes/plain-cup-cake.webp",
     "gallery": [
-      "/images/treats/cupcake.webp"
+      "/images/products/cakes/plain-cup-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2763,9 +2763,9 @@ export const products: Product[] = [
     "price": 80,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/cupcake.webp",
+    "heroImage": "/images/products/cakes/plain-cupcake-6pcs.webp",
     "gallery": [
-      "/images/treats/cupcake.webp"
+      "/images/products/cakes/plain-cupcake-6pcs.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2802,9 +2802,9 @@ export const products: Product[] = [
     "price": 90,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/cupcake.webp",
+    "heroImage": "/images/products/cakes/blueberry-cupcakes-6pcs.webp",
     "gallery": [
-      "/images/treats/cupcake.webp"
+      "/images/products/cakes/blueberry-cupcakes-6pcs.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2841,9 +2841,9 @@ export const products: Product[] = [
     "price": 90,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/cupcake.webp",
+    "heroImage": "/images/products/cakes/chocolate-cup-cake-6pcs.webp",
     "gallery": [
-      "/images/treats/cupcake.webp"
+      "/images/products/cakes/chocolate-cup-cake-6pcs.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2880,9 +2880,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/glazed-donut.webp",
+    "heroImage": "/images/products/cakes/caramal-donut.webp",
     "gallery": [
-      "/images/treats/glazed-donut.webp"
+      "/images/products/cakes/caramal-donut.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2919,9 +2919,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/glazed-donut.webp",
+    "heroImage": "/images/products/cakes/chocolate-donut.webp",
     "gallery": [
-      "/images/treats/glazed-donut.webp"
+      "/images/products/cakes/chocolate-donut.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2958,9 +2958,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cakes/swiss-roll.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cakes/swiss-roll.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -2997,9 +2997,9 @@ export const products: Product[] = [
     "price": 125,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cakes/plain-tea-cake.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cakes/plain-tea-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3036,9 +3036,9 @@ export const products: Product[] = [
     "price": 125,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cakes/vanilla-tea-cake.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cakes/vanilla-tea-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3075,9 +3075,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cakes/chocolate-tea-cake.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cakes/chocolate-tea-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3114,9 +3114,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cakes/mix-fruit-tea-cake.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cakes/mix-fruit-tea-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3153,9 +3153,9 @@ export const products: Product[] = [
     "price": 170,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cakes/kulfi-tea-cake.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cakes/kulfi-tea-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3192,9 +3192,9 @@ export const products: Product[] = [
     "price": 70,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-slice.webp",
+    "heroImage": "/images/products/dessert/vanilla-muffins.webp",
     "gallery": [
-      "/images/desserts/biscoff-slice.webp"
+      "/images/products/dessert/vanilla-muffins.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3231,9 +3231,9 @@ export const products: Product[] = [
     "price": 80,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-slice.webp",
+    "heroImage": "/images/products/dessert/blueberry-muffins.webp",
     "gallery": [
-      "/images/desserts/biscoff-slice.webp"
+      "/images/products/dessert/blueberry-muffins.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3270,9 +3270,9 @@ export const products: Product[] = [
     "price": 80,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-slice.webp",
+    "heroImage": "/images/products/dessert/chocolate-muffins.webp",
     "gallery": [
-      "/images/desserts/biscoff-slice.webp"
+      "/images/products/dessert/chocolate-muffins.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3309,9 +3309,9 @@ export const products: Product[] = [
     "price": 80,
     "packingCharge": 5,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-slice.webp",
+    "heroImage": "/images/products/dessert/vanilla-berliner.webp",
     "gallery": [
-      "/images/desserts/biscoff-slice.webp"
+      "/images/products/dessert/vanilla-berliner.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3348,9 +3348,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-slice.webp",
+    "heroImage": "/images/products/dessert/blueberry-berliner.webp",
     "gallery": [
-      "/images/desserts/biscoff-slice.webp"
+      "/images/products/dessert/blueberry-berliner.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3387,9 +3387,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-slice.webp",
+    "heroImage": "/images/products/dessert/choco-cookie-berliner.webp",
     "gallery": [
-      "/images/desserts/biscoff-slice.webp"
+      "/images/products/dessert/choco-cookie-berliner.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3426,9 +3426,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-slice.webp",
+    "heroImage": "/images/products/dessert/mango-berliner.webp",
     "gallery": [
-      "/images/desserts/biscoff-slice.webp"
+      "/images/products/dessert/mango-berliner.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3465,9 +3465,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-slice.webp",
+    "heroImage": "/images/products/dessert/red-velvet-cookie-berliner.webp",
     "gallery": [
-      "/images/desserts/biscoff-slice.webp"
+      "/images/products/dessert/red-velvet-cookie-berliner.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3504,9 +3504,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/brownie.webp",
+    "heroImage": "/images/products/dessert/walnut-brownie.webp",
     "gallery": [
-      "/images/desserts/brownie.webp"
+      "/images/products/dessert/walnut-brownie.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3543,9 +3543,9 @@ export const products: Product[] = [
     "price": 130,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/brownie.webp",
+    "heroImage": "/images/products/dessert/biscoff-brownie.webp",
     "gallery": [
-      "/images/desserts/brownie.webp"
+      "/images/products/dessert/biscoff-brownie.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3582,9 +3582,9 @@ export const products: Product[] = [
     "price": 130,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/brownie.webp",
+    "heroImage": "/images/products/dessert/hazelnut-brownie.webp",
     "gallery": [
-      "/images/desserts/brownie.webp"
+      "/images/products/dessert/hazelnut-brownie.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3621,9 +3621,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/tres-leches.webp",
+    "heroImage": "/images/products/dessert/classic-rasmalai-tres-leches.webp",
     "gallery": [
-      "/images/desserts/tres-leches.webp"
+      "/images/products/dessert/classic-rasmalai-tres-leches.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3660,9 +3660,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/tres-leches.webp",
+    "heroImage": "/images/products/dessert/mango-tres-leches.webp",
     "gallery": [
-      "/images/desserts/tres-leches.webp"
+      "/images/products/dessert/mango-tres-leches.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3699,9 +3699,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/tres-leches.webp",
+    "heroImage": "/images/products/dessert/rose-tres-leches.webp",
     "gallery": [
-      "/images/desserts/tres-leches.webp"
+      "/images/products/dessert/rose-tres-leches.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3738,9 +3738,9 @@ export const products: Product[] = [
     "price": 160,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-slice.webp",
+    "heroImage": "/images/products/dessert/biscoff-tub.webp",
     "gallery": [
-      "/images/desserts/biscoff-slice.webp"
+      "/images/products/dessert/biscoff-tub.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3777,9 +3777,9 @@ export const products: Product[] = [
     "price": 160,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/pista-kunafa.webp",
+    "heroImage": "/images/products/dessert/kunafa-pistachio-chocolate.webp",
     "gallery": [
-      "/images/cakes/pista-kunafa.webp"
+      "/images/products/dessert/kunafa-pistachio-chocolate.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3816,9 +3816,9 @@ export const products: Product[] = [
     "price": 180,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/tiramisu.webp",
+    "heroImage": "/images/products/dessert/mango-tiramisu.webp",
     "gallery": [
-      "/images/desserts/tiramisu.webp"
+      "/images/products/dessert/mango-tiramisu.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3855,9 +3855,9 @@ export const products: Product[] = [
     "price": 180,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-cheesecake.webp",
+    "heroImage": "/images/products/dessert/plain-cheese-cake.webp",
     "gallery": [
-      "/images/desserts/biscoff-cheesecake.webp"
+      "/images/products/dessert/plain-cheese-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3894,9 +3894,9 @@ export const products: Product[] = [
     "price": 180,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/tiramisu.webp",
+    "heroImage": "/images/products/dessert/tiramisu.webp",
     "gallery": [
-      "/images/desserts/tiramisu.webp"
+      "/images/products/dessert/tiramisu.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3933,9 +3933,9 @@ export const products: Product[] = [
     "price": 200,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/lotus-biscoff-cake.webp",
+    "heroImage": "/images/products/dessert/biscoff-cheesecake.webp",
     "gallery": [
-      "/images/cakes/lotus-biscoff-cake.webp"
+      "/images/products/dessert/biscoff-cheesecake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -3972,9 +3972,9 @@ export const products: Product[] = [
     "price": 200,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-cheesecake.webp",
+    "heroImage": "/images/products/dessert/blueberry-cheese-cake.webp",
     "gallery": [
-      "/images/desserts/biscoff-cheesecake.webp"
+      "/images/products/dessert/blueberry-cheese-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4011,9 +4011,9 @@ export const products: Product[] = [
     "price": 200,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/biscoff-cheesecake.webp",
+    "heroImage": "/images/products/dessert/hazelnut-cheese-cake.webp",
     "gallery": [
-      "/images/desserts/biscoff-cheesecake.webp"
+      "/images/products/dessert/hazelnut-cheese-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4050,9 +4050,9 @@ export const products: Product[] = [
     "price": 200,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/cakes/mango-mousse.webp",
+    "heroImage": "/images/products/dessert/mango-cheese-cake.webp",
     "gallery": [
-      "/images/cakes/mango-mousse.webp"
+      "/images/products/dessert/mango-cheese-cake.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4089,9 +4089,9 @@ export const products: Product[] = [
     "price": 275,
     "packingCharge": 10,
     "optionsRaw": "None",
-    "heroImage": "/images/desserts/brownie.webp",
+    "heroImage": "/images/products/dessert/assorted-brownies.webp",
     "gallery": [
-      "/images/desserts/brownie.webp"
+      "/images/products/dessert/assorted-brownies.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4128,9 +4128,9 @@ export const products: Product[] = [
     "price": 99,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/gelato/gelato-assorted.webp",
+    "heroImage": "/images/products/gelato/alphanso-mango-gelato.webp",
     "gallery": [
-      "/images/gelato/gelato-assorted.webp"
+      "/images/products/gelato/alphanso-mango-gelato.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4167,9 +4167,9 @@ export const products: Product[] = [
     "price": 99,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/gelato/gelato-assorted.webp",
+    "heroImage": "/images/products/gelato/belgian-chocolate-gelato.webp",
     "gallery": [
-      "/images/gelato/gelato-assorted.webp"
+      "/images/products/gelato/belgian-chocolate-gelato.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4206,9 +4206,9 @@ export const products: Product[] = [
     "price": 99,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/gelato/gelato-assorted.webp",
+    "heroImage": "/images/products/gelato/biscoff-gelato.webp",
     "gallery": [
-      "/images/gelato/gelato-assorted.webp"
+      "/images/products/gelato/biscoff-gelato.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4245,9 +4245,9 @@ export const products: Product[] = [
     "price": 99,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/gelato/gelato-assorted.webp",
+    "heroImage": "/images/products/gelato/fruit-flavour-gelato.webp",
     "gallery": [
-      "/images/gelato/gelato-assorted.webp"
+      "/images/products/gelato/fruit-flavour-gelato.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4284,9 +4284,9 @@ export const products: Product[] = [
     "price": 99,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/gelato/gelato-assorted.webp",
+    "heroImage": "/images/products/gelato/musk-melon-gelato.webp",
     "gallery": [
-      "/images/gelato/gelato-assorted.webp"
+      "/images/products/gelato/musk-melon-gelato.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4323,9 +4323,9 @@ export const products: Product[] = [
     "price": 99,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/gelato/gelato-assorted.webp",
+    "heroImage": "/images/products/gelato/pista-gelato.jpg",
     "gallery": [
-      "/images/gelato/gelato-assorted.webp"
+      "/images/products/gelato/pista-gelato.jpg"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4362,9 +4362,9 @@ export const products: Product[] = [
     "price": 99,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/gelato/gelato-assorted.webp",
+    "heroImage": "/images/products/gelato/vanilla-gelato.webp",
     "gallery": [
-      "/images/gelato/gelato-assorted.webp"
+      "/images/products/gelato/vanilla-gelato.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4401,9 +4401,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/biscoff-cookies.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/biscoff-cookies.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4440,9 +4440,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/cookies/chocolate-cookies.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/cookies/chocolate-cookies.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4479,9 +4479,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/hazulnut-cookies.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/hazulnut-cookies.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4518,9 +4518,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/butter-cookies-180gms.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/butter-cookies-180gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4557,9 +4557,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/cashew-sticks-130gms.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/cashew-sticks-130gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4596,9 +4596,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/choco-chip-cookies-150gms.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/choco-chip-cookies-150gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4635,9 +4635,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/coconut-cookies-150gms.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/coconut-cookies-150gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4674,9 +4674,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/masala-cookies-120gms.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/masala-cookies-120gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4713,9 +4713,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/red-velvet-cookies-120-gms.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/red-velvet-cookies-120-gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4752,9 +4752,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/salt-cookies-180gms.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/salt-cookies-180gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4791,9 +4791,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/soanpapdi-cookies-150gms.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/soanpapdi-cookies-150gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4830,9 +4830,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/pista-cookies.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/pista-cookies.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4869,9 +4869,9 @@ export const products: Product[] = [
     "price": 250,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/choc-cookie.webp",
+    "heroImage": "/images/products/cookies/assorted-cookies.webp",
     "gallery": [
-      "/images/treats/choc-cookie.webp"
+      "/images/products/cookies/assorted-cookies.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4908,9 +4908,9 @@ export const products: Product[] = [
     "price": 189,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/peri-peri-makhana.webp",
+    "heroImage": "/images/products/makhana/bbq-makhana-60gms.webp",
     "gallery": [
-      "/images/snacks/peri-peri-makhana.webp"
+      "/images/products/makhana/bbq-makhana-60gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4947,9 +4947,9 @@ export const products: Product[] = [
     "price": 189,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/peri-peri-makhana.webp",
+    "heroImage": "/images/products/makhana/lime-pudina-makhana-60gms.webp",
     "gallery": [
-      "/images/snacks/peri-peri-makhana.webp"
+      "/images/products/makhana/lime-pudina-makhana-60gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -4986,9 +4986,9 @@ export const products: Product[] = [
     "price": 189,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/peri-peri-makhana.webp",
+    "heroImage": "/images/products/makhana/mexican-cheese-makhana-60gms.webp",
     "gallery": [
-      "/images/snacks/peri-peri-makhana.webp"
+      "/images/products/makhana/mexican-cheese-makhana-60gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5025,9 +5025,9 @@ export const products: Product[] = [
     "price": 189,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/peri-peri-makhana.webp",
+    "heroImage": "/images/products/makhana/peri-peri-makhana-60gms.webp",
     "gallery": [
-      "/images/snacks/peri-peri-makhana.webp"
+      "/images/products/makhana/peri-peri-makhana-60gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5064,9 +5064,9 @@ export const products: Product[] = [
     "price": 189,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/peri-peri-makhana.webp",
+    "heroImage": "/images/products/makhana/sour-cream-onion-makhana-60gms.webp",
     "gallery": [
-      "/images/snacks/peri-peri-makhana.webp"
+      "/images/products/makhana/sour-cream-onion-makhana-60gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5103,9 +5103,9 @@ export const products: Product[] = [
     "price": 90,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/namkeens/dryfruit-madras-mixture-100gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/namkeens/dryfruit-madras-mixture-100gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5142,9 +5142,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/namkeens/congress-peanuts-170gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/namkeens/congress-peanuts-170gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5181,9 +5181,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/namkeens/masala-peanuts-170gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/namkeens/masala-peanuts-170gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5220,9 +5220,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/namkeens/kodubele-200gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/namkeens/kodubele-200gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5259,9 +5259,9 @@ export const products: Product[] = [
     "price": 130,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/namkeens/navratan-mixture-150gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/namkeens/navratan-mixture-150gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5298,9 +5298,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/namkeens/masala-chakli-200gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/namkeens/masala-chakli-200gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5337,9 +5337,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/namkeens/nippat-200gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/namkeens/nippat-200gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5376,9 +5376,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/namkeens/sabudana-vada-200gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/namkeens/sabudana-vada-200gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5415,9 +5415,9 @@ export const products: Product[] = [
     "price": 160,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/namkeens/bannana-chips-200gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/namkeens/bannana-chips-200gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5454,9 +5454,9 @@ export const products: Product[] = [
     "price": 70,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/masala-chips.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/masala-chips.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5493,9 +5493,9 @@ export const products: Product[] = [
     "price": 70,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/salted-chips.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/salted-chips.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5532,9 +5532,9 @@ export const products: Product[] = [
     "price": 80,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/mixture-150gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/mixture-150gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5571,9 +5571,9 @@ export const products: Product[] = [
     "price": 99,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/garlic-chilli-200-gm-ms.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/garlic-chilli-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5610,9 +5610,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/congress-peanuts-170gms-2.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/congress-peanuts-170gms-2.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5649,9 +5649,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/love-treat-95g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/love-treat-95g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5688,9 +5688,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/masala-peanuts-170gms-2.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/masala-peanuts-170gms-2.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5727,9 +5727,9 @@ export const products: Product[] = [
     "price": 110,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/oats-raisins-coookies-180-gms.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/oats-raisins-coookies-180-gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5766,9 +5766,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/baby-muruku-chilli-200-gm-ms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/baby-muruku-chilli-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5805,9 +5805,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/baby-salt-200-gm-ms.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/baby-salt-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5844,9 +5844,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/garlic-mixture-100gms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/garlic-mixture-100gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5883,9 +5883,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/kodubele-200-gm-ms.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/kodubele-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5922,9 +5922,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/mullu-muruku-chilli-200-gm-ms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/mullu-muruku-chilli-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -5961,9 +5961,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/ribbon-pakoda-150gms.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/ribbon-pakoda-150gms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6000,9 +6000,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/spiral-chilli-200-gm-ms.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/spiral-chilli-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6039,9 +6039,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/thenkulal-chilli-200-gm-ms.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/thenkulal-chilli-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6078,9 +6078,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/thenkulal-salt-200-gm-ms.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/thenkulal-salt-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6117,9 +6117,9 @@ export const products: Product[] = [
     "price": 120,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/tomato-chilli-200-gm-ms.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/tomato-chilli-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6156,9 +6156,9 @@ export const products: Product[] = [
     "price": 130,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/navratan-mixture.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/navratan-mixture.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6195,9 +6195,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/3-in-1-saunf-95g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/3-in-1-saunf-95g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6234,9 +6234,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/bubblegum-candy-can-220g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/bubblegum-candy-can-220g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6273,9 +6273,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/chatpat-goli-can-240g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/chatpat-goli-can-240g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6312,9 +6312,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/chatpata-amla-can-200-gm.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/chatpata-amla-can-200-gm.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6351,9 +6351,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/fluffy-marsh-mallow-70g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/fluffy-marsh-mallow-70g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6390,9 +6390,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/fruit-jelly-can-200-gm.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/fruit-jelly-can-200-gm.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6429,9 +6429,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/jelly-belly-can-215g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/jelly-belly-can-215g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6468,9 +6468,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/litchi-balls-can-240g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/litchi-balls-can-240g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6507,9 +6507,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/madrasi-saunf-can-200-gm.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/madrasi-saunf-can-200-gm.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6546,9 +6546,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/masala-chakli-200-gm-ms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/masala-chakli-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6585,9 +6585,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/mix-fruit-candy-can-230g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/mix-fruit-candy-can-230g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6624,9 +6624,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/orange-jelly-can-200-gm.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/orange-jelly-can-200-gm.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6663,9 +6663,9 @@ export const products: Product[] = [
     "price": 140,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/south-mix-saunf-can-200-gm.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/south-mix-saunf-can-200-gm.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6702,9 +6702,9 @@ export const products: Product[] = [
     "price": 148,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/mix-jelly-can-200-gm.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/mix-jelly-can-200-gm.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6741,9 +6741,9 @@ export const products: Product[] = [
     "price": 149,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/fg/milk-cadbury-cracker-balls.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/fg/milk-cadbury-cracker-balls.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6780,9 +6780,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/coconut-rose-peda-can-200-gm.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/coconut-rose-peda-can-200-gm.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6819,9 +6819,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/mango-slice-can-170g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/mango-slice-can-170g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6858,9 +6858,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/nippat-200-gm-ms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/nippat-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6897,9 +6897,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/sabudana-vada-200-gm-ms.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/sabudana-vada-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6936,9 +6936,9 @@ export const products: Product[] = [
     "price": 160,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/snacks/namkeen.webp",
+    "heroImage": "/images/products/fg/bannana-chips-200-gm-ms.webp",
     "gallery": [
-      "/images/snacks/namkeen.webp"
+      "/images/products/fg/bannana-chips-200-gm-ms.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -6975,9 +6975,9 @@ export const products: Product[] = [
     "price": 160,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/imli-bite-can-160g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/imli-bite-can-160g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7014,9 +7014,9 @@ export const products: Product[] = [
     "price": 160,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/jelly-jelly-can-230g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/jelly-jelly-can-230g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7053,9 +7053,9 @@ export const products: Product[] = [
     "price": 160,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/fg/mango-bite-can-160g.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/fg/mango-bite-can-160g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7092,9 +7092,9 @@ export const products: Product[] = [
     "price": 170,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/bakery/craft-hero.webp",
+    "heroImage": "/images/products/fg/mix-twist-215g.webp",
     "gallery": [
-      "/images/bakery/craft-hero.webp"
+      "/images/products/fg/mix-twist-215g.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7131,9 +7131,9 @@ export const products: Product[] = [
     "price": 199,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/fg/biscoff-almond-coated-chocolate.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/fg/biscoff-almond-coated-chocolate.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7170,9 +7170,9 @@ export const products: Product[] = [
     "price": 199,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/fg/mango-cashew-coated-chocolate.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/fg/mango-cashew-coated-chocolate.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7209,9 +7209,9 @@ export const products: Product[] = [
     "price": 199,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/fg/oreo-almond-coated-chocolate.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/fg/oreo-almond-coated-chocolate.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7248,9 +7248,9 @@ export const products: Product[] = [
     "price": 199,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/fg/pista-kulfi-almond-coated-chocolate.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/fg/pista-kulfi-almond-coated-chocolate.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7287,9 +7287,9 @@ export const products: Product[] = [
     "price": 199,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/fg/rose-petal-cashew-coated-chocolate.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/fg/rose-petal-cashew-coated-chocolate.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7326,9 +7326,9 @@ export const products: Product[] = [
     "price": 10,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/beverages/water-bottle-500ml.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/beverages/water-bottle-500ml.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7365,9 +7365,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/beverages/hot-chocolate-classic.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/beverages/hot-chocolate-classic.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7404,9 +7404,9 @@ export const products: Product[] = [
     "price": 125,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/beverages/hot-chocolate-hazelnut.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/beverages/hot-chocolate-hazelnut.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7443,9 +7443,9 @@ export const products: Product[] = [
     "price": 275,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/hampers/assorted-bites-6pcs.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/hampers/assorted-bites-6pcs.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7482,9 +7482,9 @@ export const products: Product[] = [
     "price": 400,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/hampers/assorted-bites-9pcs.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/hampers/assorted-bites-9pcs.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7521,9 +7521,9 @@ export const products: Product[] = [
     "price": 0,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/gift-items/gift-2.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/gift-items/gift-2.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7560,9 +7560,9 @@ export const products: Product[] = [
     "price": 0,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/gift-items/gift-4.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/gift-items/gift-4.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7599,9 +7599,9 @@ export const products: Product[] = [
     "price": 50,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/gift-items/gift-1.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/gift-items/gift-1.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7638,9 +7638,9 @@ export const products: Product[] = [
     "price": 100,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/gift-items/gidt-3.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/gift-items/gidt-3.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7677,9 +7677,9 @@ export const products: Product[] = [
     "price": 150,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/gift-items/gift-5.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/gift-items/gift-5.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7716,9 +7716,9 @@ export const products: Product[] = [
     "price": 200,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/coated-chocolates.webp",
+    "heroImage": "/images/products/gift-items/gift-6.webp",
     "gallery": [
-      "/images/treats/coated-chocolates.webp"
+      "/images/products/gift-items/gift-6.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7755,9 +7755,9 @@ export const products: Product[] = [
     "price": 5,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/parcel-charges/parcel-5.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/parcel-charges/parcel-5.webp"
     ],
     "dietary": "eggless",
     "weights": [
@@ -7794,9 +7794,9 @@ export const products: Product[] = [
     "price": 10,
     "packingCharge": 0,
     "optionsRaw": "None",
-    "heroImage": "/images/treats/sugar-candies.webp",
+    "heroImage": "/images/products/parcel-charges/parcel-10.webp",
     "gallery": [
-      "/images/treats/sugar-candies.webp"
+      "/images/products/parcel-charges/parcel-10.webp"
     ],
     "dietary": "eggless",
     "weights": [
