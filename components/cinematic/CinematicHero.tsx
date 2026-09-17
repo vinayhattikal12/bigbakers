@@ -345,7 +345,7 @@ const DesktopCinematicHero: React.FC = () => {
   };
 
   return (
-    <section ref={containerRef} className="relative h-[380vh] bg-cocoa-deep">
+    <section ref={containerRef} id="home-hero-section" className="relative h-[380vh] bg-cocoa-deep">
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden bg-black">
         {/* Natural True-to-Life Crisp Canvas */}
         <canvas

@@ -41,7 +41,16 @@ export const Header: React.FC = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 20);
-      setIsScrolledPastHero(scrollY > 80);
+
+      const heroEl = document.getElementById('home-hero-section');
+      if (heroEl) {
+        // Full hero section completes when the bottom of hero reaches near top of viewport
+        const rect = heroEl.getBoundingClientRect();
+        const isPastHero = rect.bottom <= 80;
+        setIsScrolledPastHero(isPastHero);
+      } else {
+        setIsScrolledPastHero(scrollY > 80);
+      }
     };
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });

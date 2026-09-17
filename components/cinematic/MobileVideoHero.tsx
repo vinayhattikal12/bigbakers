@@ -17,7 +17,7 @@ export const MobileVideoHero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[92vh] min-h-[580px] max-h-[920px] bg-cocoa-deep overflow-hidden select-none flex flex-col justify-end pt-24 pb-8">
+    <section id="home-hero-section" className="relative w-full h-[92vh] min-h-[580px] max-h-[920px] bg-cocoa-deep overflow-hidden select-none flex flex-col justify-end pt-24 pb-8">
       {/* 1. FULL-BLEED CRISP NATURAL VIDEO */}
       <div className="absolute inset-0 z-0 bg-black overflow-hidden">
         <video

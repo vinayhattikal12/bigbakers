@@ -16,7 +16,13 @@ export const MobileBottomBar: React.FC = () => {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolledPastHero(window.scrollY > 180);
+      const heroEl = document.getElementById('home-hero-section');
+      if (heroEl) {
+        const rect = heroEl.getBoundingClientRect();
+        setIsScrolledPastHero(rect.bottom <= 80);
+      } else {
+        setIsScrolledPastHero(window.scrollY > 120);
+      }
     };
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
