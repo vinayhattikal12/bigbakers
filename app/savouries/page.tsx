@@ -32,7 +32,7 @@ export default function SavouriesPage() {
         { icon: Croissant, text: 'Flaky French Butter Layers' },
         { icon: ShieldCheck, text: '100% Pure Vegetarian' },
       ]}
-      subcategories={['All', 'Puffs & Rolls', 'Buns & Calzones', 'Breads & Rusks', 'Hot Savouries']}
+      subcategories={['All', 'Puffs & Rolls', 'Buns & Calzones', 'Hot Savouries', 'Breads & Rusks', 'Beverages']}
     />
   );
 }

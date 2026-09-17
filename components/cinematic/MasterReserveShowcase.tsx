@@ -15,7 +15,7 @@ export const MasterReserveShowcase: React.FC = () => {
 
   const signatureItems = [
     {
-      id: 'p-cake-truffle-1',
+      id: 'belgian-truffle-cake',
       title: '54% Belgian Chocolate Truffle Cake',
       category: 'Celebration Cakes',
       tagline: 'Bengaluru’s Most Loved Dark Chocolate Gateau',
@@ -23,7 +23,7 @@ export const MasterReserveShowcase: React.FC = () => {
         'Layers of moist chocolate sponge smothered in silky 54% Callebaut Belgian dark chocolate ganache, finished with hand-piped dark chocolate rosettes and chocolate pearls.',
       image: '/images/cakes/belgian-truffle.webp',
       badge: '#1 Bestseller',
-      slug: 'belgian-chocolate-truffle-cake',
+      slug: 'belgian-truffle-cake',
       rating: '4.9',
       reviewCount: '1,240+',
       bakingNotes: [
@@ -32,12 +32,12 @@ export const MasterReserveShowcase: React.FC = () => {
         'Zero compound chocolate or palm oil',
       ],
       weights: [
-        { weight: '500g', price: 649, serves: 'Serves 4–6' },
-        { weight: '1 Kg', price: 1199, serves: 'Serves 8–12' },
+        { weight: '500 g', price: 650, serves: 'Serves 4–6' },
+        { weight: '1 Kg', price: 1300, serves: 'Serves 8–12' },
       ],
     },
     {
-      id: 'p-dessert-biscoff-1',
+      id: 'biscoff-cheesecake',
       title: 'Lotus Biscoff Baked Cheesecake',
       category: 'Artisan Cheesecakes',
       tagline: 'Authentic New York Slow-Baked Style',
@@ -45,7 +45,7 @@ export const MasterReserveShowcase: React.FC = () => {
         'Slow-baked with 100% Philadelphia cream cheese over a crispy spiced Lotus Biscoff biscuit crust, generously smothered in warm caramelized Speculoos spread.',
       image: '/images/desserts/biscoff-cheesecake.webp',
       badge: 'Chef Signature',
-      slug: 'lotus-biscoff-baked-cheesecake',
+      slug: 'biscoff-cheesecake',
       rating: '4.9',
       reviewCount: '620+',
       bakingNotes: [
@@ -54,12 +54,11 @@ export const MasterReserveShowcase: React.FC = () => {
         'Rich caramelized Speculoos crust',
       ],
       weights: [
-        { weight: '500g', price: 899, serves: 'Serves 4–6' },
-        { weight: '1 Kg', price: 1699, serves: 'Serves 8–10' },
+        { weight: 'Standard Portion', price: 200, serves: 'Indulgent Single Portion' },
       ],
     },
     {
-      id: 'p-cake-kunafa-1',
+      id: 'pista-kunafa-chocolate-cake-500grms',
       title: 'Pistachio Kunafa Royale Cake',
       category: 'Fusion Gateaux',
       tagline: 'Middle Eastern Crunch Meets Velvety Sponge',
@@ -67,7 +66,7 @@ export const MasterReserveShowcase: React.FC = () => {
         'Golden roasted crispy Kataifi pastry layered with Iranian pistachio cream, soft sponge, and delicate saffron-rose notes. Unforgettable crackle in every bite.',
       image: '/images/cakes/pista-kunafa.webp',
       badge: 'Trending Star',
-      slug: 'pistachio-kunafa-cake',
+      slug: 'pista-kunafa-chocolate-cake-500grms',
       rating: '4.8',
       reviewCount: '480+',
       bakingNotes: [
@@ -76,12 +75,11 @@ export const MasterReserveShowcase: React.FC = () => {
         'Crispy texture contrast',
       ],
       weights: [
-        { weight: '500g', price: 799, serves: 'Serves 4–6' },
-        { weight: '1 Kg', price: 1499, serves: 'Serves 8–12' },
+        { weight: '500g', price: 700, serves: 'Serves 4–6' },
       ],
     },
     {
-      id: 'p-pizza-farmhouse-1',
+      id: 'farmhouse-pizza',
       title: 'Stone-Baked Farmhouse Special Pizza',
       category: 'Hot Savouries',
       tagline: 'Oven-Hot 8" Hand-Stretched Crust',
@@ -89,7 +87,7 @@ export const MasterReserveShowcase: React.FC = () => {
         '48-hour cold fermented dough baked directly on stone slab, topped with slow-simmered San Marzano tomato marinara, farm-fresh whole milk mozzarella, and crunchy garden vegetables.',
       image: '/images/pizzas/farmhouse-pizza.webp',
       badge: 'Oven Fresh',
-      slug: 'farmhouse-special-pizza',
+      slug: 'farmhouse-pizza',
       rating: '4.8',
       reviewCount: '390+',
       bakingNotes: [
@@ -98,11 +96,11 @@ export const MasterReserveShowcase: React.FC = () => {
         'Freshly baked to order',
       ],
       weights: [
-        { weight: '8" Pizza', price: 349, serves: 'Serves 1–2' },
+        { weight: '8" Pizza', price: 245, serves: 'Serves 1–2' },
       ],
     },
     {
-      id: 'p-gelato-assorted-1',
+      id: 'pista-gelato',
       title: 'Sicilian Pistachio Artisanal Gelato',
       category: 'Italian Gelato',
       tagline: 'Slow Churned Pure Cream Indulgence',
@@ -110,7 +108,7 @@ export const MasterReserveShowcase: React.FC = () => {
         'Made the traditional Italian way with roasted Sicilian Bronte pistachios and whole dairy milk. Churned slowly for an ultra-dense, velvety texture with zero artificial stabilizers.',
       image: '/images/gelato/gelato-assorted.webp',
       badge: 'Italian Churn',
-      slug: 'artisanal-gelato-tubs',
+      slug: 'pista-gelato',
       rating: '4.9',
       reviewCount: '290+',
       bakingNotes: [
@@ -119,8 +117,7 @@ export const MasterReserveShowcase: React.FC = () => {
         'Roasted Sicilian Pistachios',
       ],
       weights: [
-        { weight: '250ml Tub', price: 299, serves: 'Serves 1–2' },
-        { weight: '500ml Tub', price: 549, serves: 'Serves 3–4' },
+        { weight: 'Single Cup', price: 99, serves: 'Serves 1' },
       ],
     },
   ];

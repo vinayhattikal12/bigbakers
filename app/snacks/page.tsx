@@ -32,7 +32,7 @@ export default function SnacksPage() {
         { icon: Sparkles, text: 'Artisanal Spice Blends' },
         { icon: ShieldCheck, text: 'Zero Trans Fat / Guilt-Free' },
       ]}
-      subcategories={['All', 'Makhana', 'Spiced Peanuts', 'Traditional Namkeens']}
+      subcategories={['All', 'Makhana', 'Traditional Namkeens', 'Spiced Peanuts', 'Chips & Crisps']}
     />
   );
 }

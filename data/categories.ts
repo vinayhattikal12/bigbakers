@@ -39,7 +39,7 @@ export const categories: CategoryInfo[] = [
     description: 'Signature cream-filled Korean buns, Cajun paneer puffs, corn calzones, grilled paninis, soft milk breads, and crunchy rusks baked fresh daily.',
     heroImage: '/images/savouries/korean-bun.webp',
     accentColor: '#E67E22',
-    subcategories: ['All Savouries', 'Puffs & Rolls', 'Buns & Calzones', 'Breads & Rusks', 'Hot Savouries'],
+    subcategories: ['All Savouries', 'Puffs & Rolls', 'Buns & Calzones', 'Hot Savouries', 'Breads & Rusks', 'Beverages'],
   },
   {
     id: 'gelato',
@@ -59,7 +59,7 @@ export const categories: CategoryInfo[] = [
     description: 'Exotic Rose Petal Cashew and Pista Kulfi coated chocolates, glazed donuts, handcrafted cupcakes, artisan cookies, vintage candies, and gift hampers.',
     heroImage: '/images/treats/coated-chocolates.webp',
     accentColor: '#F7D1D8',
-    subcategories: ['All Treats', 'Coated Chocolates', 'Cookies', 'Cupcakes', 'Donuts', 'Tea Cakes', 'Candies & Mukhwas', 'Gift Hampers'],
+    subcategories: ['All Treats', 'Coated Chocolates', 'Cookies', 'Cupcakes', 'Donuts', 'Tea Cakes', 'Candies & Mukhwas', 'Gift Hampers', 'Gift Boxes & Packaging'],
   },
   {
     id: 'snacks',
@@ -69,6 +69,6 @@ export const categories: CategoryInfo[] = [
     description: 'Slow-roasted Peri Peri and Mexican Cheese foxnuts (makhana), authentic Bengaluru masala chakli, Kodubele, crispy nippat, spiced peanuts, and mixture.',
     heroImage: '/images/snacks/peri-peri-makhana.webp',
     accentColor: '#6E8B6E',
-    subcategories: ['All Snacks', 'Makhana', 'Spiced Peanuts', 'Traditional Namkeens'],
+    subcategories: ['All Snacks', 'Makhana', 'Traditional Namkeens', 'Spiced Peanuts', 'Chips & Crisps'],
   },
 ];

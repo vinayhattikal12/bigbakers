@@ -32,7 +32,7 @@ export default function TreatsPage() {
         { icon: Sparkles, text: 'Real Cocoa Butter' },
         { icon: Smile, text: 'Perfect for Gifting & Parties' },
       ]}
-      subcategories={['All', 'Coated Chocolates', 'Cookies', 'Cupcakes', 'Donuts', 'Tea Cakes', 'Candies & Mukhwas', 'Gift Hampers']}
+      subcategories={['All', 'Coated Chocolates', 'Cookies', 'Cupcakes', 'Donuts', 'Tea Cakes', 'Candies & Mukhwas', 'Gift Hampers', 'Gift Boxes & Packaging']}
     />
   );
 }
