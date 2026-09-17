@@ -25,6 +25,8 @@ export interface Product {
   longDescription?: string;
   price: number;
   originalPrice?: number;
+  packingCharge?: number;
+  optionsRaw?: string;
   heroImage: string;
   gallery: string[];
   dietary: DietaryType;

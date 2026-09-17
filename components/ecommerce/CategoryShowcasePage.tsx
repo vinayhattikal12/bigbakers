@@ -118,7 +118,11 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
     const counts: Record<string, number> = { All: categoryProducts.length };
     subcategories.forEach((sub) => {
       if (sub !== 'All') {
-        counts[sub] = categoryProducts.filter((p) => p.subcategory === sub).length;
+        const sel = sub.toLowerCase().replace(/[^a-z0-9]/g, '');
+        counts[sub] = categoryProducts.filter((p) => {
+          const pSub = p.subcategory.toLowerCase().replace(/[^a-z0-9]/g, '');
+          return pSub === sel || pSub.includes(sel) || sel.includes(pSub);
+        }).length;
       }
     });
     return counts;
@@ -130,7 +134,11 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
 
     // 1. Subcategory filter
     if (selectedSubcategory !== 'All') {
-      list = list.filter((p) => p.subcategory === selectedSubcategory);
+      const sel = selectedSubcategory.toLowerCase().replace(/[^a-z0-9]/g, '');
+      list = list.filter((p) => {
+        const pSub = p.subcategory.toLowerCase().replace(/[^a-z0-9]/g, '');
+        return pSub === sel || pSub.includes(sel) || sel.includes(pSub);
+      });
     }
 
     // 2. Quick filters

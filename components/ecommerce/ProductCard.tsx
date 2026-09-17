@@ -71,15 +71,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           />
         </div>
 
-        {/* Minimal Badges Overlay: Clean on mobile, rich on desktop */}
+        {/* Real Catalogue Badges Overlay */}
         <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex flex-col gap-1 z-10">
-          {product.bestseller ? (
+          {product.weights.length > 1 ? (
             <span className="px-2 py-0.5 rounded-full bg-caramel text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider shadow-xs">
-              Bestseller
+              Multiple Sizes
             </span>
-          ) : product.freshlyBaked ? (
-            <span className="px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold tracking-wider shadow-xs">
-              Fresh Batch
+          ) : product.optionsRaw && product.optionsRaw !== 'None' ? (
+            <span className="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold tracking-wider shadow-xs">
+              Customizable
             </span>
           ) : null}
         </div>

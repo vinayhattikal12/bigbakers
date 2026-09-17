@@ -143,7 +143,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
             {/* Price block */}
             <div className="p-5 bg-white rounded-3xl border border-cream-300 shadow-xs space-y-2">
-              <div className="flex items-baseline gap-3">
+              <div className="flex flex-wrap items-baseline gap-2 sm:gap-3">
                 <span className="font-sans text-3xl font-black text-cocoa">
                   {formatPrice(unitPrice)}
                 </span>
@@ -155,9 +155,20 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                 <span className="text-xs text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                   Taxes Included
                 </span>
+                {product.packingCharge !== undefined && product.packingCharge > 0 && (
+                  <span className="text-xs text-caramel font-semibold bg-peach/60 px-2.5 py-0.5 rounded-full border border-caramel/30">
+                    Packaging: ₹{product.packingCharge}
+                  </span>
+                )}
               </div>
+              {product.optionsRaw && product.optionsRaw !== 'None' && !product.optionsRaw.startsWith('Sizes:') && (
+                <div className="text-xs text-cocoa/80 bg-cream-50 p-2.5 rounded-xl border border-cream-200 font-medium">
+                  <span className="font-bold text-caramel">Options: </span>
+                  {product.optionsRaw}
+                </div>
+              )}
               <p className="text-xs text-cocoa/60">
-                Freshly baked upon order confirmation. Guaranteed same-day delivery across Bengaluru.
+                Freshly prepared upon order confirmation with Big Bakers signature craftsmanship.
               </p>
             </div>
 
