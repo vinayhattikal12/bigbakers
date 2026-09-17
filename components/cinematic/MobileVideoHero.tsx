@@ -55,20 +55,21 @@ export const MobileVideoHero: React.FC = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap items-center gap-3 pt-1">
+        <div className="flex items-stretch gap-2.5 pt-1">
           <Link
             href="/menu"
-            className="flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-caramel hover:bg-caramel-dark text-white font-bold text-xs shadow-2xl shadow-caramel/30 active:scale-95 transition-all"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-gradient-to-r from-amber-600 via-caramel to-amber-700 text-white font-bold text-xs sm:text-sm shadow-[0_8px_25px_rgba(217,119,6,0.4)] border border-amber-400/40 hover:brightness-110 active:scale-95 transition-all group"
           >
-            <span>Explore Full Menu (190+ Items)</span>
-            <ArrowRight className="w-4 h-4" />
+            <Sparkles className="w-4 h-4 text-amber-200 group-hover:rotate-12 transition-transform shrink-0" />
+            <span className="font-bold tracking-wide">Explore 190+ Menu</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
           </Link>
 
           <Link
             href="/stores"
-            className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-black/60 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold text-xs active:scale-95 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-4.5 py-3.5 rounded-2xl bg-black/60 hover:bg-white/20 backdrop-blur-xl border border-white/30 text-white font-semibold text-xs sm:text-sm active:scale-95 transition-all shadow-lg group shrink-0"
           >
-            <MapPin className="w-4 h-4 text-gold" />
+            <MapPin className="w-4 h-4 text-gold group-hover:scale-110 transition-transform" />
             <span>Visit Store</span>
           </Link>
         </div>

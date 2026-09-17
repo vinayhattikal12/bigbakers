@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -6,7 +6,7 @@ interface BrandLogoProps {
   variant?: 'light' | 'dark' | 'badge' | 'auto';
   isDarkHeader?: boolean;
   className?: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   priority?: boolean;
 }
 
@@ -27,9 +27,10 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   }
 
   const heights = {
-    sm: '32px',
-    md: '40px',
-    lg: '52px',
+    sm: '42px',
+    md: '52px',
+    lg: '64px',
+    xl: '78px',
   };
 
   return (
@@ -38,10 +39,10 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         <Image
           src={src}
           alt="Big Bakers - Bite Into Happiness"
-          width={180}
-          height={70}
+          width={280}
+          height={110}
           priority={priority}
-          className="object-contain transition-opacity duration-300 group-hover:opacity-90"
+          className="object-contain transition-opacity duration-300 group-hover:opacity-90 drop-shadow-sm"
           style={{ width: 'auto', height: heights[size] }}
         />
       </div>

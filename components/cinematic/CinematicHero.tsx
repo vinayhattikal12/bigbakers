@@ -394,16 +394,18 @@ const DesktopCinematicHero: React.FC = () => {
             <div className="flex items-center gap-3 pt-2">
               <Link
                 href="/menu"
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-caramel hover:bg-caramel-dark text-white font-bold text-xs sm:text-sm shadow-2xl hover:scale-105 transition-all"
+                className="flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-amber-600 via-caramel to-amber-700 text-white font-bold text-xs sm:text-sm shadow-[0_8px_25px_rgba(217,119,6,0.35)] border border-amber-400/40 hover:brightness-110 hover:scale-105 transition-all group pointer-events-auto"
               >
-                <span>Explore Menu</span>
-                <ArrowRight className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 text-amber-200 group-hover:rotate-12 transition-transform" />
+                <span>Explore 190+ Menu</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/story"
-                className="flex items-center gap-2 px-5 py-3 rounded-full bg-black/50 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold text-xs sm:text-sm transition-all"
+                href="/stores"
+                className="flex items-center gap-2 px-5 py-3.5 rounded-full bg-black/60 hover:bg-white/20 backdrop-blur-xl border border-white/30 text-white font-semibold text-xs sm:text-sm hover:scale-105 transition-all shadow-lg pointer-events-auto group"
               >
-                <span>Our Story</span>
+                <MapPin className="w-4 h-4 text-gold group-hover:scale-110 transition-transform" />
+                <span>Visit Store</span>
               </Link>
             </div>
           </div>
@@ -555,16 +557,17 @@ const DesktopCinematicHero: React.FC = () => {
             <div className="flex flex-wrap items-center justify-center gap-3 pt-3">
               <Link
                 href="/menu"
-                className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-caramel hover:bg-caramel-dark text-white font-bold text-sm shadow-2xl hover:scale-105 transition-all"
+                className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-600 via-caramel to-amber-700 text-white font-bold text-sm shadow-[0_8px_25px_rgba(217,119,6,0.35)] border border-amber-400/40 hover:brightness-110 hover:scale-105 transition-all group pointer-events-auto"
               >
+                <Sparkles className="w-4 h-4 text-amber-200 group-hover:rotate-12 transition-transform" />
                 <span>Explore Full Menu</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/stores"
-                className="flex items-center gap-2 px-6 py-3.5 rounded-full bg-black/50 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-semibold text-sm transition-all"
+                className="flex items-center gap-2 px-6 py-3.5 rounded-full bg-black/60 hover:bg-white/20 backdrop-blur-xl border border-white/30 text-white font-semibold text-sm hover:scale-105 transition-all shadow-lg pointer-events-auto group"
               >
-                <MapPin className="w-4 h-4 text-gold" />
+                <MapPin className="w-4 h-4 text-gold group-hover:scale-110 transition-transform" />
                 <span>Vijaynagar Store</span>
               </Link>
             </div>

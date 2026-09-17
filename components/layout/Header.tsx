@@ -29,6 +29,7 @@ export const Header: React.FC = () => {
   const pathname = usePathname();
   const { totalItems, openCart } = useCart();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isMenuDropdownOpen, setIsMenuDropdownOpen] = useState(false);
@@ -38,8 +39,11 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 20);
+      setIsScrolledPastHero(scrollY > 180);
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -82,6 +86,9 @@ export const Header: React.FC = () => {
       <header
         className={cn(
           'fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-out',
+          isHomePage && !isScrolledPastHero
+            ? 'max-lg:-translate-y-full max-lg:opacity-0 max-lg:pointer-events-none'
+            : 'max-lg:translate-y-0 max-lg:opacity-100 max-lg:pointer-events-auto',
           isScrolled
             ? 'py-2.5 bg-cream-50/95 backdrop-blur-md shadow-md border-b border-cream-300/70'
             : isDarkHeroHeader
@@ -125,7 +132,7 @@ export const Header: React.FC = () => {
               <BrandLogo
                 variant="auto"
                 isDarkHeader={isDarkHeroHeader}
-                size="sm"
+                size="md"
               />
             </div>
 
@@ -161,7 +168,7 @@ export const Header: React.FC = () => {
             <BrandLogo
               variant="auto"
               isDarkHeader={isDarkHeroHeader}
-              size="md"
+              size="lg"
             />
 
             {/* Desktop Nav Links */}

@@ -10,6 +10,18 @@ import { cn } from '@/lib/utils/cn';
 export const MobileBottomBar: React.FC = () => {
   const pathname = usePathname();
   const { totalItems, openCart } = useCart();
+  const [isScrolledPastHero, setIsScrolledPastHero] = React.useState(false);
+
+  const isHomePage = pathname === '/';
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolledPastHero(window.scrollY > 180);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     {
@@ -41,7 +53,14 @@ export const MobileBottomBar: React.FC = () => {
   const isCartActive = pathname === '/cart' || pathname === '/checkout';
 
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-cream-300/80 shadow-[0_-8px_25px_rgba(40,20,10,0.08)] py-1.5 px-3 pb-[calc(env(safe-area-inset-bottom,0px)+0.4rem)]">
+    <nav
+      className={cn(
+        'lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-cream-300/80 shadow-[0_-8px_25px_rgba(40,20,10,0.08)] py-1.5 px-3 pb-[calc(env(safe-area-inset-bottom,0px)+0.4rem)] transition-all duration-300 ease-out',
+        isHomePage && !isScrolledPastHero
+          ? 'translate-y-full opacity-0 pointer-events-none'
+          : 'translate-y-0 opacity-100 pointer-events-auto'
+      )}
+    >
       <div className="flex items-center justify-around max-w-md mx-auto">
         {navItems.map((item) => {
           const Icon = item.icon;
