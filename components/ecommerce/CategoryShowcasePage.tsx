@@ -74,13 +74,29 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Ensure autoplay triggers on mount across all mobile/desktop browsers
+  // Force automatic instant playback on page load & category navigation
   React.useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.defaultMuted = true;
-      videoRef.current.muted = true;
-      videoRef.current.play().catch(() => {});
-    }
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.defaultMuted = true;
+    v.playsInline = true;
+    const startPlay = () => {
+      v.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
+    };
+    startPlay();
+
+    const handleVisibility = () => {
+      if (!document.hidden && v) {
+        startPlay();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibility);
+    };
   }, [heroVideo]);
 
   // All products in this category
@@ -171,18 +187,26 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
       {/* 1. FULL-BLEED RADIANT CINEMATIC VIDEO HERO SECTION */}
       <section className="relative min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] flex items-center text-cream-100 overflow-hidden mb-8 sm:mb-12 border-b border-caramel/20">
         {/* Full-Bleed Radiant Video Background */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-cocoa-deep">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           {heroVideo ? (
             <video
+              key={heroVideo}
               ref={videoRef}
               src={heroVideo}
               poster={heroImage}
               autoPlay
               loop
-              muted={isMuted}
+              muted
               playsInline
               preload="auto"
-              className="w-full h-full object-cover filter brightness-[1.08] contrast-[1.05] saturate-[1.18]"
+              onLoadedData={(e) => {
+                e.currentTarget.muted = true;
+                e.currentTarget.play().catch(() => {});
+              }}
+              onCanPlay={(e) => {
+                e.currentTarget.play().catch(() => {});
+              }}
+              className="w-full h-full object-cover filter brightness-[1.32] contrast-[1.08] saturate-[1.22]"
             />
           ) : (
             <Image
@@ -190,21 +214,21 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
               alt={categoryName}
               fill
               priority
-              className="object-cover filter brightness-[0.9] contrast-[1.05]"
+              className="object-cover filter brightness-[1.05]"
             />
           )}
 
-          {/* Light Cinematic Vignettes (Keeps video bright & vibrant while framing text) */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
+          {/* Minimal Top & Bottom Horizon Fades */}
+          <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
         </div>
 
         {/* Ambient Color Glow */}
-        <div className={`absolute top-1/4 left-10 w-96 h-96 ${theme.ambientGlow} rounded-full blur-[140px] pointer-events-none opacity-60`} />
+        <div className={`absolute top-1/4 left-10 w-96 h-96 ${theme.ambientGlow} rounded-full blur-[140px] pointer-events-none opacity-40`} />
 
         {/* Hero Content Layer in Frosted Glass Card */}
         <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-          <div className="max-w-2xl bg-black/45 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/20 shadow-[0_12px_40px_rgba(0,0,0,0.6)] space-y-4 sm:space-y-5">
+          <div className="max-w-2xl bg-black/60 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-white/25 shadow-[0_16px_50px_rgba(0,0,0,0.7)] space-y-4 sm:space-y-5">
             {/* Category Pill & Count */}
             <div className="flex items-center gap-2.5 flex-wrap">
               <span className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-md`}>
@@ -217,7 +241,7 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-5xl font-black text-white tracking-tight leading-[1.14] drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-5xl font-black text-white tracking-tight leading-[1.14] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
               {heroHeadline}
             </h1>
 
