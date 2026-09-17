@@ -24,21 +24,42 @@ const CravingCard: React.FC<{
 }> = ({ item }) => {
   const [isInView, setIsInView] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const cardRef = useRef<HTMLAnchorElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    // Only use IntersectionObserver to auto-play on scroll for mobile devices
+    if (!isMobile) {
+      setIsInView(false);
+      if (videoRef.current && !isHovered) {
+        videoRef.current.pause();
+      }
+      return;
+    }
+
     const cardEl = cardRef.current;
     if (!cardEl) return;
 
-    // Use IntersectionObserver to detect when this card appears while scrolling on mobile
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInView(entry.isIntersecting);
-        if (entry.isIntersecting && videoRef.current) {
-          videoRef.current.muted = true;
-          videoRef.current.defaultMuted = true;
-          videoRef.current.play().catch(() => {});
+        if (videoRef.current) {
+          if (entry.isIntersecting) {
+            videoRef.current.muted = true;
+            videoRef.current.play().catch(() => {});
+          } else {
+            videoRef.current.pause();
+          }
         }
       },
       {
@@ -49,16 +70,31 @@ const CravingCard: React.FC<{
 
     observer.observe(cardEl);
     return () => observer.disconnect();
-  }, []);
+  }, [isMobile, isHovered]);
 
-  const showVideo = isHovered || isInView;
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    if (!isMobile && videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (!isMobile && videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
+
+  const showVideo = isMobile ? isInView : isHovered;
 
   return (
     <Link
       ref={cardRef}
       href={item.href}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className={`group relative h-[360px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-cream-300 ${item.borderColor} transition-all duration-500 flex flex-col justify-between p-6 bg-cocoa-deep`}
     >
       {/* Background Imagery & Ambient Video (Active on scroll for mobile, on hover for desktop) */}
@@ -77,17 +113,12 @@ const CravingCard: React.FC<{
             ref={videoRef}
             src={item.video}
             poster={item.image}
-            autoPlay
             loop
             muted
             playsInline
-            preload="auto"
-            onLoadedData={(e) => {
-              e.currentTarget.muted = true;
-              e.currentTarget.play().catch(() => {});
-            }}
+            preload="metadata"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none filter brightness-[1.12] contrast-[1.05] ${
-              showVideo ? 'opacity-90' : 'opacity-0 group-hover:opacity-90'
+              showVideo ? 'opacity-90' : 'opacity-0'
             }`}
           />
         )}
