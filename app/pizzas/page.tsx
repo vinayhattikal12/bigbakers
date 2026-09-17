@@ -16,7 +16,7 @@ export default function PizzasPage() {
           <span className="text-amber-400 italic font-serif">& Artisan Pastas</span>
         </>
       }
-      heroDescription="Hand-stretched 8-inch crusts baked at high heat with signature Italian herb sauce and bubbling double cheese, alongside rich Arrabbiata, Alfredo, and Pesto fusilli & penne pastas."
+      heroDescription="Gourmet 8-inch thin crusts loaded with double mozzarella, and al dente Italian pastas."
       heroImage="/images/pizzas/farmhouse-pizza.webp"
       heroVideo="/videos/categories/pizzas-hero.mp4"
       flagshipSlug="farmhouse-pizza"
@@ -26,12 +26,12 @@ export default function PizzasPage() {
         accentPillBg: 'bg-amber-500/25',
         accentTextColor: 'text-amber-300',
         accentBorder: 'border-amber-400/40',
-        badgeText: 'Stone-Baked Pizzas & Pastas',
+        badgeText: 'Pizzas & Pastas',
       }}
       craftPillars={[
-        { icon: Flame, text: 'Stone-Baked Hot & Fresh' },
-        { icon: Pizza, text: '100% Gourmet Mozzarella' },
-        { icon: UtensilsCrossed, text: '100% Pure Vegetarian Kitchen' },
+        { icon: Flame, text: 'Stone-Baked Fresh' },
+        { icon: Pizza, text: '100% Mozzarella' },
+        { icon: UtensilsCrossed, text: 'Pure Vegetarian' },
       ]}
       subcategories={['All', 'Stone-Baked Pizzas', 'Artisan Pastas']}
     />

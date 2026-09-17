@@ -128,26 +128,22 @@ const CravingCard: React.FC<{
 
       {/* Top Meta Tagging */}
       <div className="relative z-10 flex items-center justify-between gap-2">
-        <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gold bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30 flex items-center gap-1.5">
-          {showVideo && <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />}
+        <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gold bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30 flex items-center gap-1.5 shadow-sm">
+          {showVideo && <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.9)]" />}
           <span>{item.badge}</span>
         </span>
-        <span className="text-[10px] font-semibold text-white/90 bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+        <span className="text-[10px] font-semibold text-white/90 bg-white/15 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
           {item.itemCount}
         </span>
       </div>
 
       {/* Bottom Editorial Content */}
-      <div className="relative z-10 space-y-2.5 transform group-hover:-translate-y-1 transition-transform duration-300">
-        <div className="inline-block text-[11px] font-medium text-cream-200/90 bg-black/40 backdrop-blur-xs px-2.5 py-0.5 rounded-md border border-white/10">
-          ✨ {item.highlight}
-        </div>
-        
+      <div className="relative z-10 space-y-2 transform group-hover:-translate-y-1 transition-transform duration-300">
         <h3 className="font-serif text-2xl sm:text-3xl font-black text-white group-hover:text-gold-light transition-colors leading-tight drop-shadow-md">
           {item.title}
         </h3>
         
-        <p className="text-xs text-cream-100/90 font-medium line-clamp-2 leading-relaxed drop-shadow-xs">
+        <p className="text-xs text-cream-100/90 font-medium line-clamp-1 leading-relaxed drop-shadow-xs">
           {item.subtitle}
         </p>
 
@@ -167,78 +163,78 @@ export const CinematicCravingSection: React.FC = () => {
     {
       id: 'cakes',
       title: 'Celebration Cakes',
-      subtitle: 'Belgian Truffles, Red Velvet, Pastries & Bento Cakes',
+      subtitle: 'Belgian Truffles, Kunafa & Bento Boxes',
       href: '/cakes',
       image: '/images/cakes/belgian-truffle.webp',
       video: '/videos/categories/cakes-hero.mp4',
-      badge: 'Bengaluru #1 Bestseller',
-      highlight: '54% Dark Belgian Ganache',
-      itemCount: '50+ Creations',
+      badge: 'Cakes & Pastries',
+      highlight: '54% Belgian Ganache',
+      itemCount: '50+ Items',
       accentColor: 'from-amber-950/90 via-amber-950/40 to-transparent',
       borderColor: 'group-hover:border-amber-500/40',
     },
     {
       id: 'desserts',
-      title: 'Artisan Cheesecakes & Desserts',
-      subtitle: 'Lotus Biscoff, Italian Tiramisu & Saffron Tres Leches',
+      title: 'Artisan Cheesecakes',
+      subtitle: 'Lotus Biscoff, Tiramisu & Tres Leches',
       href: '/desserts',
       image: '/images/desserts/biscoff-cheesecake.webp',
       video: '/videos/categories/desserts-hero.mp4',
-      badge: 'Haute Pâtisserie',
-      highlight: '100% Philadelphia Cream',
-      itemCount: '15+ Creations',
+      badge: 'Desserts',
+      highlight: 'New York Style',
+      itemCount: '25+ Items',
       accentColor: 'from-rose-950/90 via-rose-950/40 to-transparent',
       borderColor: 'group-hover:border-rose-500/40',
     },
     {
       id: 'pizzas',
-      title: 'Stone-Baked Pizzas & Bakes',
-      subtitle: '8" Thin Crusts, Korean Garlic Cream Buns & Savouries',
+      title: 'Stone-Baked Pizzas',
+      subtitle: 'Gourmet 8" Crusts & Savouries',
       href: '/pizzas',
       image: '/images/pizzas/farmhouse-pizza.webp',
       video: '/videos/categories/pizzas-hero.mp4',
-      badge: 'Oven-Hot Bakes',
-      highlight: 'Fresh Mozzarella & Herbs',
-      itemCount: '25+ Creations',
+      badge: 'Pizzas & Bakes',
+      highlight: 'Double Cheese',
+      itemCount: '20+ Items',
       accentColor: 'from-orange-950/90 via-orange-950/40 to-transparent',
       borderColor: 'group-hover:border-orange-500/40',
     },
     {
       id: 'gelato',
-      title: 'Artisanal Italian Gelato',
-      subtitle: 'Sicilian Pistachio, Dark Chocolate & Alphonso Mango',
+      title: 'Artisan Gelato',
+      subtitle: 'Slow-Churned Pure Dairy Italian Gelato',
       href: '/gelato',
       image: '/images/gelato/gelato-assorted.webp',
       video: '/videos/categories/gelato-hero.mp4',
-      badge: 'Slow Churned',
-      highlight: 'Zero Artificial Flavours',
-      itemCount: '10+ Flavours',
+      badge: 'Italian Gelato',
+      highlight: 'Pure Whole Milk',
+      itemCount: '10+ Flavors',
       accentColor: 'from-sky-950/90 via-sky-950/40 to-transparent',
       borderColor: 'group-hover:border-sky-500/40',
     },
     {
       id: 'treats',
-      title: 'Little Treats & Cookies',
-      subtitle: 'Gourmet Donuts, NYC Chunky Cookies & Rose Petal Chocolates',
+      title: 'Treats & Chocolates',
+      subtitle: 'Glazed Donuts, Cookies & Coated Nuts',
       href: '/treats',
       image: '/images/treats/glazed-donut.webp',
       video: '/videos/categories/treats-hero.mp4',
-      badge: 'Everyday Joy',
-      highlight: 'Hand-dipped & Glazed',
-      itemCount: '40+ Creations',
+      badge: 'Treats & Cookies',
+      highlight: 'Hand-Dipped',
+      itemCount: '55+ Items',
       accentColor: 'from-fuchsia-950/90 via-fuchsia-950/40 to-transparent',
       borderColor: 'group-hover:border-fuchsia-500/40',
     },
     {
       id: 'snacks',
-      title: 'Crispy Snacks & Munchies',
-      subtitle: 'Peri Peri Foxnuts, Masala Chakli & Sourdough Breads',
+      title: 'Crispy Snacks',
+      subtitle: 'Peri Peri Makhana & Heritage Namkeens',
       href: '/snacks',
       image: '/images/snacks/peri-peri-makhana.webp',
       video: '/videos/categories/snacks-hero.mp4',
-      badge: 'Crunch Reserve',
-      highlight: 'Zero Palm Oil • Pure Ghee',
-      itemCount: '30+ Creations',
+      badge: 'Makhana & Snacks',
+      highlight: 'Non-Fried Superfood',
+      itemCount: '35+ Items',
       accentColor: 'from-emerald-950/90 via-emerald-950/40 to-transparent',
       borderColor: 'group-hover:border-emerald-500/40',
     },

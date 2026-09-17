@@ -16,7 +16,7 @@ export default function SnacksPage() {
           <span className="text-lime-300 italic font-serif">& Irresistibly Spiced</span>
         </>
       }
-      heroDescription="Healthy superfood foxnuts slow-roasted without frying in bold peri peri spices, alongside authentic Karnataka heritage mixtures, Kodubele, crispy nippat, and masala peanuts."
+      heroDescription="Slow-roasted non-fried Peri Peri Makhana, authentic Bengaluru masala chakli, and spiced peanuts."
       heroImage="/images/snacks/peri-peri-makhana.webp"
       heroVideo="/videos/categories/snacks-hero.mp4"
       flagshipSlug="peri-peri-makhana-60gms"
@@ -26,12 +26,12 @@ export default function SnacksPage() {
         accentPillBg: 'bg-lime-500/25',
         accentTextColor: 'text-lime-200',
         accentBorder: 'border-lime-400/40',
-        badgeText: 'Makhana & Traditional Snacks',
+        badgeText: 'Roasted Snacks & Munchies',
       }}
       craftPillars={[
-        { icon: Flame, text: '100% Non-Fried Superfood' },
-        { icon: Sparkles, text: 'Artisanal Spice Blends' },
-        { icon: ShieldCheck, text: 'Zero Trans Fat / Guilt-Free' },
+        { icon: Flame, text: 'Non-Fried Superfood' },
+        { icon: Sparkles, text: 'Artisanal Spices' },
+        { icon: ShieldCheck, text: 'Zero Trans Fat • Guilt-Free' },
       ]}
       subcategories={['All', 'Makhana', 'Traditional Namkeens', 'Spiced Peanuts', 'Chips & Crisps']}
     />

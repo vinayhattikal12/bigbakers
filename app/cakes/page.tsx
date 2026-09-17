@@ -16,7 +16,7 @@ export default function CakesPage() {
           <span className="text-caramel italic font-serif">Of Your Story</span>
         </>
       }
-      heroDescription="From our legendary 54% dark Belgian Truffle Cake to trending Pista Kunafa and Red Velvet Royale. Baked 100% pure vegetarian & eggless with pure dairy cream and zero compound chocolate."
+      heroDescription="Signature 54% Belgian dark truffles, trending Kunafa, bento boxes, and delicate pastry slices."
       heroImage="/images/cakes/belgian-truffle.webp"
       heroVideo="/videos/categories/cakes-hero.mp4"
       flagshipSlug="belgian-truffle-cake"
@@ -26,7 +26,7 @@ export default function CakesPage() {
         accentPillBg: 'bg-caramel/25',
         accentTextColor: 'text-gold',
         accentBorder: 'border-gold/40',
-        badgeText: 'Celebration & Pastry Cakes',
+        badgeText: 'Celebration Cakes',
       }}
       craftPillars={[
         { icon: ShieldCheck, text: '100% Pure Dairy & Eggless' },

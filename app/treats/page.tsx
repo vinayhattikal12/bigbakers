@@ -16,7 +16,7 @@ export default function TreatsPage() {
           <span className="text-pink-300 italic font-serif">Big Smiles.</span>
         </>
       }
-      heroDescription="Exotic whole nuts enrobed in gourmet chocolate, NYC-style chocolate chunk cookies, soft glazed brioche donuts, festive tea cakes, and curated artisanal gift boxes."
+      heroDescription="Rose petal chocolate-coated whole cashews, NYC chunky cookies, and glazed brioche donuts."
       heroImage="/images/treats/coated-chocolates.webp"
       heroVideo="/videos/categories/treats-hero.mp4"
       flagshipSlug="rose-petal-cashew-coated-chocolate"
@@ -26,12 +26,12 @@ export default function TreatsPage() {
         accentPillBg: 'bg-pink-500/25',
         accentTextColor: 'text-pink-200',
         accentBorder: 'border-pink-400/40',
-        badgeText: 'Treats & Coated Chocolates',
+        badgeText: 'Treats & Chocolates',
       }}
       craftPillars={[
-        { icon: Cookie, text: 'Artisanal Hand-Dipper Nuts' },
-        { icon: Sparkles, text: 'Real Cocoa Butter' },
-        { icon: Smile, text: 'Perfect for Gifting & Parties' },
+        { icon: Cookie, text: 'Artisanal Hand-Dipped' },
+        { icon: Sparkles, text: 'Pure Cocoa Butter' },
+        { icon: Smile, text: 'Gifting & Celebrations' },
       ]}
       subcategories={['All', 'Coated Chocolates', 'Cookies', 'Cupcakes', 'Donuts', 'Tea Cakes', 'Candies & Mukhwas', 'Gift Hampers', 'Gift Boxes & Packaging']}
     />

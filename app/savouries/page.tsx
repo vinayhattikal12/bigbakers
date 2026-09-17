@@ -16,7 +16,7 @@ export default function SavouriesPage() {
           <span className="text-orange-400 italic font-serif">& Artisan Breads</span>
         </>
       }
-      heroDescription="Baked fresh every morning in our Vijaynagar ovens: Golden flaky Cajun paneer puffs, savory cream cheese Korean buns, toasted paninis, soft milk loaves, and crispy rusks."
+      heroDescription="Golden flaky Cajun paneer puffs, cream cheese Korean buns, calzones, and fresh milk bread."
       heroImage="/images/savouries/korean-bun.webp"
       heroVideo="/videos/categories/savouries-hero.mp4"
       flagshipSlug="korean-bun"
@@ -26,10 +26,10 @@ export default function SavouriesPage() {
         accentPillBg: 'bg-orange-500/25',
         accentTextColor: 'text-orange-300',
         accentBorder: 'border-orange-400/40',
-        badgeText: 'Hot Savouries & Breads',
+        badgeText: 'Savouries & Breads',
       }}
       craftPillars={[
-        { icon: Flame, text: 'Fresh Morning Oven Batch' },
+        { icon: Flame, text: 'Baked Fresh Daily' },
         { icon: Croissant, text: 'Flaky French Butter Layers' },
         { icon: ShieldCheck, text: '100% Pure Vegetarian' },
       ]}
