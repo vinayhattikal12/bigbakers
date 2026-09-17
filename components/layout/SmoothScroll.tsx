@@ -19,13 +19,14 @@ export const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 0.85,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       syncTouch: false,
       autoRaf: false,
+      wheelMultiplier: 1.0,
     });
     lenisRef.current = lenis;
 

@@ -144,7 +144,8 @@ const DesktopCinematicHero: React.FC = () => {
     ctx.drawImage(img, x, y, renderWidth, renderHeight);
     ctx.restore();
 
-    lastDrawnRef.current = { scene, frame: validFrame };
+    const isExact = img === imagesRef.current.get(key);
+    lastDrawnRef.current = isExact ? { scene, frame: validFrame } : { scene: 0, frame: 0 };
   }, []);
 
   // Lightweight multi-tier background preloading
@@ -158,8 +159,8 @@ const DesktopCinematicHero: React.FC = () => {
     loadFrame(2, 1, false);
     loadFrame(3, 1, false);
 
-    // 2. Immediate warm-up: first 10 frames of Scene 1
-    for (let f = 2; f <= 10; f++) {
+    // 2. Immediate warm-up: first 15 frames of Scene 1
+    for (let f = 2; f <= 15; f++) {
       loadFrame(1, f);
     }
 
@@ -169,7 +170,7 @@ const DesktopCinematicHero: React.FC = () => {
       const keyframes: { scene: number; frame: number }[] = [];
       for (let s = 1; s <= 3; s++) {
         const maxF = SCENE_FRAME_COUNTS[s] || 300;
-        for (let f = 16; f <= maxF; f += 16) {
+        for (let f = 10; f <= maxF; f += 10) {
           keyframes.push({ scene: s, frame: f });
         }
       }
@@ -181,20 +182,20 @@ const DesktopCinematicHero: React.FC = () => {
         loadFrame(item.scene, item.frame);
 
         if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
-          (window as any).requestIdleCallback(loadNext, { timeout: 300 });
+          (window as any).requestIdleCallback(loadNext, { timeout: 250 });
         } else {
-          setTimeout(loadNext, 80);
+          setTimeout(loadNext, 60);
         }
       };
 
       if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
-        (window as any).requestIdleCallback(loadNext, { timeout: 500 });
+        (window as any).requestIdleCallback(loadNext, { timeout: 400 });
       } else {
-        setTimeout(loadNext, 300);
+        setTimeout(loadNext, 200);
       }
     };
 
-    const idleTimer = setTimeout(preloadMilestones, 500);
+    const idleTimer = setTimeout(preloadMilestones, 300);
 
     return () => {
       isCancelled = true;
@@ -212,10 +213,10 @@ const DesktopCinematicHero: React.FC = () => {
     }
     if (p < peakStart) {
       const norm = (p - start) / (peakStart - start);
-      return { opacity: norm, translateY: 25 * (1 - norm), active: norm > 0.3 };
+      return { opacity: norm, translateY: 25 * (1 - norm), active: norm > 0.4 };
     }
-    const norm = (p - peakEnd) / (end - peakEnd);
-    return { opacity: 1 - norm, translateY: -25 * norm, active: 1 - norm > 0.3 };
+    const norm = (end - p) / (end - peakEnd);
+    return { opacity: norm, translateY: -25 * (1 - norm), active: norm > 0.4 };
   };
 
   const applyBeatStyles = (el: HTMLElement | null, res: { opacity: number; translateY: number; active: boolean }) => {
@@ -269,7 +270,7 @@ const DesktopCinematicHero: React.FC = () => {
         trigger: container,
         start: 'top top',
         end: 'bottom bottom',
-        scrub: 0.6,
+        scrub: 0.15,
         onUpdate: (self) => {
           const p = Math.max(0, Math.min(1, self.progress));
 
@@ -296,16 +297,25 @@ const DesktopCinematicHero: React.FC = () => {
           targetStateRef.current = { scene: sceneNum, frame, progress: p };
 
           const currentMaxF = SCENE_FRAME_COUNTS[sceneNum] || 300;
-          for (let offset = -5; offset <= 15; offset++) {
+          const isGoingDown = self.direction >= 0;
+          const forward = isGoingDown ? 24 : 8;
+          const backward = isGoingDown ? 6 : 18;
+
+          for (let offset = -backward; offset <= forward; offset++) {
             const target = frame + offset;
             if (target >= 1 && target <= currentMaxF) {
               loadFrame(sceneNum, target);
             }
           }
 
-          if (frame > currentMaxF - 30 && sceneNum < 3) {
-            for (let f = 1; f <= 15; f++) {
+          if (frame > currentMaxF - 35 && sceneNum < 3) {
+            for (let f = 1; f <= 20; f++) {
               loadFrame(sceneNum + 1, f);
+            }
+          } else if (frame < 35 && sceneNum > 1) {
+            const prevMax = SCENE_FRAME_COUNTS[sceneNum - 1] || 300;
+            for (let f = prevMax; f >= prevMax - 20; f--) {
+              loadFrame(sceneNum - 1, f);
             }
           }
         },
@@ -335,7 +345,7 @@ const DesktopCinematicHero: React.FC = () => {
   };
 
   return (
-    <section ref={containerRef} className="relative h-[480vh] bg-cocoa-deep">
+    <section ref={containerRef} className="relative h-[380vh] bg-cocoa-deep">
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden bg-black">
         {/* Natural True-to-Life Crisp Canvas */}
         <canvas
