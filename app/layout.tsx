@@ -5,6 +5,7 @@ import { CartProvider } from '@/lib/context/CartContext';
 import { WishlistProvider } from '@/lib/context/WishlistContext';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { MobileBottomBar } from '@/components/layout/MobileBottomBar';
 import { CartDrawer } from '@/components/ecommerce/CartDrawer';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
 import { FlyToCartOverlay } from '@/components/ecommerce/FlyToCartOverlay';
@@ -112,6 +113,7 @@ export default function RootLayout({
               <Header />
               <main className="flex-grow">{children}</main>
               <Footer />
+              <MobileBottomBar />
               <CartDrawer />
               <FlyToCartOverlay />
               <DeliveryDispatchOverlay />

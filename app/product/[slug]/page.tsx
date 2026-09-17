@@ -23,6 +23,7 @@ import {
   Sparkles,
   Check,
   ArrowRight,
+  ArrowLeft,
   Flame,
 } from 'lucide-react';
 
@@ -90,18 +91,33 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   return (
     <div className="pt-28 pb-32 min-h-screen bg-cream-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs text-cocoa/60 font-medium">
-          <Link href="/" className="hover:text-caramel">
-            Home
-          </Link>
-          <span>/</span>
-          <Link href={`/${product.category}`} className="hover:text-caramel capitalize">
-            {product.category}
-          </Link>
-          <span>/</span>
-          <span className="text-cocoa font-semibold truncate max-w-xs">{product.name}</span>
-        </nav>
+        {/* Breadcrumb & Quick Back Button */}
+        <div className="flex items-center justify-between gap-3">
+          <nav className="flex items-center gap-2 text-xs text-cocoa/60 font-medium overflow-x-auto py-1">
+            <Link href="/" className="hover:text-caramel shrink-0">
+              Home
+            </Link>
+            <span>/</span>
+            <Link href={`/${product.category}`} className="hover:text-caramel capitalize shrink-0">
+              {product.category}
+            </Link>
+            <span>/</span>
+            <span className="text-cocoa font-semibold truncate max-w-[150px] sm:max-w-xs">{product.name}</span>
+          </nav>
+          <button
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.history.length > 1) {
+                router.back();
+              } else {
+                router.push(`/${product.category}`);
+              }
+            }}
+            className="inline-flex items-center gap-1 text-xs font-bold text-cocoa bg-white border border-cream-300 px-3 py-1.5 rounded-full hover:bg-cream-200 active:scale-95 transition-all shadow-xs shrink-0"
+          >
+            <ArrowLeft className="w-3.5 h-3.5 text-caramel" />
+            <span>Back</span>
+          </button>
+        </div>
 
         {/* Product Hero Section (Image Gallery + Purchase Info) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">

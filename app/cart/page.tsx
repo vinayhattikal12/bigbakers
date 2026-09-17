@@ -19,7 +19,10 @@ import {
   ArrowLeft,
 } from 'lucide-react';
 
+import { useRouter } from 'next/navigation';
+
 export default function CartPage() {
+  const router = useRouter();
   const {
     items,
     updateQuantity,
@@ -34,6 +37,14 @@ export default function CartPage() {
     applyCoupon,
     removeCoupon,
   } = useCart();
+
+  const handleGoBack = () => {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      router.back();
+    } else {
+      router.push('/menu');
+    }
+  };
 
   const [couponInput, setCouponInput] = useState('');
   const [couponMsg, setCouponMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
@@ -65,12 +76,20 @@ export default function CartPage() {
               Looks like you haven&apos;t added any sweet cravings to your bag yet.
             </p>
           </div>
-          <Link href="/menu" className="inline-block pt-2">
-            <Button variant="primary" size="md">
-              <Sparkles className="w-4 h-4 mr-2" />
-              <span>Explore Menu</span>
-            </Button>
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <button
+              onClick={handleGoBack}
+              className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-cream-300 bg-white font-bold text-xs text-cocoa hover:bg-cream-200 active:scale-95 transition-all shadow-xs"
+            >
+              ← Go Back
+            </button>
+            <Link href="/menu" className="w-full sm:w-auto">
+              <Button variant="primary" size="md" className="w-full justify-center">
+                <Sparkles className="w-4 h-4 mr-2" />
+                <span>Explore Menu</span>
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     );
@@ -79,20 +98,40 @@ export default function CartPage() {
   return (
     <div className="pt-28 pb-24 min-h-screen bg-cream-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        {/* Header */}
+        {/* Header with Back Buttons */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-cream-300 pb-6">
-          <div>
-            <h1 className="font-serif text-3xl sm:text-5xl font-black text-cocoa tracking-tight">
-              Your Shopping Bag
-            </h1>
-            <p className="text-xs sm:text-sm text-cocoa/60 mt-1">
-              Review your items and proceed to secure delivery in Bengaluru.
-            </p>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleGoBack}
+              className="p-2 sm:p-2.5 rounded-2xl bg-white border border-cream-300 text-cocoa hover:bg-cream-200 active:scale-90 transition-all shadow-xs"
+              aria-label="Go back"
+            >
+              <ArrowLeft className="w-5 h-5 text-cocoa" />
+            </button>
+            <div>
+              <h1 className="font-serif text-2xl sm:text-4xl font-black text-cocoa tracking-tight">
+                Your Shopping Bag
+              </h1>
+              <p className="text-xs sm:text-sm text-cocoa/60 mt-0.5">
+                Review your items and proceed to secure delivery in Bengaluru.
+              </p>
+            </div>
           </div>
-          <Link href="/menu" className="inline-flex items-center gap-1.5 text-xs font-semibold text-caramel hover:underline">
-            <ArrowLeft className="w-4 h-4" />
-            <span>Continue Shopping</span>
-          </Link>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleGoBack}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-cream-300 text-xs font-bold text-cocoa hover:bg-cream-200 active:scale-95 transition-all shadow-xs"
+            >
+              <ArrowLeft className="w-4 h-4 text-caramel" />
+              <span>Back</span>
+            </button>
+            <Link
+              href="/menu"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-cocoa text-cream-50 hover:bg-caramel text-xs font-bold active:scale-95 transition-all shadow-xs"
+            >
+              <span>Add More Items</span>
+            </Link>
+          </div>
         </div>
 
         {/* Layout Grid */}

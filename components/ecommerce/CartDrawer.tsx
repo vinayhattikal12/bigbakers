@@ -7,9 +7,11 @@ import { X, Plus, Minus, Trash2, ShoppingBag, ArrowRight, ShieldCheck } from 'lu
 import { useCart } from '@/lib/context/CartContext';
 import { formatPrice } from '@/lib/utils/formatters';
 import { Button } from '@/components/ui/Button';
+import { usePathname } from 'next/navigation';
 import { CravingPairUpsell } from '@/components/ecommerce/CravingPairUpsell';
 
 export const CartDrawer: React.FC = () => {
+  const pathname = usePathname();
   const {
     items,
     isOpen,
@@ -25,6 +27,33 @@ export const CartDrawer: React.FC = () => {
     applyCoupon,
     removeCoupon,
   } = useCart();
+
+  // Close drawer automatically on page change
+  React.useEffect(() => {
+    if (isOpen) {
+      closeCart();
+    }
+  }, [pathname]);
+
+  // Handle Android/iOS browser back button & escape key to dismiss drawer
+  React.useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeCart();
+    };
+
+    const handlePopState = () => {
+      closeCart();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [isOpen, closeCart]);
 
   const [couponInput, setCouponInput] = React.useState('');
   const [couponError, setCouponError] = React.useState('');

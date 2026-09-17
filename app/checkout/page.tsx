@@ -118,22 +118,46 @@ export default function CheckoutPage() {
     );
   }
 
+  const handleCheckoutBack = () => {
+    if (step === 3) setStep(2);
+    else if (step === 2) setStep(1);
+    else router.push('/cart');
+  };
+
   return (
     <div className="pt-28 pb-24 min-h-screen bg-cream-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Checkout Header */}
+        {/* Checkout Header with Smart Back Action */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-cream-300 pb-6">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-caramel">
-              Secure Bengaluru Checkout
-            </span>
-            <h1 className="font-serif text-3xl sm:text-4xl font-black text-cocoa tracking-tight mt-1">
-              Complete Your Order
-            </h1>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleCheckoutBack}
+              className="p-2 sm:p-2.5 rounded-2xl bg-white border border-cream-300 text-cocoa hover:bg-cream-200 active:scale-90 transition-all shadow-xs"
+              aria-label="Go back"
+            >
+              <ArrowLeft className="w-5 h-5 text-cocoa" />
+            </button>
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-caramel">
+                Secure Bengaluru Checkout
+              </span>
+              <h1 className="font-serif text-2xl sm:text-3xl font-black text-cocoa tracking-tight mt-0.5">
+                Complete Your Order
+              </h1>
+            </div>
           </div>
-          <div className="flex items-center gap-2 text-xs text-cocoa/60">
-            <Lock className="w-3.5 h-3.5 text-caramel" />
-            <span>256-Bit SSL Encrypted Checkout</span>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleCheckoutBack}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-cream-300 text-xs font-bold text-cocoa hover:bg-cream-200 active:scale-95 transition-all"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 text-caramel" />
+              <span>{step > 1 ? 'Previous Step' : 'Back to Bag'}</span>
+            </button>
+            <div className="flex items-center gap-1.5 text-xs text-cocoa/60 bg-cream-50 px-3 py-1.5 rounded-xl border border-cream-200">
+              <Lock className="w-3.5 h-3.5 text-emerald-600" />
+              <span>256-Bit SSL Encrypted</span>
+            </div>
           </div>
         </div>
 

@@ -7,12 +7,15 @@ import { Search, X, ArrowRight, Sparkles } from 'lucide-react';
 import { products } from '@/data/products';
 import { formatPrice } from '@/lib/utils/formatters';
 
+import { usePathname } from 'next/navigation';
+
 interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
 export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
+  const pathname = usePathname();
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -23,6 +26,33 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
       setQuery('');
     }
   }, [isOpen]);
+
+  // Close modal when route changes
+  useEffect(() => {
+    if (isOpen) {
+      onClose();
+    }
+  }, [pathname]);
+
+  // Handle hardware/browser back and escape key
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+
+    const handlePopState = () => {
+      onClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
