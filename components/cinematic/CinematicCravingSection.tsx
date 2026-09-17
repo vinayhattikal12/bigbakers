@@ -1,14 +1,138 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
-export const CinematicCravingSection: React.FC = () => {
-  const [, setHoveredIndex] = useState<number | null>(null);
+interface CravingCollectionItem {
+  id: string;
+  title: string;
+  subtitle: string;
+  href: string;
+  image: string;
+  video: string;
+  badge: string;
+  highlight: string;
+  itemCount: string;
+  accentColor: string;
+  borderColor: string;
+}
 
-  const cravingCollections = [
+const CravingCard: React.FC<{
+  item: CravingCollectionItem;
+}> = ({ item }) => {
+  const [isInView, setIsInView] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef<HTMLAnchorElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const cardEl = cardRef.current;
+    if (!cardEl) return;
+
+    // Use IntersectionObserver to detect when this card appears while scrolling on mobile
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+        if (entry.isIntersecting && videoRef.current) {
+          videoRef.current.muted = true;
+          videoRef.current.defaultMuted = true;
+          videoRef.current.play().catch(() => {});
+        }
+      },
+      {
+        threshold: 0.35, // Trigger when 35% of the card is visible in mobile viewport
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    observer.observe(cardEl);
+    return () => observer.disconnect();
+  }, []);
+
+  const showVideo = isHovered || isInView;
+
+  return (
+    <Link
+      ref={cardRef}
+      href={item.href}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`group relative h-[360px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-cream-300 ${item.borderColor} transition-all duration-500 flex flex-col justify-between p-6 bg-cocoa-deep`}
+    >
+      {/* Background Imagery & Ambient Video (Active on scroll for mobile, on hover for desktop) */}
+      <div className="absolute inset-0 z-0 bg-cocoa-deep overflow-hidden">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className={`object-cover transition-transform duration-700 ease-out ${
+            showVideo ? 'scale-105 opacity-20' : 'opacity-85 group-hover:scale-110 group-hover:opacity-20'
+          }`}
+        />
+        {item.video && (
+          <video
+            ref={videoRef}
+            src={item.video}
+            poster={item.image}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            onLoadedData={(e) => {
+              e.currentTarget.muted = true;
+              e.currentTarget.play().catch(() => {});
+            }}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none filter brightness-[1.12] contrast-[1.05] ${
+              showVideo ? 'opacity-90' : 'opacity-0 group-hover:opacity-90'
+            }`}
+          />
+        )}
+        <div className={`absolute inset-0 bg-gradient-to-t ${item.accentColor}`} />
+        <div className="absolute inset-0 bg-black/25 group-hover:bg-black/10 transition-colors duration-500" />
+      </div>
+
+      {/* Top Meta Tagging */}
+      <div className="relative z-10 flex items-center justify-between gap-2">
+        <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gold bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30 flex items-center gap-1.5">
+          {showVideo && <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />}
+          <span>{item.badge}</span>
+        </span>
+        <span className="text-[10px] font-semibold text-white/90 bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+          {item.itemCount}
+        </span>
+      </div>
+
+      {/* Bottom Editorial Content */}
+      <div className="relative z-10 space-y-2.5 transform group-hover:-translate-y-1 transition-transform duration-300">
+        <div className="inline-block text-[11px] font-medium text-cream-200/90 bg-black/40 backdrop-blur-xs px-2.5 py-0.5 rounded-md border border-white/10">
+          ✨ {item.highlight}
+        </div>
+        
+        <h3 className="font-serif text-2xl sm:text-3xl font-black text-white group-hover:text-gold-light transition-colors leading-tight drop-shadow-md">
+          {item.title}
+        </h3>
+        
+        <p className="text-xs text-cream-100/90 font-medium line-clamp-2 leading-relaxed drop-shadow-xs">
+          {item.subtitle}
+        </p>
+
+        <div className="pt-2 flex items-center justify-between border-t border-white/15 text-xs font-bold text-white group-hover:text-gold transition-colors">
+          <span>Explore Collection</span>
+          <div className="w-7 h-7 rounded-full bg-white/20 group-hover:bg-gold group-hover:text-cocoa flex items-center justify-center transition-all">
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export const CinematicCravingSection: React.FC = () => {
+  const cravingCollections: CravingCollectionItem[] = [
     {
       id: 'cakes',
       title: 'Celebration Cakes',
@@ -123,69 +247,7 @@ export const CinematicCravingSection: React.FC = () => {
         {/* Cinematic 6-Card Editorial Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {cravingCollections.map((item, index) => (
-            <Link
-              key={item.id}
-              href={item.href}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className={`group relative h-[360px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-cream-300 ${item.borderColor} transition-all duration-500 flex flex-col justify-between p-6 bg-cocoa-deep`}
-            >
-              {/* Background Imagery & Ambient Video on Hover/Touch */}
-              <div className="absolute inset-0 z-0 bg-cocoa-deep overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out opacity-85 group-hover:opacity-20"
-                />
-                {item.video && (
-                  <video
-                    src={item.video}
-                    poster={item.image}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
-                  />
-                )}
-                <div className={`absolute inset-0 bg-gradient-to-t ${item.accentColor}`} />
-                <div className="absolute inset-0 bg-black/25 group-hover:bg-black/10 transition-colors duration-500" />
-              </div>
-
-              {/* Top Meta Tagging */}
-              <div className="relative z-10 flex items-center justify-between gap-2">
-                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-gold bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30">
-                  {item.badge}
-                </span>
-                <span className="text-[10px] font-semibold text-white/90 bg-white/20 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
-                  {item.itemCount}
-                </span>
-              </div>
-
-              {/* Bottom Editorial Content */}
-              <div className="relative z-10 space-y-2.5 transform group-hover:-translate-y-1 transition-transform duration-300">
-                <div className="inline-block text-[11px] font-medium text-cream-200/90 bg-black/40 backdrop-blur-xs px-2.5 py-0.5 rounded-md border border-white/10">
-                  ✨ {item.highlight}
-                </div>
-                
-                <h3 className="font-serif text-2xl sm:text-3xl font-black text-white group-hover:text-gold-light transition-colors leading-tight">
-                  {item.title}
-                </h3>
-                
-                <p className="text-xs text-cream-100/80 font-medium line-clamp-2 leading-relaxed">
-                  {item.subtitle}
-                </p>
-
-                <div className="pt-2 flex items-center justify-between border-t border-white/15 text-xs font-bold text-white group-hover:text-gold transition-colors">
-                  <span>Explore Collection</span>
-                  <div className="w-7 h-7 rounded-full bg-white/20 group-hover:bg-gold group-hover:text-cocoa flex items-center justify-center transition-all">
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                  </div>
-                </div>
-              </div>
-            </Link>
+            <CravingCard key={item.id} item={item} />
           ))}
         </div>
 
@@ -207,3 +269,4 @@ export const CinematicCravingSection: React.FC = () => {
     </section>
   );
 };
+
