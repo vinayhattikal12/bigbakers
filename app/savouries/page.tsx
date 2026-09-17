@@ -18,6 +18,7 @@ export default function SavouriesPage() {
       }
       heroDescription="Baked fresh every morning in our Vijaynagar ovens: Golden flaky Cajun paneer puffs, savory cream cheese Korean buns, toasted paninis, soft milk loaves, and crispy rusks."
       heroImage="/images/savouries/korean-bun.webp"
+      heroVideo="/videos/categories/savouries-hero.mp4"
       flagshipSlug="korean-bun"
       theme={{
         bgGradient: 'bg-gradient-to-br from-[#2A1808] via-[#180D04] to-[#100802]',

@@ -18,6 +18,7 @@ export default function PizzasPage() {
       }
       heroDescription="Hand-stretched 8-inch crusts baked at high heat with signature Italian herb sauce and bubbling double cheese, alongside rich Arrabbiata, Alfredo, and Pesto fusilli & penne pastas."
       heroImage="/images/pizzas/farmhouse-pizza.webp"
+      heroVideo="/videos/categories/pizzas-hero.mp4"
       flagshipSlug="farmhouse-pizza"
       theme={{
         bgGradient: 'bg-gradient-to-br from-[#2B0F08] via-[#1A0804] to-[#110502]',

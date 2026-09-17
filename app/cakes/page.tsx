@@ -18,6 +18,7 @@ export default function CakesPage() {
       }
       heroDescription="From our legendary 54% dark Belgian Truffle Cake to trending Pista Kunafa and Red Velvet Royale. Baked 100% pure vegetarian & eggless with pure dairy cream and zero compound chocolate."
       heroImage="/images/cakes/belgian-truffle.webp"
+      heroVideo="/videos/categories/cakes-hero.mp4"
       flagshipSlug="belgian-truffle-cake"
       theme={{
         bgGradient: 'bg-gradient-to-br from-[#1A0C06] via-[#2D160C] to-[#120804]',

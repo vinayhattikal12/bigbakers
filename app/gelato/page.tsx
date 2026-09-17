@@ -18,6 +18,7 @@ export default function GelatoPage() {
       }
       heroDescription="Silky, dense, and intensely creamy 100% vegetarian gelato crafted with pure whole milk and premium natural flavors. Made fresh daily with zero gelatin or artificial coloring."
       heroImage="/images/gelato/gelato-assorted.webp"
+      heroVideo="/videos/categories/gelato-hero.mp4"
       flagshipSlug="belgian-chocolate-gelato"
       theme={{
         bgGradient: 'bg-gradient-to-br from-[#16281E] via-[#0B1812] to-[#06100B]',

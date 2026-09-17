@@ -18,6 +18,7 @@ export default function SnacksPage() {
       }
       heroDescription="Healthy superfood foxnuts slow-roasted without frying in bold peri peri spices, alongside authentic Karnataka heritage mixtures, Kodubele, crispy nippat, and masala peanuts."
       heroImage="/images/snacks/peri-peri-makhana.webp"
+      heroVideo="/videos/categories/snacks-hero.mp4"
       flagshipSlug="peri-peri-makhana-60gms"
       theme={{
         bgGradient: 'bg-gradient-to-br from-[#1C2618] via-[#0F170C] to-[#080E06]',

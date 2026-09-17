@@ -15,6 +15,7 @@ export const CinematicCravingSection: React.FC = () => {
       subtitle: 'Belgian Truffles, Red Velvet, Pastries & Bento Cakes',
       href: '/cakes',
       image: '/images/cakes/belgian-truffle.webp',
+      video: '/videos/categories/cakes-hero.mp4',
       badge: 'Bengaluru #1 Bestseller',
       highlight: '54% Dark Belgian Ganache',
       itemCount: '50+ Creations',
@@ -27,6 +28,7 @@ export const CinematicCravingSection: React.FC = () => {
       subtitle: 'Lotus Biscoff, Italian Tiramisu & Saffron Tres Leches',
       href: '/desserts',
       image: '/images/desserts/biscoff-cheesecake.webp',
+      video: '/videos/categories/desserts-hero.mp4',
       badge: 'Haute Pâtisserie',
       highlight: '100% Philadelphia Cream',
       itemCount: '15+ Creations',
@@ -39,6 +41,7 @@ export const CinematicCravingSection: React.FC = () => {
       subtitle: '8" Thin Crusts, Korean Garlic Cream Buns & Savouries',
       href: '/pizzas',
       image: '/images/pizzas/farmhouse-pizza.webp',
+      video: '/videos/categories/pizzas-hero.mp4',
       badge: 'Oven-Hot Bakes',
       highlight: 'Fresh Mozzarella & Herbs',
       itemCount: '25+ Creations',
@@ -51,6 +54,7 @@ export const CinematicCravingSection: React.FC = () => {
       subtitle: 'Sicilian Pistachio, Dark Chocolate & Alphonso Mango',
       href: '/gelato',
       image: '/images/gelato/gelato-assorted.webp',
+      video: '/videos/categories/gelato-hero.mp4',
       badge: 'Slow Churned',
       highlight: 'Zero Artificial Flavours',
       itemCount: '10+ Flavours',
@@ -63,6 +67,7 @@ export const CinematicCravingSection: React.FC = () => {
       subtitle: 'Gourmet Donuts, NYC Chunky Cookies & Rose Petal Chocolates',
       href: '/treats',
       image: '/images/treats/glazed-donut.webp',
+      video: '/videos/categories/treats-hero.mp4',
       badge: 'Everyday Joy',
       highlight: 'Hand-dipped & Glazed',
       itemCount: '40+ Creations',
@@ -75,6 +80,7 @@ export const CinematicCravingSection: React.FC = () => {
       subtitle: 'Peri Peri Foxnuts, Masala Chakli & Sourdough Breads',
       href: '/snacks',
       image: '/images/snacks/peri-peri-makhana.webp',
+      video: '/videos/categories/snacks-hero.mp4',
       badge: 'Crunch Reserve',
       highlight: 'Zero Palm Oil • Pure Ghee',
       itemCount: '30+ Creations',
@@ -124,15 +130,26 @@ export const CinematicCravingSection: React.FC = () => {
               onMouseLeave={() => setHoveredIndex(null)}
               className={`group relative h-[360px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl border border-cream-300 ${item.borderColor} transition-all duration-500 flex flex-col justify-between p-6 bg-cocoa-deep`}
             >
-              {/* Background Imagery with Smooth Zoom */}
-              <div className="absolute inset-0 z-0 bg-cocoa-deep">
+              {/* Background Imagery & Ambient Video on Hover/Touch */}
+              <div className="absolute inset-0 z-0 bg-cocoa-deep overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out opacity-85 group-hover:opacity-95"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out opacity-85 group-hover:opacity-20"
                 />
+                {item.video && (
+                  <video
+                    src={item.video}
+                    poster={item.image}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
+                  />
+                )}
                 <div className={`absolute inset-0 bg-gradient-to-t ${item.accentColor}`} />
                 <div className="absolute inset-0 bg-black/25 group-hover:bg-black/10 transition-colors duration-500" />
               </div>

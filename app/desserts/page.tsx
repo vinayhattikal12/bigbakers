@@ -18,6 +18,7 @@ export default function DessertsPage() {
       }
       heroDescription="Baked New York style cheesecakes swirled with caramelized Lotus Biscoff, espresso-infused Savoiardi Italian Tiramisu, and Kashmiri saffron Rasmalai Tres Leches. Pure European luxury."
       heroImage="/images/desserts/biscoff-cheesecake.webp"
+      heroVideo="/videos/categories/desserts-hero.mp4"
       flagshipSlug="biscoff-cheesecake"
       theme={{
         bgGradient: 'bg-gradient-to-br from-[#2A0A10] via-[#1C060B] to-[#140407]',

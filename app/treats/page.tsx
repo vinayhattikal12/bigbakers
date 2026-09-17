@@ -18,6 +18,7 @@ export default function TreatsPage() {
       }
       heroDescription="Exotic whole nuts enrobed in gourmet chocolate, NYC-style chocolate chunk cookies, soft glazed brioche donuts, festive tea cakes, and curated artisanal gift boxes."
       heroImage="/images/treats/coated-chocolates.webp"
+      heroVideo="/videos/categories/treats-hero.mp4"
       flagshipSlug="rose-petal-cashew-coated-chocolate"
       theme={{
         bgGradient: 'bg-gradient-to-br from-[#2E1B10] via-[#1C0E06] to-[#140A04]',
