@@ -352,19 +352,26 @@ const DesktopCinematicHero: React.FC = () => {
 
   return (
     <section ref={containerRef} className="relative h-[480vh] bg-cocoa-deep">
-      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden bg-cocoa-deep">
+      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden bg-black">
+        {/* 4K Ultra-Radiant Canvas */}
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full object-cover block pointer-events-none select-none filter brightness-[1.08] contrast-[1.05] saturate-[1.12]"
+          className="absolute inset-0 w-full h-full object-cover block pointer-events-none select-none filter brightness-[1.28] contrast-[1.12] saturate-[1.24] drop-shadow-[0_0_60px_rgba(230,130,50,0.18)]"
         />
 
-        <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-cocoa-deep/50 via-cocoa-deep/15 to-transparent pointer-events-none z-10" />
-        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-cocoa-deep/60 via-cocoa-deep/20 to-transparent pointer-events-none z-10" />
+        {/* Ambient Radiant Glow Accents for 4K Atmosphere */}
+        <div className="absolute -top-20 -left-20 w-[550px] h-[550px] bg-amber-500/20 rounded-full blur-[140px] pointer-events-none z-10" />
+        <div className="absolute top-1/3 right-0 w-[650px] h-[650px] bg-caramel/20 rounded-full blur-[160px] pointer-events-none z-10" />
+        <div className="absolute -bottom-20 left-1/4 w-[600px] h-[600px] bg-gold/20 rounded-full blur-[150px] pointer-events-none z-10" />
+
+        {/* Crisp Horizon Vignette Fades */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black/45 via-black/10 to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/55 via-black/15 to-transparent pointer-events-none z-10" />
 
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-white/10 z-30 pointer-events-none">
           <div
             ref={progressBarRef}
-            className="h-full bg-gradient-to-r from-caramel via-gold to-peach transition-all duration-75"
+            className="h-full bg-gradient-to-r from-caramel via-gold to-peach transition-all duration-75 shadow-[0_0_12px_rgba(245,166,35,0.8)]"
             style={{ width: '0%' }}
           />
         </div>
