@@ -18,7 +18,7 @@ export const MobileVideoHero: React.FC = () => {
 
   return (
     <section className="relative w-full h-[92vh] min-h-[580px] max-h-[920px] bg-cocoa-deep overflow-hidden select-none flex flex-col justify-end pt-24 pb-8">
-      {/* 1. FULL-BLEED RADIANT 4K VIDEO */}
+      {/* 1. FULL-BLEED CRISP NATURAL VIDEO */}
       <div className="absolute inset-0 z-0 bg-black overflow-hidden">
         <video
           ref={videoRef}
@@ -28,15 +28,12 @@ export const MobileVideoHero: React.FC = () => {
           muted
           playsInline
           preload="auto"
-          className="w-full h-full object-cover object-center filter brightness-[1.28] contrast-[1.12] saturate-[1.25]"
+          className="w-full h-full object-cover object-center filter brightness-[1.16] contrast-[1.06] saturate-[1.02]"
         />
 
-        {/* Radiant Ambient Warm Backlight */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-80 h-80 bg-amber-500/25 rounded-full blur-[110px] pointer-events-none" />
-
-        {/* Minimal Crisp Top & Bottom Contrast Gradients */}
-        <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-black/55 via-black/15 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-[58%] bg-gradient-to-t from-black/90 via-black/45 to-transparent pointer-events-none" />
+        {/* Minimal Neutral Top & Bottom Contrast Gradients */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/45 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-[52%] bg-gradient-to-t from-black/80 via-black/35 to-transparent pointer-events-none" />
       </div>
 
       {/* 2. CINEMATIC EDITORIAL CONTENT */}
