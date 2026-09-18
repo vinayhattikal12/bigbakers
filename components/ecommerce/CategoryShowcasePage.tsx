@@ -214,7 +214,7 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
               onCanPlay={(e) => {
                 e.currentTarget.play().catch(() => {});
               }}
-              className="w-full h-full object-cover filter brightness-[1.32] contrast-[1.08] saturate-[1.22]"
+              className="w-full h-full object-cover filter brightness-[1.02] contrast-[1.04] saturate-[1.02]"
             />
           ) : (
             <Image
@@ -222,17 +222,18 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
               alt={categoryName}
               fill
               priority
-              className="object-cover filter brightness-[1.05]"
+              className="object-cover"
             />
           )}
 
-          {/* Minimal Top & Bottom Horizon Fades */}
-          <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
+          {/* Natural Text Readability Scrim & Horizon Fades */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/30 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
         </div>
 
-        {/* Ambient Color Glow */}
-        <div className={`absolute top-1/4 left-10 w-96 h-96 ${theme.ambientGlow} rounded-full blur-[140px] pointer-events-none opacity-40`} />
+        {/* Ambient Color Glow - Subtle Natural Tone */}
+        <div className={`absolute top-1/4 left-10 w-96 h-96 ${theme.ambientGlow} rounded-full blur-[140px] pointer-events-none opacity-20`} />
 
         {/* Hero Content Layer - Fully Transparent Directly on Video */}
         <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20">
