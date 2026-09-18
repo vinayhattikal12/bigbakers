@@ -27,6 +27,7 @@ import { formatPrice } from '@/lib/utils/formatters';
 import { ProductGrid } from '@/components/ecommerce/ProductGrid';
 import { useCart } from '@/lib/context/CartContext';
 import { triggerFlyToCartAnimation } from '@/components/ecommerce/FlyToCartOverlay';
+import { SparkleModernIcon } from '@/components/ui/ModernIcons';
 
 export interface CategoryShowcaseProps {
   categoryId: string;
@@ -240,11 +241,11 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
           <div className="max-w-2xl space-y-3 sm:space-y-4">
             {/* Category Pill & Count */}
             <div className="flex items-center gap-2">
-              <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-[11px] font-bold uppercase tracking-wider bg-black/50 backdrop-blur-md shadow-sm`}>
-                <Sparkles className="w-3 h-3" />
+              <span className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full ${theme.accentPillBg} ${theme.accentBorder} border ${theme.accentTextColor} text-[11px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md shadow-sm`}>
+                <SparkleModernIcon className="w-3.5 h-3.5" />
                 <span>{theme.badgeText}</span>
               </span>
-              <span className="text-[11px] font-bold text-cream-100 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-xs">
+              <span className="text-[11px] font-bold text-cream-100 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-xs">
                 {categoryProducts.length} Items
               </span>
             </div>
@@ -266,9 +267,11 @@ export const CategoryShowcasePage: React.FC<CategoryShowcaseProps> = ({
                 return (
                   <div
                     key={idx}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-cream-100 text-[11px] font-medium shadow-sm"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-md border border-white/20 text-cream-100 text-[11px] font-medium shadow-sm transition-all group"
                   >
-                    <Icon className="w-3 h-3 text-gold shrink-0" />
+                    <div className="w-4 h-4 flex items-center justify-center shrink-0">
+                      <Icon className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
+                    </div>
                     <span>{pillar.text}</span>
                   </div>
                 );

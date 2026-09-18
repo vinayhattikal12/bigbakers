@@ -2,7 +2,11 @@
 
 import React from 'react';
 import { CategoryShowcasePage } from '@/components/ecommerce/CategoryShowcasePage';
-import { Pizza, Flame, UtensilsCrossed } from 'lucide-react';
+import { 
+  PizzaModernIcon, 
+  PureVegModernBadge, 
+  ExpressDeliveryModernIcon 
+} from '@/components/ui/ModernIcons';
 
 export default function PizzasPage() {
   return (
@@ -29,9 +33,9 @@ export default function PizzasPage() {
         badgeText: 'Pizzas & Pastas',
       }}
       craftPillars={[
-        { icon: Flame, text: 'Stone-Baked Fresh' },
-        { icon: Pizza, text: '100% Mozzarella' },
-        { icon: UtensilsCrossed, text: 'Pure Vegetarian' },
+        { icon: PizzaModernIcon, text: 'Stone-Baked Fresh 8" Pizzas' },
+        { icon: PureVegModernBadge, text: '100% Mozzarella & Pure Veg' },
+        { icon: ExpressDeliveryModernIcon, text: 'Hot 45-Min Express Delivery' },
       ]}
       subcategories={['All', 'Stone-Baked Pizzas', 'Artisan Pastas']}
     />

@@ -3,7 +3,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, UtensilsCrossed, Cake, Croissant, ShoppingBag } from 'lucide-react';
+import { 
+  HomeModernIcon, 
+  MenuModernIcon, 
+  CakeModernIcon, 
+  SavouriesModernIcon, 
+  BagModernIcon 
+} from '@/components/ui/ModernIcons';
 import { useCart } from '@/lib/context/CartContext';
 import { cn } from '@/lib/utils/cn';
 
@@ -33,25 +39,25 @@ export const MobileBottomBar: React.FC = () => {
     {
       label: 'Home',
       href: '/',
-      icon: Home,
+      icon: HomeModernIcon,
       isActive: pathname === '/',
     },
     {
       label: 'Menu',
       href: '/menu',
-      icon: UtensilsCrossed,
+      icon: MenuModernIcon,
       isActive: pathname === '/menu',
     },
     {
       label: 'Cakes',
       href: '/cakes',
-      icon: Cake,
+      icon: CakeModernIcon,
       isActive: pathname === '/cakes',
     },
     {
       label: 'Savouries',
       href: '/savouries',
-      icon: Croissant,
+      icon: SavouriesModernIcon,
       isActive: pathname === '/savouries' || pathname === '/pizzas',
     },
   ];
@@ -84,10 +90,10 @@ export const MobileBottomBar: React.FC = () => {
               <div
                 className={cn(
                   'p-1.5 rounded-xl transition-all',
-                  item.isActive ? 'bg-caramel/15 text-caramel scale-105' : 'text-cocoa/70'
+                  item.isActive ? 'bg-caramel/15 text-caramel scale-110 shadow-xs' : 'text-cocoa/70'
                 )}
               >
-                <Icon className="w-5 h-5 stroke-[2.2]" />
+                <Icon className="w-5 h-5" />
               </div>
               <span className="text-[10px] mt-0.5 tracking-tight">{item.label}</span>
             </Link>
@@ -106,7 +112,7 @@ export const MobileBottomBar: React.FC = () => {
           aria-label="Open Shopping Bag"
         >
           <div className="relative p-1.5 rounded-xl text-cocoa/70">
-            <ShoppingBag className="w-5 h-5 stroke-[2.2]" />
+            <BagModernIcon className="w-5 h-5" />
             {totalItems > 0 && (
               <span className="absolute -top-1 -right-1 bg-berry-rose text-white text-[9px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white shadow-xs">
                 {totalItems}

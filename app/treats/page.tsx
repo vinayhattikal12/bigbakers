@@ -2,7 +2,11 @@
 
 import React from 'react';
 import { CategoryShowcasePage } from '@/components/ecommerce/CategoryShowcasePage';
-import { Cookie, Sparkles, Smile } from 'lucide-react';
+import { 
+  TreatsModernIcon, 
+  SparkleModernIcon, 
+  PureVegModernBadge 
+} from '@/components/ui/ModernIcons';
 
 export default function TreatsPage() {
   return (
@@ -29,9 +33,9 @@ export default function TreatsPage() {
         badgeText: 'Treats & Chocolates',
       }}
       craftPillars={[
-        { icon: Cookie, text: 'Artisanal Hand-Dipped' },
-        { icon: Sparkles, text: 'Pure Cocoa Butter' },
-        { icon: Smile, text: 'Gifting & Celebrations' },
+        { icon: TreatsModernIcon, text: 'Artisanal Hand-Dipped' },
+        { icon: SparkleModernIcon, text: 'Pure Cocoa Butter' },
+        { icon: PureVegModernBadge, text: 'Gifting & Celebrations' },
       ]}
       subcategories={['All', 'Coated Chocolates', 'Cookies', 'Cupcakes', 'Donuts', 'Tea Cakes', 'Candies & Mukhwas', 'Gift Hampers', 'Gift Boxes & Packaging']}
     />

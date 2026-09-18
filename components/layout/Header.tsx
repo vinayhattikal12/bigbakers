@@ -25,6 +25,18 @@ import { categories } from '@/data/categories';
 import { cn } from '@/lib/utils/cn';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 
+import { 
+  CakeModernIcon,
+  DessertModernIcon,
+  PizzaModernIcon,
+  SavouriesModernIcon,
+  GelatoModernIcon,
+  TreatsModernIcon,
+  SnacksModernIcon,
+  SparkleModernIcon,
+  BagModernIcon
+} from '@/components/ui/ModernIcons';
+
 export const Header: React.FC = () => {
   const pathname = usePathname();
   const { totalItems, openCart } = useCart();
@@ -79,13 +91,13 @@ export const Header: React.FC = () => {
   ];
 
   const categoryIcons: Record<string, React.ReactNode> = {
-    cakes: <Cake className="w-4 h-4 text-caramel" />,
-    desserts: <Sparkles className="w-4 h-4 text-berry-rose" />,
-    pizzas: <Pizza className="w-4 h-4 text-amber-500" />,
-    savouries: <Croissant className="w-4 h-4 text-orange-400" />,
-    gelato: <IceCream className="w-4 h-4 text-pink-400" />,
-    treats: <Cookie className="w-4 h-4 text-caramel" />,
-    snacks: <Flame className="w-4 h-4 text-emerald-400" />,
+    cakes: <CakeModernIcon className="w-5 h-5" />,
+    desserts: <DessertModernIcon className="w-5 h-5" />,
+    pizzas: <PizzaModernIcon className="w-5 h-5" />,
+    savouries: <SavouriesModernIcon className="w-5 h-5" />,
+    gelato: <GelatoModernIcon className="w-5 h-5" />,
+    treats: <TreatsModernIcon className="w-5 h-5" />,
+    snacks: <SnacksModernIcon className="w-5 h-5" />,
   };
 
   const isDarkHeroHeader = isHomePage && !isScrolled;

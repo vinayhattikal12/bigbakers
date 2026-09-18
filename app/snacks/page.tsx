@@ -2,7 +2,11 @@
 
 import React from 'react';
 import { CategoryShowcasePage } from '@/components/ecommerce/CategoryShowcasePage';
-import { Flame, Sparkles, ShieldCheck } from 'lucide-react';
+import { 
+  SnacksModernIcon, 
+  SparkleModernIcon, 
+  PureVegModernBadge 
+} from '@/components/ui/ModernIcons';
 
 export default function SnacksPage() {
   return (
@@ -29,9 +33,9 @@ export default function SnacksPage() {
         badgeText: 'Roasted Snacks & Munchies',
       }}
       craftPillars={[
-        { icon: Flame, text: 'Non-Fried Superfood' },
-        { icon: Sparkles, text: 'Artisanal Spices' },
-        { icon: ShieldCheck, text: 'Zero Trans Fat • Guilt-Free' },
+        { icon: SnacksModernIcon, text: 'Non-Fried Superfood Makhana' },
+        { icon: SparkleModernIcon, text: 'Artisanal Bengaluru Spices' },
+        { icon: PureVegModernBadge, text: 'Zero Trans Fat • 100% Pure Veg' },
       ]}
       subcategories={['All', 'Makhana', 'Traditional Namkeens', 'Spiced Peanuts', 'Chips & Crisps']}
     />

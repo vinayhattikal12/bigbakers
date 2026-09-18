@@ -2,7 +2,11 @@
 
 import React from 'react';
 import { CategoryShowcasePage } from '@/components/ecommerce/CategoryShowcasePage';
-import { ShieldCheck, Sparkles, Clock, Flame, Award } from 'lucide-react';
+import { 
+  PureVegModernBadge, 
+  CakeModernIcon, 
+  ExpressDeliveryModernIcon 
+} from '@/components/ui/ModernIcons';
 
 export default function CakesPage() {
   return (
@@ -29,9 +33,9 @@ export default function CakesPage() {
         badgeText: 'Celebration Cakes',
       }}
       craftPillars={[
-        { icon: ShieldCheck, text: '100% Pure Dairy & Eggless' },
-        { icon: Sparkles, text: '54% Callebaut Ganache' },
-        { icon: Clock, text: 'Same-Day Bengaluru Delivery' },
+        { icon: PureVegModernBadge, text: '100% Pure Dairy & Eggless' },
+        { icon: CakeModernIcon, text: '54% Callebaut Ganache' },
+        { icon: ExpressDeliveryModernIcon, text: 'Same-Day Bengaluru Delivery' },
       ]}
       subcategories={['All', 'Celebration Cakes', 'Pastry Slices', 'Bento Box Cakes']}
     />

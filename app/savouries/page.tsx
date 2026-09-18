@@ -2,7 +2,11 @@
 
 import React from 'react';
 import { CategoryShowcasePage } from '@/components/ecommerce/CategoryShowcasePage';
-import { Croissant, Flame, ShieldCheck } from 'lucide-react';
+import { 
+  SavouriesModernIcon, 
+  SparkleModernIcon, 
+  PureVegModernBadge 
+} from '@/components/ui/ModernIcons';
 
 export default function SavouriesPage() {
   return (
@@ -29,9 +33,9 @@ export default function SavouriesPage() {
         badgeText: 'Savouries & Breads',
       }}
       craftPillars={[
-        { icon: Flame, text: 'Baked Fresh Daily' },
-        { icon: Croissant, text: 'Flaky French Butter Layers' },
-        { icon: ShieldCheck, text: '100% Pure Vegetarian' },
+        { icon: SavouriesModernIcon, text: 'Baked Fresh Every Morning' },
+        { icon: SparkleModernIcon, text: 'Flaky French Butter Layers' },
+        { icon: PureVegModernBadge, text: '100% Pure Vegetarian' },
       ]}
       subcategories={['All', 'Puffs & Rolls', 'Buns & Calzones', 'Hot Savouries', 'Breads & Rusks', 'Beverages']}
     />

@@ -2,7 +2,11 @@
 
 import React from 'react';
 import { CategoryShowcasePage } from '@/components/ecommerce/CategoryShowcasePage';
-import { IceCream, ShieldCheck, Heart } from 'lucide-react';
+import { 
+  GelatoModernIcon, 
+  SparkleModernIcon, 
+  PureVegModernBadge 
+} from '@/components/ui/ModernIcons';
 
 export default function GelatoPage() {
   return (
@@ -29,9 +33,9 @@ export default function GelatoPage() {
         badgeText: 'Italian Gelato',
       }}
       craftPillars={[
-        { icon: IceCream, text: 'Slow-Churned Daily' },
-        { icon: ShieldCheck, text: '100% Pure Milk & Dairy' },
-        { icon: Heart, text: 'Zero Gelatin & Preservatives' },
+        { icon: GelatoModernIcon, text: 'Slow-Churned Italian Gelato' },
+        { icon: SparkleModernIcon, text: '100% Pure Milk & Whole Dairy' },
+        { icon: PureVegModernBadge, text: 'Zero Gelatin • 100% Pure Veg' },
       ]}
       subcategories={['All', 'Artisan Gelato']}
     />

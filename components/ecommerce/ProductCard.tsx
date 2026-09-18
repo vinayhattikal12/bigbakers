@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/Badge';
 import { useCart } from '@/lib/context/CartContext';
 import { useWishlist } from '@/lib/context/WishlistContext';
 import { triggerFlyToCartAnimation } from '@/components/ecommerce/FlyToCartOverlay';
+import { PureVegModernBadge } from '@/components/ui/ModernIcons';
 
 interface ProductCardProps {
   product: Product;
@@ -88,9 +89,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
 
         {/* Pure Veg Green Dot Indicator (Standard Indian FSSAI aesthetic) */}
         <div className="absolute bottom-2 left-2 z-10">
-          <div className="w-4 h-4 rounded-sm border border-emerald-600 bg-white/90 flex items-center justify-center shadow-xs">
-            <div className="w-2 h-2 rounded-full bg-emerald-600" />
-          </div>
+          <PureVegModernBadge className="w-4.5 h-4.5" />
         </div>
 
         {/* Wishlist Button */}

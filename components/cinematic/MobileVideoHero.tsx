@@ -2,7 +2,13 @@
 
 import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Sparkles, ArrowRight, MapPin, ChevronDown, Heart } from 'lucide-react';
+import { 
+  SparkleModernIcon, 
+  StorePinModernIcon, 
+  ExpressDeliveryModernIcon,
+  CakeModernIcon 
+} from '@/components/ui/ModernIcons';
+import { ArrowRight, ChevronDown, Heart } from 'lucide-react';
 
 export const MobileVideoHero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -40,7 +46,7 @@ export const MobileVideoHero: React.FC = () => {
       <div className="relative z-10 px-5 max-w-7xl mx-auto w-full space-y-5">
         <div className="max-w-3xl space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-gold/40 text-gold text-[11px] font-bold uppercase tracking-wider shadow-lg">
-            <Sparkles className="w-3.5 h-3.5 text-gold animate-pulse" />
+            <SparkleModernIcon className="w-3.5 h-3.5" />
             <span>Handcrafted in Vijaynagar, Bengaluru</span>
           </div>
 
@@ -60,7 +66,7 @@ export const MobileVideoHero: React.FC = () => {
             href="/menu"
             className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-3.5 rounded-2xl bg-gradient-to-r from-amber-600 via-caramel to-amber-700 text-white font-bold text-xs sm:text-sm shadow-[0_8px_25px_rgba(217,119,6,0.4)] border border-amber-400/40 hover:brightness-110 active:scale-95 transition-all group whitespace-nowrap"
           >
-            <Sparkles className="w-4 h-4 text-amber-200 group-hover:rotate-12 transition-transform shrink-0" />
+            <SparkleModernIcon className="w-4 h-4 shrink-0" />
             <span className="font-bold tracking-tight sm:tracking-wide">Explore Menu</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform shrink-0" />
           </Link>
@@ -69,7 +75,7 @@ export const MobileVideoHero: React.FC = () => {
             href="/stores"
             className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-3.5 rounded-2xl bg-black/65 hover:bg-white/20 backdrop-blur-xl border border-white/35 text-white font-bold text-xs sm:text-sm active:scale-95 transition-all shadow-[0_8px_25px_rgba(0,0,0,0.4)] group whitespace-nowrap"
           >
-            <MapPin className="w-4 h-4 text-gold group-hover:scale-110 transition-transform shrink-0" />
+            <StorePinModernIcon className="w-4 h-4 shrink-0" />
             <span className="font-bold tracking-tight sm:tracking-wide">Visit Store</span>
           </Link>
         </div>
@@ -78,11 +84,14 @@ export const MobileVideoHero: React.FC = () => {
         <div className="pt-4 border-t border-white/15 flex flex-wrap items-center justify-between gap-3 text-xs text-cream-200/80">
           <div className="flex items-center gap-3 font-medium text-[11px]">
             <span className="flex items-center gap-1.5 text-cream-100">
-              <Heart className="w-3.5 h-3.5 text-caramel fill-current" />
+              <CakeModernIcon className="w-3.5 h-3.5" />
               <span>50,000+ Celebrations</span>
             </span>
             <span className="text-white/30">•</span>
-            <span>⚡ 45-60 Min Express</span>
+            <span className="flex items-center gap-1">
+              <ExpressDeliveryModernIcon className="w-3.5 h-3.5" />
+              <span>45-60 Min Express</span>
+            </span>
           </div>
 
           <div className="flex items-center gap-1 text-gold font-medium animate-bounce text-[11px]">

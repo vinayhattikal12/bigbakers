@@ -2,7 +2,11 @@
 
 import React from 'react';
 import { CategoryShowcasePage } from '@/components/ecommerce/CategoryShowcasePage';
-import { ShieldCheck, Sparkles, Heart, Award } from 'lucide-react';
+import { 
+  DessertModernIcon, 
+  SparkleModernIcon, 
+  PureVegModernBadge 
+} from '@/components/ui/ModernIcons';
 
 export default function DessertsPage() {
   return (
@@ -29,9 +33,9 @@ export default function DessertsPage() {
         badgeText: 'Artisan Desserts',
       }}
       craftPillars={[
-        { icon: ShieldCheck, text: 'Mascarpone & Cream Cheese' },
-        { icon: Sparkles, text: 'Pure Biscoff & Saffron' },
-        { icon: Heart, text: '100% Eggless & Pure Veg' },
+        { icon: DessertModernIcon, text: 'Mascarpone & Cream Cheese' },
+        { icon: SparkleModernIcon, text: 'Pure Biscoff & Saffron' },
+        { icon: PureVegModernBadge, text: '100% Eggless & Pure Veg' },
       ]}
       subcategories={['All', 'Cheesecakes', 'Tiramisu', 'Tres Leches', 'Brownies', 'Berliners', 'Muffins']}
     />
