@@ -119,11 +119,11 @@ export const Header: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* ========================================================
-              📱 MOBILE & TABLET NAVBAR (< 1024px) — STRUCTURED 3-COLUMN
+              📱 MOBILE & TABLET NAVBAR (< 1024px) — RESPONSIVE 3-PART HEADER
               ======================================================== */}
-          <div className="grid grid-cols-3 items-center lg:hidden">
+          <div className="flex items-center justify-between gap-2 lg:hidden">
             {/* Left: Quick Actions Capsule (Menu + Search) */}
-            <div className="flex items-center justify-start gap-1">
+            <div className="flex items-center justify-start shrink-0">
               <div className={cn(
                 'flex items-center rounded-2xl p-0.5 border transition-all',
                 isDarkHeroHeader
