@@ -71,13 +71,13 @@ export const Header: React.FC = () => {
   };
 
   const navLinks = [
-    { label: 'Cakes', href: '/cakes' },
-    { label: 'Desserts', href: '/desserts' },
-    { label: 'Pizzas & Savouries', href: '/pizzas' },
-    { label: 'Gelato & Treats', href: '/treats' },
-    { label: 'Snacks', href: '/snacks' },
-    { label: 'Our Story', href: '/story' },
-    { label: 'Store', href: '/stores' },
+    { label: 'Cakes', shortLabel: 'Cakes', href: '/cakes' },
+    { label: 'Desserts', shortLabel: 'Desserts', href: '/desserts' },
+    { label: 'Pizzas & Savouries', shortLabel: 'Savouries', href: '/pizzas' },
+    { label: 'Gelato & Treats', shortLabel: 'Treats', href: '/treats' },
+    { label: 'Snacks', shortLabel: 'Snacks', href: '/snacks' },
+    { label: 'Our Story', shortLabel: 'Story', href: '/story' },
+    { label: 'Store', shortLabel: 'Store', href: '/stores' },
   ];
 
   const categoryIcons: Record<string, React.ReactNode> = {
@@ -174,26 +174,35 @@ export const Header: React.FC = () => {
           {/* ========================================================
               💻 DESKTOP NAVBAR (>= 1024px)
               ======================================================== */}
-          <div className="hidden lg:flex items-center justify-between gap-6">
+          <div className="hidden lg:flex items-center justify-between gap-3 xl:gap-6 w-full min-w-0">
             {/* Brand Logo */}
-            <BrandLogo
-              variant="auto"
-              isDarkHeader={isDarkHeroHeader}
-              size="lg"
-            />
+            <div className="shrink-0">
+              <BrandLogo
+                variant="auto"
+                isDarkHeader={isDarkHeroHeader}
+                size="md"
+                className="xl:hidden"
+              />
+              <BrandLogo
+                variant="auto"
+                isDarkHeader={isDarkHeroHeader}
+                size="lg"
+                className="hidden xl:inline-flex"
+              />
+            </div>
 
             {/* Desktop Nav Links */}
-            <nav className="flex items-center gap-1 xl:gap-2">
+            <nav className="flex items-center gap-0.5 xl:gap-1.5 shrink min-w-0">
               {/* Menu with Mega Dropdown */}
               <div
-                className="relative"
+                className="relative shrink-0"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
                   href="/menu"
                   className={cn(
-                    'flex items-center gap-1 px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all whitespace-nowrap',
+                    'flex items-center gap-1 px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs xl:text-[13px] font-medium transition-all whitespace-nowrap',
                     pathname === '/menu'
                       ? isDarkHeroHeader
                         ? 'bg-white/20 text-gold font-bold'
@@ -295,7 +304,7 @@ export const Header: React.FC = () => {
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      'px-3 py-1.5 rounded-full text-[13px] font-medium transition-all whitespace-nowrap',
+                      'px-2 xl:px-3 py-1.5 rounded-full text-xs xl:text-[13px] font-medium transition-all whitespace-nowrap shrink-0',
                       isActive
                         ? isDarkHeroHeader
                           ? 'bg-white/20 text-gold font-bold'
@@ -305,28 +314,30 @@ export const Header: React.FC = () => {
                         : 'text-cocoa/85 hover:text-cocoa hover:bg-cream-200/60'
                     )}
                   >
-                    {link.label}
+                    <span className="hidden xl:inline">{link.label}</span>
+                    <span className="xl:hidden">{link.shortLabel}</span>
                   </Link>
                 );
               })}
             </nav>
 
             {/* Desktop Actions */}
-            <div className="flex items-center gap-2.5 shrink-0">
+            <div className="flex items-center gap-2 xl:gap-2.5 shrink-0">
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className={cn(
-                  'flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all whitespace-nowrap group',
+                  'flex items-center gap-1.5 xl:gap-2 px-2.5 xl:px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all whitespace-nowrap group shrink-0',
                   isDarkHeroHeader
                     ? 'bg-white/15 hover:bg-white/25 text-white border-white/25 backdrop-blur-md'
                     : 'bg-cream-200/80 hover:bg-cream-300/90 text-cocoa border-cream-300 shadow-2xs'
                 )}
               >
                 <SearchModernIcon className={cn('w-4 h-4 transition-transform group-hover:scale-110', isDarkHeroHeader ? 'text-gold' : 'text-caramel')} />
-                <span className="font-semibold text-cocoa/80">Search cravings...</span>
+                <span className="hidden 2xl:inline font-semibold text-cocoa/80">Search cravings...</span>
+                <span className="2xl:hidden font-semibold text-cocoa/80">Search</span>
                 <kbd
                   className={cn(
-                    'text-[10px] px-1.5 py-0.5 rounded font-mono font-bold',
+                    'text-[10px] px-1.5 py-0.5 rounded font-mono font-bold hidden sm:inline',
                     isDarkHeroHeader ? 'bg-white/20 text-white' : 'bg-white text-caramel-dark border border-cream-300/80 shadow-2xs'
                   )}
                 >
