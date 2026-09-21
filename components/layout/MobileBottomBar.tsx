@@ -107,14 +107,19 @@ export const MobileBottomBar: React.FC = () => {
             'flex flex-col items-center justify-center py-1 px-3 rounded-2xl transition-all duration-200 active:scale-95 min-w-[56px]',
             isCartActive
               ? 'text-caramel font-bold'
-              : 'text-cocoa/60 hover:text-cocoa font-medium'
+              : 'text-cocoa/70 hover:text-caramel font-medium'
           )}
           aria-label="Open Shopping Bag"
         >
-          <div className="relative p-1.5 rounded-xl text-cocoa/70">
-            <BagModernIcon className="w-5 h-5" />
+          <div
+            className={cn(
+              'relative p-1.5 rounded-xl transition-all',
+              isCartActive ? 'bg-caramel/15 text-caramel scale-110 shadow-xs' : 'text-caramel'
+            )}
+          >
+            <BagModernIcon className="w-5 h-5 text-caramel" />
             {totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 bg-berry-rose text-white text-[9px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white shadow-xs">
+              <span className="absolute -top-1 -right-1 bg-[#B91C1C] text-white text-[9px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white shadow-xs">
                 {totalItems}
               </span>
             )}

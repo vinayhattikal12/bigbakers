@@ -118,11 +118,11 @@ export const Header: React.FC = () => {
                 'flex items-center rounded-2xl p-0.5 border transition-all',
                 isDarkHeroHeader
                   ? 'bg-white/10 border-white/20 text-white backdrop-blur-md'
-                  : 'bg-cream-200/70 border-cream-300 text-cocoa'
+                  : 'bg-cream-200/80 border-cream-300 text-cocoa shadow-2xs'
               )}>
                 <button
                   onClick={() => setIsMobileNavOpen(true)}
-                  className="p-2 rounded-xl hover:bg-white/20 active:scale-95 transition-all"
+                  className="p-2 rounded-xl hover:bg-white/20 active:scale-95 transition-all text-caramel-dark"
                   aria-label="Open menu"
                 >
                   <MenuModernIcon className="w-5 h-5" />
@@ -130,7 +130,7 @@ export const Header: React.FC = () => {
                 <div className={cn('w-[1px] h-4', isDarkHeroHeader ? 'bg-white/20' : 'bg-cream-300')} />
                 <button
                   onClick={() => setIsSearchOpen(true)}
-                  className="p-2 rounded-xl hover:bg-white/20 active:scale-95 transition-all"
+                  className="p-2 rounded-xl hover:bg-white/20 active:scale-95 transition-all text-caramel-dark"
                   aria-label="Search menu"
                 >
                   <SearchModernIcon className="w-4 h-4" />
@@ -154,16 +154,16 @@ export const Header: React.FC = () => {
                 data-cart-target="true"
                 onClick={openCart}
                 className={cn(
-                  'relative p-2 rounded-2xl transition-all shadow-sm active:scale-90 border',
+                  'relative p-2.5 rounded-2xl transition-all duration-200 shadow-sm active:scale-90 border',
                   isDarkHeroHeader
-                    ? 'bg-white/15 hover:bg-white/25 text-white border-white/20 backdrop-blur-md'
-                    : 'bg-cocoa text-cream-50 border-cocoa hover:bg-caramel'
+                    ? 'bg-gradient-to-r from-caramel via-[#D96B1A] to-caramel-dark text-white border-gold/40 shadow-[0_0_12px_rgba(212,175,55,0.25)]'
+                    : 'bg-gradient-to-r from-caramel via-[#D96B1A] to-caramel-dark text-white border-caramel-dark/30 shadow-[0_2px_8px_rgba(200,90,23,0.25)] hover:brightness-105'
                 )}
                 aria-label="View shopping bag"
               >
-                <BagModernIcon className="w-5 h-5" />
+                <BagModernIcon className="w-5 h-5 text-white" />
                 {totalItems > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-berry-rose text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-md">
+                  <span className="absolute -top-1.5 -right-1.5 bg-[#B91C1C] text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-md">
                     {totalItems}
                   </span>
                 )}
@@ -316,18 +316,18 @@ export const Header: React.FC = () => {
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className={cn(
-                  'flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all whitespace-nowrap',
+                  'flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border transition-all whitespace-nowrap group',
                   isDarkHeroHeader
                     ? 'bg-white/15 hover:bg-white/25 text-white border-white/25 backdrop-blur-md'
-                    : 'bg-cream-200/70 hover:bg-cream-300/80 text-cocoa border-cream-300/80'
+                    : 'bg-cream-200/80 hover:bg-cream-300/90 text-cocoa border-cream-300 shadow-2xs'
                 )}
               >
-                <SearchModernIcon className={cn('w-3.5 h-3.5', isDarkHeroHeader ? 'text-white/80' : 'text-cocoa/60')} />
-                <span>Search cravings...</span>
+                <SearchModernIcon className={cn('w-4 h-4 transition-transform group-hover:scale-110', isDarkHeroHeader ? 'text-gold' : 'text-caramel')} />
+                <span className="font-semibold text-cocoa/80">Search cravings...</span>
                 <kbd
                   className={cn(
-                    'text-[10px] px-1.5 py-0.5 rounded font-mono',
-                    isDarkHeroHeader ? 'bg-white/20 text-white' : 'bg-white text-cocoa/50 shadow-xs'
+                    'text-[10px] px-1.5 py-0.5 rounded font-mono font-bold',
+                    isDarkHeroHeader ? 'bg-white/20 text-white' : 'bg-white text-caramel-dark border border-cream-300/80 shadow-2xs'
                   )}
                 >
                   ⌘K
@@ -339,16 +339,16 @@ export const Header: React.FC = () => {
                 data-cart-target="true"
                 onClick={openCart}
                 className={cn(
-                  'relative p-2.5 rounded-full transition-all shadow-sm group active:scale-95 shrink-0',
+                  'relative p-2.5 rounded-full transition-all duration-200 shadow-sm group active:scale-95 shrink-0 border',
                   isDarkHeroHeader
-                    ? 'bg-white/20 text-white hover:bg-caramel backdrop-blur-md border border-white/25'
-                    : 'bg-cocoa text-cream-50 hover:bg-caramel hover:text-white'
+                    ? 'bg-gradient-to-r from-caramel via-[#D96B1A] to-caramel-dark text-white border-gold/40 shadow-[0_0_14px_rgba(212,175,55,0.3)] hover:brightness-110 hover:scale-105'
+                    : 'bg-gradient-to-r from-caramel via-[#D96B1A] to-caramel-dark text-white border-caramel-dark/30 shadow-[0_2px_10px_rgba(200,90,23,0.3)] hover:brightness-105 hover:scale-105'
                 )}
                 aria-label="View shopping bag"
               >
-                <BagModernIcon className="w-4.5 h-4.5 transition-transform group-hover:scale-110" />
+                <BagModernIcon className="w-5 h-5 text-white transition-transform duration-200 group-hover:scale-110" />
                 {totalItems > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-berry-rose text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+                  <span className="absolute -top-1.5 -right-1.5 bg-[#B91C1C] text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-md animate-in zoom-in-50 duration-200">
                     {totalItems}
                   </span>
                 )}

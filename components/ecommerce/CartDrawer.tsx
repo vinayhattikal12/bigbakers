@@ -97,7 +97,7 @@ export const CartDrawer: React.FC = () => {
         {/* Header */}
         <div className="flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 border-b border-cream-300 bg-white/70 backdrop-blur-md">
           <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
-            <BagModernIcon className="w-5 h-5 shrink-0" />
+            <BagModernIcon className="w-5 h-5 shrink-0 text-caramel" />
             <h2 className="font-serif text-lg sm:text-xl font-bold text-cocoa truncate">Your Cravings</h2>
             <span className="text-xs bg-caramel/10 text-caramel font-semibold px-2 py-0.5 rounded-full shrink-0">
               {totalItems} {totalItems === 1 ? 'item' : 'items'}
@@ -138,7 +138,7 @@ export const CartDrawer: React.FC = () => {
           {items.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-4">
               <div className="w-20 h-20 rounded-full bg-cream-200 flex items-center justify-center">
-                <BagModernIcon className="w-10 h-10" />
+                <BagModernIcon className="w-10 h-10 text-caramel" />
               </div>
               <div className="space-y-1">
                 <p className="font-serif text-lg font-bold text-cocoa">Your bag is empty</p>

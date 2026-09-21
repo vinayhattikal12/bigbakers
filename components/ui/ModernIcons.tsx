@@ -469,7 +469,7 @@ export const StorePinModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5',
   </svg>
 );
 
-// 🛍️ 11. MODERN SHOPPING BAG ICON
+// 🛍️ 11. MODERN SHOPPING BAG ICON (Big Bakers Signature Luxury Bag)
 export const BagModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', size, animate = true, ...props }) => (
   <svg
     viewBox="0 0 24 24"
@@ -480,25 +480,26 @@ export const BagModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', size
     height={size}
     {...props}
   >
-    <defs>
-      <linearGradient id="bagGrad" x1="4" y1="7" x2="20" y2="21" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#D97706" />
-        <stop offset="50%" stopColor="#C85A17" />
-        <stop offset="100%" stopColor="#8A3805" />
-      </linearGradient>
-    </defs>
-
+    {/* Curved Luxury Handle */}
     <path
-      d="M4 7C4 5.9 4.9 5 6 5H18C19.1 5 20 5.9 20 7L21 19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19L4 7Z"
-      fill="url(#bagGrad)"
-    />
-    <path
-      d="M9 7V5C9 3.34 10.34 2 12 2C13.66 2 15 3.34 15 5V7"
-      stroke="#FDE68A"
-      strokeWidth="2"
+      d="M8.5 7.5V5.5C8.5 3.567 10.067 2 12 2C13.933 2 15.5 3.567 15.5 5.5V7.5"
+      stroke="currentColor"
+      strokeWidth="2.2"
       strokeLinecap="round"
+      strokeLinejoin="round"
     />
-    <path d="M12 11L12.4 12.2L13.6 12.6L12.4 13L12 14.2L11.6 13L10.4 12.6L11.6 12.2L12 11Z" fill="#FEF3C7" />
+
+    {/* Modern Bag Main Body with Gentle Taper and Curved Bottom */}
+    <path
+      d="M4.5 7.5H19.5L18.2 20.2C18.08 21.2 17.24 22 16.23 22H7.77C6.76 22 5.92 21.2 5.8 20.2L4.5 7.5Z"
+      fill="currentColor"
+    />
+
+    {/* Elegant Gold Accent Center Diamond Sparkle */}
+    <path
+      d="M12 11.5L12.4 12.4L13.5 12.7L12.6 13.5L12.9 14.5L12 13.9L11.1 14.5L11.4 13.5L10.5 12.7L11.6 12.4L12 11.5Z"
+      fill="#FDE047"
+    />
   </svg>
 );
 
@@ -593,14 +594,10 @@ export const MenuModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', siz
     height={size}
     {...props}
   >
-    <defs>
-      <linearGradient id="menuGrad" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#F59E0B" />
-        <stop offset="100%" stopColor="#D97706" />
-      </linearGradient>
-    </defs>
-    <rect x="3" y="4" width="18" height="16" rx="3" fill="url(#menuGrad)" />
-    <path d="M7 8H17M7 12H17M7 16H13" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+    <path d="M4 6.5H20" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+    <path d="M4 12H15" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+    <path d="M4 17.5H20" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+    <circle cx="18.5" cy="12" r="1.5" fill="#D97706" />
   </svg>
 );
 
@@ -615,33 +612,12 @@ export const SearchModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', s
     height={size}
     {...props}
   >
-    <defs>
-      <linearGradient id="searchRimGrad" x1="3" y1="3" x2="16" y2="16" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#F59E0B" />
-        <stop offset="50%" stopColor="#D97706" />
-        <stop offset="100%" stopColor="#B45309" />
-      </linearGradient>
-      <radialGradient id="searchLensGrad" cx="10" cy="10" r="7" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#FFFDF9" stopOpacity="0.9" />
-        <stop offset="70%" stopColor="#FEF3C7" stopOpacity="0.6" />
-        <stop offset="100%" stopColor="#FDE68A" stopOpacity="0.2" />
-      </radialGradient>
-      <linearGradient id="searchHandleGrad" x1="14" y1="14" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#D97706" />
-        <stop offset="100%" stopColor="#78350F" />
-      </linearGradient>
-    </defs>
-    {/* Optical Lens */}
-    <circle cx="10.5" cy="10.5" r="7" fill="url(#searchLensGrad)" />
-    {/* Gold Bezel Rim */}
-    <circle cx="10.5" cy="10.5" r="7" stroke="url(#searchRimGrad)" strokeWidth="2.2" />
-    {/* Glass Flare Reflection */}
-    <path d="M7 7.5C8 6.5 9.5 6 11 6.2" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" opacity="0.9" />
-    {/* Starlight Sparkle */}
-    <path d="M12 9L12.3 9.7L13 10L12.3 10.3L12 11L11.7 10.3L11 10L11.7 9.7L12 9Z" fill="#F59E0B" />
-    {/* Precision Handle with Grip Ring */}
-    <path d="M15.5 15.5L21 21" stroke="url(#searchHandleGrad)" strokeWidth="3" strokeLinecap="round" />
-    <circle cx="16.5" cy="16.5" r="1" fill="#FBBF24" />
+    {/* Optical Lens Rim */}
+    <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="2.2" />
+    {/* Subtle Lens Flare */}
+    <path d="M7.5 7.5C8.3 6.7 9.3 6.3 10.5 6.3" stroke="#FDE047" strokeWidth="1.3" strokeLinecap="round" />
+    {/* Handle */}
+    <path d="M15.5 15.5L20.5 20.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
   </svg>
 );
 
