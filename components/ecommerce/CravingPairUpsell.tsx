@@ -50,34 +50,35 @@ export const CravingPairUpsell: React.FC<CravingPairUpsellProps> = ({
   };
 
   return (
-    <div className="p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-amber-50 via-cream-100 to-amber-50 border border-amber-200/80 shadow-xs space-y-3">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-1.5">
-          <Zap className="w-4 h-4 text-caramel fill-caramel" />
-          <span className="text-xs font-bold uppercase tracking-wider text-cocoa">
+    <div className="p-3 sm:p-4 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-amber-50 via-cream-100 to-amber-50 border border-amber-200/80 shadow-xs space-y-2.5 w-full min-w-0 overflow-hidden">
+      <div className="flex items-center justify-between gap-2 min-w-0">
+        <div className="flex items-center gap-1.5 min-w-0">
+          <Zap className="w-3.5 h-3.5 text-caramel fill-caramel shrink-0" />
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-cocoa truncate">
             The Perfect Craving Contrast
           </span>
         </div>
-        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-caramel/15 text-caramel">
+        <span className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full bg-caramel/15 text-caramel shrink-0">
           Chef Recommended
         </span>
       </div>
 
-      <div className="flex items-center justify-between gap-3 bg-white p-3 rounded-2xl border border-cream-200 shadow-xs">
-        <div className="flex items-center gap-3 min-w-0">
-          <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-cream-200 shrink-0">
+      <div className="flex items-center justify-between gap-2 sm:gap-3 bg-white p-2.5 sm:p-3 rounded-2xl border border-cream-200 shadow-xs w-full min-w-0">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+          <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-cream-200 shrink-0">
             <Image
-              src={pairItem.heroImage}
+              src={pairItem.heroImage || '/images/products/celebration-cakes/belgian-truffle-cake.webp'}
               alt={pairItem.name}
               fill
               className="object-cover"
+              sizes="48px"
             />
           </div>
-          <div className="min-w-0">
+          <div className="min-w-0 flex-1">
             <h5 className="text-xs font-bold text-cocoa truncate">
               {pairItem.name}
             </h5>
-            <p className="text-[11px] text-cocoa/60 truncate">
+            <p className="text-[10px] sm:text-[11px] text-cocoa/60 truncate">
               {pairItem.tagline}
             </p>
             <span className="font-bold text-xs text-caramel">
@@ -89,7 +90,7 @@ export const CravingPairUpsell: React.FC<CravingPairUpsellProps> = ({
         <button
           onClick={handleAddPair}
           disabled={isAdded}
-          className={`px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all shrink-0 active:scale-95 ${
+          className={`px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs font-bold flex items-center gap-1 transition-all shrink-0 active:scale-95 ${
             isAdded
               ? 'bg-emerald-600 text-white shadow-md'
               : 'bg-cocoa text-cream-50 hover:bg-caramel hover:text-white shadow-sm'
@@ -98,12 +99,12 @@ export const CravingPairUpsell: React.FC<CravingPairUpsellProps> = ({
           {isAdded ? (
             <>
               <Check className="w-3.5 h-3.5" />
-              <span>Added!</span>
+              <span className="text-[11px]">Added!</span>
             </>
           ) : (
             <>
               <Plus className="w-3.5 h-3.5" />
-              <span>+ Add Pair</span>
+              <span className="text-[11px]">+ Add</span>
             </>
           )}
         </button>

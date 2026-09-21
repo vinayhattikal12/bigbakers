@@ -41,6 +41,11 @@ export function triggerFlyToCartAnimation(
 ) {
   if (typeof window === 'undefined' || !source) return;
 
+  // On mobile & tablet viewports (< 1024px), skip the flying animation completely as requested
+  if (window.innerWidth < 1024) {
+    return;
+  }
+
   let rect: DOMRect;
   if ('getBoundingClientRect' in source) {
     rect = source.getBoundingClientRect();
