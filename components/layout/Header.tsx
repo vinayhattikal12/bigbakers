@@ -3,21 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { 
-  ShoppingBag, 
-  Search, 
-  Menu as MenuIcon, 
-  Sparkles, 
-  ChevronDown, 
-  Cake, 
-  IceCream, 
-  Cookie, 
-  Flame, 
-  ArrowRight,
-  ShieldCheck,
-  Pizza,
-  Croissant
-} from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { useCart } from '@/lib/context/CartContext';
 import { SearchModal } from '@/components/ecommerce/SearchModal';
 import { MobileNav } from './MobileNav';
@@ -34,7 +20,11 @@ import {
   TreatsModernIcon,
   SnacksModernIcon,
   SparkleModernIcon,
-  BagModernIcon
+  BagModernIcon,
+  SearchModernIcon,
+  MenuModernIcon,
+  ArrowRightModernIcon,
+  ShieldModernBadge
 } from '@/components/ui/ModernIcons';
 
 export const Header: React.FC = () => {
@@ -135,7 +125,7 @@ export const Header: React.FC = () => {
                   className="p-2 rounded-xl hover:bg-white/20 active:scale-95 transition-all"
                   aria-label="Open menu"
                 >
-                  <MenuIcon className="w-5 h-5" />
+                  <MenuModernIcon className="w-5 h-5" />
                 </button>
                 <div className={cn('w-[1px] h-4', isDarkHeroHeader ? 'bg-white/20' : 'bg-cream-300')} />
                 <button
@@ -143,7 +133,7 @@ export const Header: React.FC = () => {
                   className="p-2 rounded-xl hover:bg-white/20 active:scale-95 transition-all"
                   aria-label="Search menu"
                 >
-                  <Search className="w-4 h-4" />
+                  <SearchModernIcon className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -164,14 +154,14 @@ export const Header: React.FC = () => {
                 data-cart-target="true"
                 onClick={openCart}
                 className={cn(
-                  'relative p-2.5 rounded-2xl transition-all shadow-sm active:scale-90 border',
+                  'relative p-2 rounded-2xl transition-all shadow-sm active:scale-90 border',
                   isDarkHeroHeader
                     ? 'bg-white/15 hover:bg-white/25 text-white border-white/20 backdrop-blur-md'
                     : 'bg-cocoa text-cream-50 border-cocoa hover:bg-caramel'
                 )}
                 aria-label="View shopping bag"
               >
-                <ShoppingBag className="w-4.5 h-4.5" />
+                <BagModernIcon className="w-5 h-5" />
                 {totalItems > 0 && (
                   <span className="absolute -top-1.5 -right-1.5 bg-berry-rose text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-md">
                     {totalItems}
@@ -242,7 +232,7 @@ export const Header: React.FC = () => {
                         className="text-xs font-bold text-caramel hover:text-caramel-dark flex items-center gap-1 transition-colors group"
                       >
                         <span>Browse All</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                        <ArrowRightModernIcon className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                     </div>
 
@@ -255,7 +245,7 @@ export const Header: React.FC = () => {
                           className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-cream-100/90 border border-transparent hover:border-cream-300 transition-all group"
                         >
                           <div className="w-9 h-9 rounded-xl bg-cream-200/80 group-hover:bg-caramel/20 flex items-center justify-center transition-colors shrink-0">
-                            {categoryIcons[cat.id] || <Sparkles className="w-4 h-4 text-caramel" />}
+                            {categoryIcons[cat.id] || <SparkleModernIcon className="w-4 h-4 text-caramel" />}
                           </div>
                           <div className="min-w-0">
                             <p className="text-xs font-bold text-cocoa group-hover:text-caramel transition-colors truncate">
@@ -274,7 +264,7 @@ export const Header: React.FC = () => {
                         className="flex items-center gap-3 p-2.5 rounded-xl bg-gradient-to-r from-caramel/10 via-cream-100 to-caramel/15 border border-caramel/30 hover:border-caramel hover:bg-caramel/20 transition-all group"
                       >
                         <div className="w-9 h-9 rounded-xl bg-caramel text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
-                          <Sparkles className="w-4 h-4" />
+                          <SparkleModernIcon className="w-4 h-4" />
                         </div>
                         <div className="min-w-0">
                           <p className="text-xs font-bold text-caramel-dark truncate">
@@ -289,7 +279,7 @@ export const Header: React.FC = () => {
 
                     <div className="mt-4 pt-3 border-t border-cream-200 flex items-center justify-between text-[11px] text-cocoa/70 font-medium bg-cream-50 -mx-5 -mb-5 px-5 py-2.5 rounded-b-2xl">
                       <span className="flex items-center gap-1.5 text-emerald-800 font-semibold">
-                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                        <ShieldModernBadge className="w-3.5 h-3.5" />
                         <span>100% Pure Vegetarian & Eggless</span>
                       </span>
                       <span className="text-cocoa/60">Vijaynagar, Bengaluru</span>
@@ -332,7 +322,7 @@ export const Header: React.FC = () => {
                     : 'bg-cream-200/70 hover:bg-cream-300/80 text-cocoa border-cream-300/80'
                 )}
               >
-                <Search className={cn('w-3.5 h-3.5', isDarkHeroHeader ? 'text-white/80' : 'text-cocoa/60')} />
+                <SearchModernIcon className={cn('w-3.5 h-3.5', isDarkHeroHeader ? 'text-white/80' : 'text-cocoa/60')} />
                 <span>Search cravings...</span>
                 <kbd
                   className={cn(
@@ -356,7 +346,7 @@ export const Header: React.FC = () => {
                 )}
                 aria-label="View shopping bag"
               >
-                <ShoppingBag className="w-4.5 h-4.5 transition-transform group-hover:scale-110" />
+                <BagModernIcon className="w-4.5 h-4.5 transition-transform group-hover:scale-110" />
                 {totalItems > 0 && (
                   <span className="absolute -top-1.5 -right-1.5 bg-berry-rose text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
                     {totalItems}

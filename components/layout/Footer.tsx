@@ -2,7 +2,14 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { MapPin, Phone, Mail, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { 
+  StorePinModernIcon, 
+  PhoneModernIcon, 
+  MailModernIcon, 
+  ClockModernIcon, 
+  ArrowRightModernIcon, 
+  CheckCircleModernIcon 
+} from '@/components/ui/ModernIcons';
 import { Button } from '@/components/ui/Button';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 
@@ -39,7 +46,7 @@ export const Footer: React.FC = () => {
               </p>
               {isSubscribed ? (
                 <div className="flex items-center gap-2 text-xs text-emerald-400 bg-emerald-950/40 p-3 rounded-2xl border border-emerald-800/40">
-                  <CheckCircle2 className="w-4 h-4" />
+                  <CheckCircleModernIcon className="w-4 h-4" />
                   <span>Welcome to Big Bakers! Check your inbox for 15% off.</span>
                 </div>
               ) : (
@@ -54,7 +61,7 @@ export const Footer: React.FC = () => {
                   />
                   <Button variant="secondary" size="sm" type="submit">
                     <span>Join</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                    <ArrowRightModernIcon className="w-3.5 h-3.5 ml-1" />
                   </Button>
                 </form>
               )}
@@ -134,20 +141,20 @@ export const Footer: React.FC = () => {
           <div className="space-y-3">
             <p className="font-serif text-base font-bold text-white tracking-wide">Visit Our Store</p>
             <div className="space-y-2.5 text-xs text-cream-200/75">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-caramel flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5">
+                <StorePinModernIcon className="w-4 h-4 flex-shrink-0 mt-0.5" />
                 <span>17th Cross, MC Layout, Vijaynagar, Bengaluru, 560040</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-caramel flex-shrink-0" />
+              <div className="flex items-center gap-2.5">
+                <ClockModernIcon className="w-4 h-4 flex-shrink-0" />
                 <span>8:00 AM – 10:30 PM Everyday</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-caramel flex-shrink-0" />
+              <div className="flex items-center gap-2.5">
+                <PhoneModernIcon className="w-4 h-4 flex-shrink-0" />
                 <span>+91 80 2330 4567</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-caramel flex-shrink-0" />
+              <div className="flex items-center gap-2.5">
+                <MailModernIcon className="w-4 h-4 flex-shrink-0" />
                 <span>hello@bigbakers.in</span>
               </div>
             </div>

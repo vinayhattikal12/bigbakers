@@ -3,7 +3,15 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { X, Plus, Minus, Trash2, ShoppingBag, ArrowRight, ShieldCheck } from 'lucide-react';
+import { 
+  BagModernIcon, 
+  CloseModernIcon, 
+  PlusModernIcon, 
+  MinusModernIcon, 
+  TrashModernIcon, 
+  ArrowRightModernIcon, 
+  ShieldModernBadge 
+} from '@/components/ui/ModernIcons';
 import { useCart } from '@/lib/context/CartContext';
 import { formatPrice } from '@/lib/utils/formatters';
 import { Button } from '@/components/ui/Button';
@@ -88,8 +96,8 @@ export const CartDrawer: React.FC = () => {
       <div className="relative w-full max-w-md bg-cream-50 h-full flex flex-col shadow-2xl z-10 animate-in slide-in-from-right duration-300">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-cream-300 bg-white/70 backdrop-blur-md">
-          <div className="flex items-center gap-2">
-            <ShoppingBag className="w-5 h-5 text-cocoa" />
+          <div className="flex items-center gap-2.5">
+            <BagModernIcon className="w-5 h-5" />
             <h2 className="font-serif text-xl font-bold text-cocoa">Your Cravings</h2>
             <span className="text-xs bg-caramel/10 text-caramel font-semibold px-2 py-0.5 rounded-full">
               {totalItems} {totalItems === 1 ? 'item' : 'items'}
@@ -97,10 +105,10 @@ export const CartDrawer: React.FC = () => {
           </div>
           <button
             onClick={closeCart}
-            className="p-2 rounded-full text-cocoa/70 hover:text-cocoa hover:bg-cream-200 transition-colors"
+            className="p-1.5 rounded-full text-cocoa/70 hover:text-cocoa hover:bg-cream-200 transition-all active:scale-90"
             aria-label="Close cart"
           >
-            <X className="w-5 h-5" />
+            <CloseModernIcon className="w-5 h-5" />
           </button>
         </div>
 
@@ -129,8 +137,8 @@ export const CartDrawer: React.FC = () => {
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
           {items.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-4">
-              <div className="w-20 h-20 rounded-full bg-cream-200 flex items-center justify-center text-cocoa/40">
-                <ShoppingBag className="w-10 h-10 stroke-[1.5]" />
+              <div className="w-20 h-20 rounded-full bg-cream-200 flex items-center justify-center">
+                <BagModernIcon className="w-10 h-10" />
               </div>
               <div className="space-y-1">
                 <p className="font-serif text-lg font-bold text-cocoa">Your bag is empty</p>
@@ -182,7 +190,7 @@ export const CartDrawer: React.FC = () => {
                       className="text-cocoa/40 hover:text-berry-crimson p-1 transition-colors"
                       title="Remove item"
                     >
-                      <Trash2 className="w-3.5 h-3.5" />
+                      <TrashModernIcon className="w-4 h-4" />
                     </button>
                   </div>
 
@@ -190,20 +198,20 @@ export const CartDrawer: React.FC = () => {
                     <div className="flex items-center border border-cream-300 rounded-lg bg-cream-50">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="p-1 hover:bg-cream-200 text-cocoa rounded-l-lg transition-colors"
+                        className="p-1.5 hover:bg-cream-200 text-cocoa rounded-l-lg transition-colors"
                         aria-label="Decrease quantity"
                       >
-                        <Minus className="w-3 h-3" />
+                        <MinusModernIcon className="w-3 h-3" />
                       </button>
-                      <span className="px-2 text-xs font-semibold text-cocoa min-w-[20px] text-center">
+                      <span className="px-2.5 text-xs font-semibold text-cocoa min-w-[20px] text-center">
                         {item.quantity}
                       </span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="p-1 hover:bg-cream-200 text-cocoa rounded-r-lg transition-colors"
+                        className="p-1.5 hover:bg-cream-200 text-cocoa rounded-r-lg transition-colors"
                         aria-label="Increase quantity"
                       >
-                        <Plus className="w-3 h-3" />
+                        <PlusModernIcon className="w-3 h-3" />
                       </button>
                     </div>
                     <span className="font-semibold text-sm text-cocoa">
@@ -293,12 +301,12 @@ export const CartDrawer: React.FC = () => {
                   <span>Proceed to Checkout</span>
                   <div className="flex items-center gap-1.5">
                     <span>{formatPrice(total)}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRightModernIcon className="w-4 h-4" />
                   </div>
                 </Button>
               </Link>
-              <div className="flex items-center justify-center gap-1.5 text-[11px] text-cocoa/50">
-                <ShieldCheck className="w-3.5 h-3.5" />
+              <div className="flex items-center justify-center gap-1.5 text-[11px] text-cocoa/70 font-medium">
+                <ShieldModernBadge className="w-3.5 h-3.5" />
                 <span>100% Safe & Contactless Bengaluru Delivery</span>
               </div>
             </div>

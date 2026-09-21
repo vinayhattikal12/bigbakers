@@ -3,7 +3,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, X, ArrowRight, Sparkles } from 'lucide-react';
+import { 
+  SearchModernIcon, 
+  CloseModernIcon, 
+  ArrowRightModernIcon, 
+  SparkleModernIcon,
+  CakeModernIcon,
+  DessertModernIcon,
+  PizzaModernIcon,
+  SavouriesModernIcon,
+  GelatoModernIcon,
+  TreatsModernIcon,
+  SnacksModernIcon,
+  PureVegModernBadge
+} from '@/components/ui/ModernIcons';
 import { products } from '@/data/products';
 import { formatPrice } from '@/lib/utils/formatters';
 
@@ -86,7 +99,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
       <div className="relative w-full max-w-2xl bg-cream-50 rounded-3xl shadow-2xl border border-cream-300 overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-200">
         {/* Search Input */}
         <div className="flex items-center px-6 py-4 border-b border-cream-300 bg-white">
-          <Search className="w-5 h-5 text-cocoa/40 mr-3 flex-shrink-0" />
+          <SearchModernIcon className="w-5 h-5 text-caramel mr-3 flex-shrink-0" />
           <input
             ref={inputRef}
             type="text"
@@ -99,8 +112,9 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
             <button
               onClick={() => setQuery('')}
               className="text-cocoa/40 hover:text-cocoa p-1 mr-2"
+              aria-label="Clear search"
             >
-              <X className="w-4 h-4" />
+              <CloseModernIcon className="w-4 h-4" />
             </button>
           )}
           <button
@@ -116,7 +130,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
           {!query.trim() ? (
             <div className="space-y-4">
               <div className="flex items-center gap-1.5 text-xs font-semibold text-cocoa/50 uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-caramel" />
+                <SparkleModernIcon className="w-3.5 h-3.5" />
                 <span>Trending Cravings</span>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -124,7 +138,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
                   <button
                     key={item}
                     onClick={() => setQuery(item)}
-                    className="px-3.5 py-1.5 rounded-full bg-white border border-cream-300 text-xs font-medium text-cocoa hover:border-caramel hover:text-caramel hover:bg-cream-100 transition-all"
+                    className="px-3.5 py-1.5 rounded-full bg-white border border-cream-300 text-xs font-medium text-cocoa hover:border-caramel hover:text-caramel hover:bg-cream-100 transition-all active:scale-95"
                   >
                     {item}
                   </button>
@@ -137,23 +151,31 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                   {[
-                    { name: 'Cakes', href: '/cakes', icon: '🎂' },
-                    { name: 'Desserts', href: '/desserts', icon: '🍮' },
-                    { name: 'Treats', href: '/treats', icon: '🍩' },
-                    { name: 'Snacks', href: '/snacks', icon: '🍿' },
-                  ].map((cat) => (
-                    <Link
-                      key={cat.name}
-                      href={cat.href}
-                      onClick={onClose}
-                      className="p-3 bg-white rounded-2xl border border-cream-300 hover:border-caramel hover:shadow-sm text-center transition-all group"
-                    >
-                      <span className="text-xl block mb-1">{cat.icon}</span>
-                      <span className="text-xs font-semibold text-cocoa group-hover:text-caramel">
-                        {cat.name}
-                      </span>
-                    </Link>
-                  ))}
+                    { name: 'Cakes', href: '/cakes', icon: CakeModernIcon },
+                    { name: 'Desserts', href: '/desserts', icon: DessertModernIcon },
+                    { name: 'Pizzas', href: '/pizzas', icon: PizzaModernIcon },
+                    { name: 'Savouries', href: '/savouries', icon: SavouriesModernIcon },
+                    { name: 'Gelato', href: '/gelato', icon: GelatoModernIcon },
+                    { name: 'Treats', href: '/treats', icon: TreatsModernIcon },
+                    { name: 'Snacks', href: '/snacks', icon: SnacksModernIcon },
+                  ].map((cat) => {
+                    const CatIcon = cat.icon;
+                    return (
+                      <Link
+                        key={cat.name}
+                        href={cat.href}
+                        onClick={onClose}
+                        className="flex flex-col items-center justify-center p-3 bg-white rounded-2xl border border-cream-300 hover:border-caramel hover:shadow-md text-center transition-all group active:scale-95"
+                      >
+                        <div className="w-8 h-8 rounded-xl bg-cream-100 group-hover:bg-caramel/15 flex items-center justify-center mb-1.5 transition-colors">
+                          <CatIcon className="w-5 h-5" />
+                        </div>
+                        <span className="text-xs font-semibold text-cocoa group-hover:text-caramel">
+                          {cat.name}
+                        </span>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -170,7 +192,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-caramel hover:underline"
                 >
                   <span>View All Products</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRightModernIcon className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>

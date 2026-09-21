@@ -3,14 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import {
-  Sparkles,
-  Heart,
-  Award,
-  ShieldCheck,
-  Flame,
-  CheckCircle2,
-  ArrowRight,
-} from 'lucide-react';
+  SparkleModernIcon,
+  AwardModernIcon,
+  ShieldModernBadge,
+  FlameModernIcon,
+  ArrowRightModernIcon,
+  HeartModernIcon,
+} from '@/components/ui/ModernIcons';
 
 export const metadata = {
   title: 'Our Story & Master Bakers',
@@ -36,7 +35,7 @@ export default function StoryPage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-widest">
-            <Sparkles className="w-4 h-4" />
+            <SparkleModernIcon className="w-4 h-4" />
             <span>The Big Bakers Philosophy</span>
           </div>
 
@@ -95,29 +94,29 @@ export default function StoryPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: <Award className="w-6 h-6 text-gold" />,
+                icon: <AwardModernIcon className="w-6 h-6" />,
                 title: '54% Belgian Chocolate',
                 desc: 'We strictly use authentic single-origin cocoa butter and Belgian chocolate in all our truffle gateaux.',
               },
               {
-                icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />,
+                icon: <ShieldModernBadge className="w-6 h-6" />,
                 title: '100% Pure Dairy Cream',
                 desc: 'Zero palm oil, zero margarine, zero synthetic cake stabilizers. Only pure churned butter and dairy cream.',
               },
               {
-                icon: <Flame className="w-6 h-6 text-caramel" />,
+                icon: <FlameModernIcon className="w-6 h-6" />,
                 title: 'Freshly Baked Everyday',
                 desc: 'We bake multiple times throughout the day so your cake is hours fresh when it arrives at your doorstep.',
               },
               {
-                icon: <Heart className="w-6 h-6 text-berry-rose" />,
+                icon: <HeartModernIcon className="w-6 h-6" />,
                 title: 'Handcrafted With Love',
                 desc: 'Every rose, swirl, and ribbon is hand-piped and hand-tied by our trained pastry artisans.',
               },
             ].map((pillar) => (
               <div
                 key={pillar.title}
-                className="p-6 bg-white rounded-3xl border border-cream-300 shadow-xs space-y-3"
+                className="p-6 bg-white rounded-3xl border border-cream-300 shadow-xs space-y-3 hover:shadow-md transition-shadow"
               >
                 <div className="p-3 bg-cream-100 rounded-2xl w-fit">{pillar.icon}</div>
                 <h3 className="font-serif text-lg font-bold text-cocoa">{pillar.title}</h3>
@@ -138,9 +137,9 @@ export default function StoryPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link href="/menu">
-              <Button variant="gold" size="lg">
+              <Button variant="gold" size="lg" className="shadow-lg">
                 <span>Explore Full Menu</span>
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRightModernIcon className="w-4 h-4 ml-2" />
               </Button>
             </Link>
             <Link href="/stores">

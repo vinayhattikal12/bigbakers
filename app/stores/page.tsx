@@ -5,15 +5,15 @@ import Image from 'next/image';
 import { stores } from '@/data/stores';
 import { Button } from '@/components/ui/Button';
 import {
-  MapPin,
-  Clock,
-  Phone,
-  Navigation,
-  Sparkles,
-  CheckCircle2,
-  ShieldCheck,
-  Truck,
-} from 'lucide-react';
+  StorePinModernIcon,
+  ClockModernIcon,
+  PhoneModernIcon,
+  NavigationModernIcon,
+  SparkleModernIcon,
+  CheckCircleModernIcon,
+  ShieldModernBadge,
+  ExpressDeliveryModernIcon,
+} from '@/components/ui/ModernIcons';
 
 export default function StoresPage() {
   const store = stores[0]; // Vijaynagar store
@@ -35,7 +35,7 @@ export default function StoresPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-caramel/20 border border-caramel/40 text-gold text-xs font-semibold uppercase tracking-widest">
-            <MapPin className="w-4 h-4 text-gold" />
+            <StorePinModernIcon className="w-4 h-4 text-gold" />
             <span>Vijaynagar, Bengaluru</span>
           </div>
           <h1 className="font-serif text-3xl sm:text-6xl font-black text-white tracking-tight">
@@ -81,17 +81,17 @@ export default function StoresPage() {
               </div>
 
               <div className="flex items-start gap-2.5 text-xs sm:text-sm text-cocoa/80 leading-relaxed">
-                <MapPin className="w-4 h-4 text-caramel flex-shrink-0 mt-1" />
+                <StorePinModernIcon className="w-4 h-4 text-caramel flex-shrink-0 mt-0.5" />
                 <span>{store.address}, {store.city}, {store.state} - {store.pincode}</span>
               </div>
 
               <div className="flex items-center gap-2.5 text-xs sm:text-sm text-cocoa/80">
-                <Clock className="w-4 h-4 text-caramel flex-shrink-0" />
+                <ClockModernIcon className="w-4 h-4 text-caramel flex-shrink-0" />
                 <span>{store.hours}</span>
               </div>
 
               <div className="flex items-center gap-2.5 text-xs sm:text-sm text-cocoa/80">
-                <Phone className="w-4 h-4 text-caramel flex-shrink-0" />
+                <PhoneModernIcon className="w-4 h-4 text-caramel flex-shrink-0" />
                 <a href={`tel:${store.phone}`} className="hover:text-caramel font-semibold">
                   {store.phone}
                 </a>
@@ -123,14 +123,14 @@ export default function StoresPage() {
                 rel="noopener noreferrer"
                 className="flex-1 min-w-[180px]"
               >
-                <Button variant="primary" size="lg" className="w-full justify-center">
-                  <Navigation className="w-4 h-4 mr-2" />
+                <Button variant="primary" size="lg" className="w-full justify-center shadow-md">
+                  <NavigationModernIcon className="w-4 h-4 mr-2" />
                   <span>Get Directions on Maps</span>
                 </Button>
               </a>
               <a href={`tel:${store.phone}`}>
                 <Button variant="outline" size="lg">
-                  <Phone className="w-4 h-4 mr-2 text-caramel" />
+                  <PhoneModernIcon className="w-4 h-4 mr-2 text-caramel" />
                   <span>Call Store</span>
                 </Button>
               </a>
@@ -142,7 +142,7 @@ export default function StoresPage() {
         <div className="bg-peach/60 rounded-3xl p-6 sm:p-8 border border-peach-warm/40 flex flex-col sm:flex-row items-center justify-between gap-6 text-cocoa">
           <div className="flex items-center gap-4">
             <div className="p-3.5 bg-white rounded-2xl text-caramel shadow-xs">
-              <Truck className="w-7 h-7" />
+              <ExpressDeliveryModernIcon className="w-7 h-7" />
             </div>
             <div>
               <h3 className="font-serif text-lg font-bold">Prefer Home Delivery?</h3>

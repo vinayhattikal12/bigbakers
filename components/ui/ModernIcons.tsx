@@ -588,7 +588,7 @@ export const MenuModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', siz
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    className={`${className}`}
+    className={`${className} ${animate ? 'hover:scale-105 transition-transform duration-200' : ''}`}
     width={size}
     height={size}
     {...props}
@@ -603,3 +603,341 @@ export const MenuModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', siz
     <path d="M7 8H17M7 12H17M7 16H13" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
+
+// 🔍 16. MODERN SEARCH ICON
+export const SearchModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'group-hover:scale-110 group-hover:rotate-6 transition-all duration-300' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="searchRimGrad" x1="3" y1="3" x2="16" y2="16" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#F59E0B" />
+        <stop offset="50%" stopColor="#D97706" />
+        <stop offset="100%" stopColor="#B45309" />
+      </linearGradient>
+      <radialGradient id="searchLensGrad" cx="10" cy="10" r="7" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#FFFDF9" stopOpacity="0.9" />
+        <stop offset="70%" stopColor="#FEF3C7" stopOpacity="0.6" />
+        <stop offset="100%" stopColor="#FDE68A" stopOpacity="0.2" />
+      </radialGradient>
+      <linearGradient id="searchHandleGrad" x1="14" y1="14" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#D97706" />
+        <stop offset="100%" stopColor="#78350F" />
+      </linearGradient>
+    </defs>
+    {/* Optical Lens */}
+    <circle cx="10.5" cy="10.5" r="7" fill="url(#searchLensGrad)" />
+    {/* Gold Bezel Rim */}
+    <circle cx="10.5" cy="10.5" r="7" stroke="url(#searchRimGrad)" strokeWidth="2.2" />
+    {/* Glass Flare Reflection */}
+    <path d="M7 7.5C8 6.5 9.5 6 11 6.2" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" opacity="0.9" />
+    {/* Starlight Sparkle */}
+    <path d="M12 9L12.3 9.7L13 10L12.3 10.3L12 11L11.7 10.3L11 10L11.7 9.7L12 9Z" fill="#F59E0B" />
+    {/* Precision Handle with Grip Ring */}
+    <path d="M15.5 15.5L21 21" stroke="url(#searchHandleGrad)" strokeWidth="3" strokeLinecap="round" />
+    <circle cx="16.5" cy="16.5" r="1" fill="#FBBF24" />
+  </svg>
+);
+
+// ✖️ 17. MODERN CLOSE / DISMISS ICON
+export const CloseModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:rotate-90 hover:scale-110 transition-all duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <circle cx="12" cy="12" r="10" fill="#F5EFEB" />
+    <path d="M15 9L9 15M9 9L15 15" stroke="#78350F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+// 📞 18. MODERN PHONE ICON
+export const PhoneModernIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:scale-110 transition-transform duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="phoneGrad" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#F59E0B" />
+        <stop offset="100%" stopColor="#D97706" />
+      </linearGradient>
+    </defs>
+    <path
+      d="M22 16.92V19.92C22 20.48 21.54 20.94 20.98 20.92C10.02 20.48 3.52 13.98 3.08 3.02C3.06 2.46 3.52 2 4.08 2H7.08C7.58 2 8 2.38 8.08 2.88C8.24 3.98 8.56 5.06 9.04 6.06C9.2 6.4 9.12 6.8 8.84 7.08L7.34 8.58C9.06 12.06 11.94 14.94 15.42 16.66L16.92 15.16C17.2 14.88 17.6 14.8 17.94 14.96C18.94 15.44 20.02 15.76 21.12 15.92C21.62 16 22 16.42 22 16.92Z"
+      fill="url(#phoneGrad)"
+    />
+    <path d="M15 3C17 4 19 6 20 8M15 6C16 6.5 17.5 8 18 9" stroke="#FDE68A" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>
+);
+
+// ✉️ 19. MODERN MAIL / EMAIL ICON
+export const MailModernIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:scale-110 transition-transform duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="mailGrad" x1="2" y1="4" x2="22" y2="20" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#F59E0B" />
+        <stop offset="100%" stopColor="#D97706" />
+      </linearGradient>
+    </defs>
+    <rect x="2" y="4" width="20" height="16" rx="3" fill="url(#mailGrad)" />
+    <path d="M2 7L12 13L22 7" stroke="#FFF" strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="12" cy="13" r="2" fill="#FEF3C7" />
+  </svg>
+);
+
+// ⏰ 20. MODERN CLOCK / TIMEPIECE ICON
+export const ClockModernIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:rotate-45 transition-transform duration-300' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="clockGrad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#F59E0B" />
+        <stop offset="100%" stopColor="#B45309" />
+      </linearGradient>
+    </defs>
+    <circle cx="12" cy="12" r="9" fill="url(#clockGrad)" />
+    <circle cx="12" cy="12" r="7.5" fill="#FFFDF9" />
+    <path d="M12 7V12L15.5 14" stroke="#78350F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="12" cy="12" r="1" fill="#D97706" />
+  </svg>
+);
+
+// ✅ 21. MODERN CHECK CIRCLE ICON
+export const CheckCircleModernIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:scale-110 transition-transform duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="checkGrad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#22C55E" />
+        <stop offset="100%" stopColor="#15803D" />
+      </linearGradient>
+    </defs>
+    <circle cx="12" cy="12" r="10" fill="url(#checkGrad)" />
+    <path d="M8 12L11 15L16 9" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+// ➡️ 22. MODERN ARROW RIGHT ICON
+export const ArrowRightModernIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'group-hover:translate-x-1 transition-transform duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+// 🗑️ 23. MODERN TRASH ICON
+export const TrashModernIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:scale-110 hover:text-red-500 transition-all duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <path d="M3 6H21M19 6V20C19 21.1 18.1 22 17 22H7C5.9 22 5 21.1 5 20V6M8 6V4C8 2.9 8.9 2 10 2H14C15.1 2 16 2.9 16 4V6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M10 11V17M14 11V17" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+  </svg>
+);
+
+// ➕ 24. MODERN PLUS ICON
+export const PlusModernIcon: React.FC<IconProps> = ({ className = 'w-3.5 h-3.5', size, ...props }) => (
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} width={size} height={size} {...props}>
+    <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+// ➖ 25. MODERN MINUS ICON
+export const MinusModernIcon: React.FC<IconProps> = ({ className = 'w-3.5 h-3.5', size, ...props }) => (
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} width={size} height={size} {...props}>
+    <path d="M5 12H19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+// 🧭 26. MODERN NAVIGATION / DIRECTIONS ICON
+export const NavigationModernIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:rotate-12 transition-transform duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="navGrad" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#F59E0B" />
+        <stop offset="100%" stopColor="#D97706" />
+      </linearGradient>
+    </defs>
+    <polygon points="3 11 22 2 13 21 11 13 3 11" fill="url(#navGrad)" stroke="#FFF" strokeWidth="1" strokeLinejoin="round" />
+  </svg>
+);
+
+// 🎖️ 27. MODERN AWARD / CRAFT ICON
+export const AwardModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:scale-110 transition-transform duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="awardGrad" x1="4" y1="2" x2="20" y2="18" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#FDE047" />
+        <stop offset="60%" stopColor="#F59E0B" />
+        <stop offset="100%" stopColor="#D97706" />
+      </linearGradient>
+    </defs>
+    <circle cx="12" cy="8" r="6" fill="url(#awardGrad)" />
+    <path d="M12 4L13.2 6.5L16 6.8L14 8.8L14.5 11.5L12 10.2L9.5 11.5L10 8.8L8 6.8L10.8 6.5L12 4Z" fill="#FFFFFF" />
+    <path d="M8.2 13.5L7 22L12 19L17 22L15.8 13.5" fill="#D97706" />
+  </svg>
+);
+
+// 🔥 28. MODERN FLAME / ARTISAN OVEN ICON
+export const FlameModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'animate-pulse' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="flameGrad" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#FDE047" />
+        <stop offset="50%" stopColor="#F97316" />
+        <stop offset="100%" stopColor="#DC2626" />
+      </linearGradient>
+    </defs>
+    <path
+      d="M12 2C10 6 6 8.5 6 14C6 17.31 8.69 20 12 20C15.31 20 18 17.31 18 14C18 9 14.5 7 14 5C13.5 7.5 12 9 11 9C10 7 11 4.5 12 2Z"
+      fill="url(#flameGrad)"
+    />
+    <path d="M12 13C11 13 10 14 10 15.5C10 16.88 11.12 18 12.5 18C13.88 18 15 16.88 15 15.5C15 14.5 13.5 13.5 12 13Z" fill="#FEF08A" />
+  </svg>
+);
+
+// 📖 29. MODERN HISTORY / STORY ICON
+export const HistoryModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:scale-105 transition-transform duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="bookGrad" x1="2" y1="4" x2="22" y2="20" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#F59E0B" />
+        <stop offset="100%" stopColor="#92400E" />
+      </linearGradient>
+    </defs>
+    <path d="M4 19.5V4.5C4 3.67 4.67 3 5.5 3H19C19.55 3 20 3.45 20 4V19C20 19.55 19.55 20 19 20H5.5C4.67 20 4 19.55 4 19.5Z" fill="url(#bookGrad)" />
+    <path d="M4 17C4 16.5 4.5 16 5 16H20V20H5.5C4.67 20 4 19.33 4 18.5V17Z" fill="#78350F" />
+    <path d="M8 8H16M8 12H14" stroke="#FFFDF9" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M12 2L12.3 2.7L13 3L12.3 3.3L12 4L11.7 3.3L11 3L11.7 2.7L12 2Z" fill="#FDE68A" />
+  </svg>
+);
+
+// ⚙️ 30. MODERN FILTER / SLIDERS ICON
+export const FilterModernIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:scale-110 transition-transform duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="8" cy="6" r="2.5" fill="#D97706" stroke="#FFFDF9" strokeWidth="1.5" />
+    <circle cx="16" cy="12" r="2.5" fill="#D97706" stroke="#FFFDF9" strokeWidth="1.5" />
+    <circle cx="10" cy="18" r="2.5" fill="#D97706" stroke="#FFFDF9" strokeWidth="1.5" />
+  </svg>
+);
+
+// ❤️ 31. MODERN HEART / FAVOURITE ICON
+export const HeartModernIcon: React.FC<IconProps> = ({ className = 'w-5 h-5', size, animate = true, ...props }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} ${animate ? 'hover:scale-110 active:scale-125 transition-transform duration-200' : ''}`}
+    width={size}
+    height={size}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="heartGrad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#FB7185" />
+        <stop offset="50%" stopColor="#E11D48" />
+        <stop offset="100%" stopColor="#9F1239" />
+      </linearGradient>
+    </defs>
+    <path
+      d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z"
+      fill="url(#heartGrad)"
+      stroke="#FFF"
+      strokeWidth="0.8"
+    />
+    <path d="M7 6C6 7 5.5 8.5 6 10" stroke="#FFE4E6" strokeWidth="1.2" strokeLinecap="round" opacity="0.8" />
+  </svg>
+);
+
